@@ -1,0 +1,25 @@
+/* svg
+#freepik_stories-about-us-page:not(.animated) .animable 
+{opacity: 0;}
+svg#freepik_stories-about-us-page.animated #freepik--Floor--inject-3 {animation: 4.3s 1 forwards cubic-bezier(.36,-0.01,.5,1.38) fadeIn;animation-delay: 0s;}
+svg#freepik_stories-about-us-page.animated #freepik--Page--inject-3 { */
+  img{
+    animation-name: fadeIn;
+    animation: 1.5s Infinite  linear floating;
+    animation-delay: 0s;
+    margin-left: 10rem;
+} 
+ @keyframes fadeIn {            
+    0% {opacity: 0;}   
+    100% {opacity: 1;}   
+                                     }              
+                                          
+@keyframes floating {
+    0% {opacity: 1;
+        transform: translateY(0px);}
+    50% {transform: translateY(-10px);}
+    100% {opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
