@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="./fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="./home.css">
+</head>
+
+<body>
+
+    <!--************** SIDE BAR************ -->
+    <div class="sidebar" id="sidebar">
+        <div class="close_btn">
+             <img src="./dada.png" alt="">
+             <span id="icon_btn" onclick='toggleSidebar()'>&times;</span>
+        </div>
+
+          <ul class="menu">
+
+         <li class="list">
+             <a href="dashboard.php">
+                 <i class="fas fa-home"></i>
+                 <span>Dashboard</span>
+             </a>
+         </li>
+         
+         <li class="list">
+             <a href="data.php">
+                 <i class="fas fa-wifi"></i>
+                 <span>Data</span>
+             </a>
+         </li>
+
+         <li class="list">
+             <a href="airtime.php">
+                 <i class="fas fa-mobile"></i>
+                 <span>Airtime</span>
+             </a>
+         </li>
+
+         <li class="list">
+             <a href="cable.php">
+                 <i class="fas fa-tv"></i>
+                 <span>Cable</span>
+             </a>
+         </li>
+
+         <li class="list">
+             <a href="utility">
+                 <i class="fas fa-bolt"></i>
+                 <span>Utility</span>
+             </a>
+         </li>
+
+         <li class="list">
+             <a href="transaction.php">
+                 <i class="fas fa-receipt"></i>
+                 <span>Transactions</span>
+             </a>
+         </li>
+
+         <li class="list">
+             <a href="profil.php">
+                 <i class="fas fa-user"></i>
+                 <span>Referral</span>
+             </a>
+         </li>
+         
+         <li class="list" id="logout">
+             <a href="landing.php">
+                 <i class="fas fa-sign-out-alt"></i>
+                 <span>Log Out</span>
+             </a>
+         </li>
+
+         </ul>
+     </div>
+
+
+     <div class="main-content">
+
+        <!--********* HEADER SECTION ******-->
+
+        <div class="header-wrapper">
+
+            <div class="icon_box" >
+               <span id="icon_btn" onclick='toggleSidebar()'>&#9776;</span>
+            </div>
+
+             <div class="header-tittle">
+                 <h2>Dashboard</h2>
+             </div>
+            
+             <fieldset class="search-box">
+                <i class="fas fa-search" id="fa-search"></i>
+                <i class="fas fa-angle-left" id="fa-angle-left" onclick="hideSearch()"></i>
+               <input type="text" class="search_input" id="search_input" onkeyup="search()" placeholder="Search Items ">
+             </fieldset>
+           
+             <div class="add_to_chart">
+                <i class="fas fa-cart-shopping"></i>
+             </div>
+             <div class="user">
+                <i class="fas fa-user"></i>
+             </div>
+        </div>
+
+        <div class="search-result" id="search-result">
+
+            <div class="product_list" id="product_list" >            
+
+                <a href="">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./chair.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Tub</h2>
+                            <h3 class="p-price"> $500</h3>
+                     </div>
+                    </div>
+                </a>
+                
+                <a href="">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./chandelier.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2 id="h2">chandelier</h2>
+                            <h3 class="p-price"> $500</h3>
+                     </div>
+                    </div>
+                </a>
+                
+                <a href="">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./mirror.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2 id="h2">Mirror</h2>
+                            <h3 class="p-price"> $500</h3>
+                     </div>
+                    </div>
+                </a>
+                
+                <a href="">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./baby_bag.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2 id="h2">Baby Bag</h2>
+                            <h3 class="p-price"> $500</h3>
+                     </div>
+                    </div>
+                </a>
+                
+                <a href="">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./baby_bag.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Baby Bag</h2>
+                            <h3 class="p-price"> $500</h3>
+                     </div>
+                    </div>
+                </a>
+                
+                <a href="">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./baby_bag.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Baby Bag</h2>
+                            <h3 class="p-price"> $500</h3>
+                     </div>
+                    </div>
+                </a>
+                
+                <a href="">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./baby_bag.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Baby Bag</h2>
+                            <h3 class="p-price"> $500</h3>
+                     </div>
+                    </div>
+                </a>
+                
+                <a href="">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./baby_bag.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Baby Bag</h2>
+                            <h3 class="p-price"> $500</h3>
+                     </div>
+                    </div>
+                </a>
+                
+                <a href="">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./baby_bag.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Baby Bag</h2>
+                            <h3 class="p-price"> $500</h3>
+                     </div>
+                    </div>
+                </a>
+                
+                <a href="">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./baby_bag.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Baby Bag</h2>
+                            <h3 class="p-price"> $500</h3>
+                     </div>
+                    </div>
+                </a>
+                
+                <a href="">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./baby_bag.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Baby Bag</h2>
+                            <h3 class="p-price"> $500</h3>
+                     </div>
+                    </div>
+                </a>
+                
+                <a href="">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./baby_bag.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Baby Bag</h2>
+                            <h3 class="p-price"> $500</h3>
+                     </div>
+                    </div>
+                </a>
+                
+                <a href="">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./baby_bag.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Baby Bag</h2>
+                            <h3 class="p-price"> $500</h3>
+                     </div>
+                    </div>
+                </a>
+                
+
+            </div>
+
+        </div>
+
+       <section class="landing-page">
+
+        <div class="land-container1">
+            <div class="box1">
+                    <h3>FOR ADDITIONAL INFO</h3>
+            </div>
+        </div>
+
+        <section class="carousel">
+            <div id="slide">
+                <div class="item" style="background-image: url(./baby_bag.jpg);">
+                    <div class="content">
+                        <div class="name">Diaper Baby</div>
+                        <div class="des">Effortlessly carry all your baby essentials with our chic and sapcious bag</div>
+                        <button>See more</button>
+                    </div>
+                </div>
+
+                <div class="item" style="background-image: url(./chair.jpg);">
+                    <div class="content">
+                        <div class="name">Tub</div>
+                        <div class="des">Very Soft and Comfortable Tub</div>
+                        <button>See more</button>
+                    </div>
+                </div>
+
+                <div class="item" style="background-image: url(./chandelier.jpg);">
+                    <div class="content">
+                        <div class="name">Chandelier</div>
+                        <div class="des">Elevate your home with our equisite chandelier</div>
+                        <button>See more</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url(./mirror.jpg);">
+                    <div class="content">
+                        <div class="name">Circle mirror</div>
+                        <div class="des">Reflect timeless in every glance with our sleek circle dressing mirror</div>
+                        <button>See more</button>
+                    </div>
+                </div>
+
+                <div class="item" style="background-image: url(./slide_lamp.jpg);">
+                    <div class="content">
+                        <div class="name">Table Lamp</div>
+                        <div class="des">Create a cozy ambience with our side lamp</div>
+                        <button>See more</button>
+                    </div>
+                </div>
+
+                <div class="item" style="background-image: url(./tote\ bag.jpg);">
+                    <div class="content">
+                        <div class="name">Travel Tote</div>
+                        <div class="des">Affordable to pack your traveling items</div>
+                        <button>See more</button>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="buttons">
+                <button id="prev"><i class="fa-solid fa-angle-left"></i></button>
+                <button id="next"><i class="fa-solid fa-angle-right"></i></button>
+            </div>
+        </section>
+
+        <div class="land-container2">
+            <div class="box1">
+                    <h3>FOR ADDITIONAL INFO</h3>
+            </div>
+          
+
+        </div>
+       </section>
+
+
+        
+     </div>
+
+
+
+
+<script src="./home.js"></script>
+</body>
+</html>
+
