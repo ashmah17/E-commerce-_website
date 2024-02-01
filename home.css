@@ -512,7 +512,7 @@ body{
 
         }
         .categories_wrap{
-            width: 100%;
+            /* width: 100%; */
             height: 100%;
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -523,7 +523,7 @@ body{
             background-size: cover;
             background-position: center;
             height: 30vh;
-            width: 25vh;
+            width: 21vh;
             display: flex;
             align-items: center;
             justify-content: center;
