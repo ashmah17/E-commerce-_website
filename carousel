@@ -1,353 +1,214 @@
-<div class="caro-container">
-                <div class="carousel">
-                    <div class="carousel-inner">
-                    
-                        <input type="radio" class="carousel-open" id="carousel-1" aria-hidden="true" checked="checked">
-                        <div class="carouse-item">
-                            <div class="views">
-                                <h1 class="h1"> Our Newest Products</h1>
-                            </div>
-                                <img src="./Dreamland estate logo 2.jpg" width="500px" height="700px">
-                        </div>
-                        
-                        <input type="radio" class="carousel-open" id="carousel-2" aria-hidden="true" checked="checked" >
-                        <div class="carouse-item">
-                            <div class="views">
-                                <h1 class="h1"> Our Newest Products</h1>
-                            </div>
-                                <img src="./0a03a74486707cb2162cc6fff0fc8dbd.jpg" width="500px" height="700px">
-                        </div>
-                        
-                        <input type="radio" class="carousel-open" id="carousel-3" aria-hidden="true" checked="checked" >
-                        <div class="carouse-item">
-                            <div class="views">
-                                <h1 class="h1"> Our Newest Products</h1>
-                            </div>
-                                <img src="./Dreamland estate logo 2.jpg" width="500px" height="700px">
-                        </div>
-
-                        <label for="carousel-3" class="carousel-control prev control-1" >-</label>
-                        <label for="carousel-2" class="carousel-control next control-1" >-</label>
-                        <label for="carousel-1" class="carousel-control prev control-1" >-</label>
-                        <label for="carousel-3" class="carousel-control next control-1" >-</label>
-                        <label for="carousel-2" class="carousel-control prev control-1" >-</label>
-                        <label for="carousel-1" class="carousel-control next control-1" >-</label>
-                        <ol class="carousel-indicators">
-                            <li>
-                                <label for="carousel-1" class="carousel-bullet">.</label>
-                            </li>
-                            <li>
-                                <label for="carousel-2" class="carousel-bullet">.</label>
-                            </li>
-                            <li>
-                                <label for="carousel-3" class="carousel-bullet">.</label>
-                            </li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-
-
-
-            .caro-container{
-                height: 100vh;
-                width: 100%;
-                display: flex;
-                margin-top: 20px;
-                top: 1rem;
-                position: relative;
-                align-items: center;
-                justify-content: center;
-            }
-        
-            .carousel{
-                position: relative;
-                box-shadow:  0px 1px 6px rgba(0, 0, 0, 0.64);
-                margin-top: 26px;
-            }
-            .carousel-inner{
-                position: relative;
-                overflow: hidden;
-                width: 100%;
-            }
-            .carousel-open:checked+ .carousel-item{
-                position: static;
-                opacity: 100;
-            }
-            .carousel-item{
-                position: absolute;
-                opacity: 0;
-                -webkit-transition: opacity 0.6s ease-out;
-                transition: opacity 0.6s ease-out;
-            }
-            .carousel-item,img{
-                display: block;
-                height: auto;
-                max-width: 100%;
-            }
-            .carousel-control{
-                background-color: var(--text);
-                border-radius: 50%;
-                color: var(--main-color);
-                cursor: pointer;
-                display:none;
-                font-size: 40px;
-                height: 40px;
-                line-height: 35px;
-                position: absolute;
-                top: 50%;
-                -webkit-transform: translate(0, -50%);
-                transform:  translate(0, -50%);
-                text-align: center;
-                width: 40px;
-                z-index: 10;
-            }
-            .carousel-control.prev{
-                left: 2%;
-            }
-            .carousel-control.next{
-                left: 2%;
-            }
-            .carousel-control:hover{
-                background-color: var(--text);
-                color: #aaa;
-            } 
-            #carousel-1:checked ~.control-1,
-            #carousel-:checked ~.control-2,
-            #carousel-3:checked ~.control-3{
-                display: block;
-            }
-            .carousel-indicators{
-                list-style: none;
-                margin: 0;
-                padding: 0;
-                position: absolute;
-                bottom: 2%;
-                left: 0;
-                right: 0;
-                text-align: center;
-                z-index: 10;
-            }
-            .carousel-indicators li{
-                display: inline-block;
-                margin: 0 5px;
-            }
-            .carousel-bullet{
-                color: #fff;
-                cursor: pointer;
-                display: block;
-                font-size: 35px;
-            }
-            .carousel-bullet:hover{
-                color: var(--second-color);
-            }
-            #carousel-1:checked ~.control-1~.carousel-indicators li:nth-child(1) .carousel-bullet,
-            #carousel-:checked ~.control-2~.carousel-indicators li:nth-child(2) .carousel-bullet,
-            #carousel-3:checked ~.control-3~.carousel-indicators li:nth-child(3) .carousel-bullet{
-                color: red;
-            }
-        
-
-
-
-
-            .caro-container{
-                height: 100vh;
-                width: 100%;
-                display: flex;
-                margin-top: 20px;
-                top: 1rem;
-                position: relative;
-                align-items: center;
-                justify-content: center;
-            }
-        
-            .carousel{
-                position: relative;
-                box-shadow:  0px 1px 6px rgba(0, 0, 0, 0.64);
-                margin-top: 26px;
-            }
-            .carousel-inner{
-                position: relative;
-                overflow: hidden;
-                width: 100%;
-            }
-            .carousel-open:checked+ .carousel-item{
-                position: static;
-                opacity: 100;
-            }
-            .carousel-item{
-                position: absolute;
-                opacity: 0;
-                -webkit-transition: opacity 0.6s ease-out;
-                transition: opacity 0.6s ease-out;
-            }
-            .carousel-item,img{
-                display: block;
-                height: auto;
-                max-width: 100%;
-            }
-            .carousel-control{
-                background-color: var(--text);
-                border-radius: 50%;
-                color: var(--main-color);
-                cursor: pointer;
-                display:none;
-                font-size: 40px;
-                height: 40px;
-                line-height: 35px;
-                position: absolute;
-                top: 50%;
-                -webkit-transform: translate(0, -50%);
-                transform:  translate(0, -50%);
-                text-align: center;
-                width: 40px;
-                z-index: 10;
-            }
-            .carousel-control.prev{
-                left: 2%;
-            }
-            .carousel-control.next{
-                left: 2%;
-            }
-            .carousel-control:hover{
-                background-color: var(--text);
-                color: #aaa;
-            } 
-            #carousel-1:checked ~.control-1,
-            #carousel-:checked ~.control-2,
-            #carousel-3:checked ~.control-3{
-                display: block;
-            }
-            .carousel-indicators{
-                list-style: none;
-                margin: 0;
-                padding: 0;
-                position: absolute;
-                bottom: 2%;
-                left: 0;
-                right: 0;
-                text-align: center;
-                z-index: 10;
-            }
-            .carousel-indicators li{
-                display: inline-block;
-                margin: 0 5px;
-            }
-            .carousel-bullet{
-                color: #fff;
-                cursor: pointer;
-                display: block;
-                font-size: 35px;
-            }
-            .carousel-bullet:hover{
-                color: var(--second-color);
-            }
-            #carousel-1:checked ~.control-1~.carousel-indicators li:nth-child(1) .carousel-bullet,
-            #carousel-:checked ~.control-2~.carousel-indicators li:nth-child(2) .carousel-bullet,
-            #carousel-3:checked ~.control-3~.carousel-indicators li:nth-child(3) .carousel-bullet{
-                color: red;
-            }
+Armless Tub
+Army Green Kaftan
+Ash Abaya
+Ash Baby Snickers
+Ash long sleeve shirt
+Avocado Body Cream
+Babeque Pan
+Baby Bag
+Bakkarat Perfume
+Banana
+Barry Kaftan
+Bay Leave
+Beedsteak Tomato
+Beige Baby Snickers
+Beyond Space Snickers
+AFI Snickers
+Black Kaftan
+Nike Snickers
+Black Peppe
+Black Seed
+Black Slicon Spatula
+Adidas Snickers
+Blue Baby Gown
+Nike Baby snickers
+Blue Suit
+Board Clip
+Bolb Chandelier
+Boohoo Hills
+Brastemp Refigerator
+Fan Gown
+Brown Kaftan
+Brown Baby cloth
+Buffet
+Cabbage
+Candle Holder
+Cardimon
+Cauliflower
+Cd Plate
+Cement Chandelier
+Ceramic Plates
+Ceramic Utensil Holder
+Tub
+Chandelier
+Channel Perfume
+Cheetar Snickers
+Cherry Tomato
+Wooden Buffet
+Cinnamon
+Dry Cinnamon
+Clip
+Clove
+Coconut
+Lace Baby Gown
+Coffe Baby Boy Set
+Correction Fluid
+Crochet Baby Gown
+Cucumber
+Cumin
+D & G Perfume
+Desktop
+Dell Laptop
+Digital Camera
+Dior Watch
+Dry Peppe
+Dry Turmeric
+Electric Lamp
+Half Cover shoe
+Fenugreek
+Fig
+Gas Cooker
+Flat Laptop
+Flexible Keyboard
+PS Game
+Garlic Squeezer
+Garlic
+Ginger
+Givenchy Perfume
+Globe Tomato
+Gold Plated Necklace
+Green Boy Set
+Green Beans
+Green Tea Scrub
+Blue Sofa
+Hair Oil
+Hand Colander
+Hand Juicer
+Hand baby bag
+Hange Chendelier
+Hardcover Book
+Hardcover Note Book
+Heart Silver Neclace
+Hermes Bag
+Hp Laptop
+Irish Potato
+Keyboard
+Knife Set
+Lace Baby Gown
+Lavender Scrub
+Hardcover Journal
+Lemon Squeezer
+Lemon
+Lenovo Laptop
+Lettuce
+LH Baby Boy Set
+Mgiv Bullet Blender
+Mathematical Set
+Blue Mathematical Set
+Measuring Cup
+Mercury Gaming Microphone
+Metal Lid Spice Jar
+Metal Book Glider
+Michael Kors Watch
+Tote Vuitton Bag
+Flat shoe
+Milk Half Cover 
+Mini FLask
+Mini Laptop
+Mini Louis Vuitton
+Mini Toaster
+Glass Buffet
+Electric Mixer
+Molton Shower Gel
+Mosaic Camera
+Mother Board
+Multi-Color Fabric Gown
+Multi-Colored Shirt
+Navy Sofa
+Netigo N660P Webcam
+White NIKE Snickers
+Nonstick Pan
+Noodle Measurer
+Notebook
+Nutmeg
+Okra
+Onion
+Purple Onion
+Oxheart Tomato
+Pack Bag
+Paper Tape
+Paper Cutter
+P anfd L Face mask
+Pencil Set
+Periperal Microphone
+Pie Cutter
+Pinepple Cutter
+Pineapple
+Pink Tote Bag
+Podcast Microphone
+Pomegranate
+Prada Bag
+Pumpkin
+Rose Shower Gel
+Beige Round Tub
+Pink Round Tub
+Rubber Spiral Book
+Saffron
+Same Same Baby Set
+Sndy Brown Kaftan
+Stapler
+Scandal Perfume
+Waist Belt Gown
+Shamfoo
+Sharpener
+Siicon Siever
+Silicon Spatula
+Silk Gown
+Milk Silk Gown
+D Silver Necklace
+Side Lamp
+Navy Blue Sofa
+Soup Vegies
+Spice Jars
+Red Peppe
+Spiral Memo
+Star Anice
+Steak Cutter
+Steve Madden Hills
+Stick Glue
+Sweet Peppe
+Tamarin
+Tape Holder
+Tape
+Telephone
+The Ordinary Serum
+Thyme
+Toi Et Moi Boy Set
+Tomato
+Travel Bag
+Turmeric Scrub
+Turmeric
+Vedio Camera
+Versace Watch
+Vest Hand Baby Gown
+Vitamin A Serum
+Tote Vuitton Bag
+WHite Blender
+Mark Snicker
+White Silicon Spatula 
+Wooden Spatula
+Wireless HeadPhone
+White Wireless HeadPhone
+Wireless Mouse
 
 
 
 
 
-            .caro-container{
-                height: 100vh;
-                width: 100%;
-                display: flex;
-                margin-top: 20px;
-                top: 1rem;
-                position: relative;
-                align-items: center;
-                justify-content: center;
-            }
-        
-            .carousel{
-                position: relative;
-                box-shadow:  0px 1px 6px rgba(0, 0, 0, 0.64);
-                margin-top: 26px;
-            }
-            .carousel-inner{
-                position: relative;
-                overflow: hidden;
-                width: 100%;
-            }
-            .carousel-open:checked+ .carousel-item{
-                position: static;
-                opacity: 100;
-            }
-            .carousel-item{
-                position: absolute;
-                opacity: 0;
-                -webkit-transition: opacity 0.6s ease-out;
-                transition: opacity 0.6s ease-out;
-            }
-            .carousel-item,img{
-                display: block;
-                height: auto;
-                max-width: 100%;
-            }
-            .carousel-control{
-                background-color: var(--text);
-                border-radius: 50%;
-                color: var(--main-color);
-                cursor: pointer;
-                display:none;
-                font-size: 40px;
-                height: 40px;
-                line-height: 35px;
-                position: absolute;
-                top: 50%;
-                -webkit-transform: translate(0, -50%);
-                transform:  translate(0, -50%);
-                text-align: center;
-                width: 40px;
-                z-index: 10;
-            }
-            .carousel-control.prev{
-                left: 2%;
-            }
-            .carousel-control.next{
-                left: 2%;
-            }
-            .carousel-control:hover{
-                background-color: var(--text);
-                color: #aaa;
-            } 
-            #carousel-1:checked ~.control-1,
-            #carousel-:checked ~.control-2,
-            #carousel-3:checked ~.control-3{
-                display: block;
-            }
-            .carousel-indicators{
-                list-style: none;
-                margin: 0;
-                padding: 0;
-                position: absolute;
-                bottom: 2%;
-                left: 0;
-                right: 0;
-                text-align: center;
-                z-index: 10;
-            }
-            .carousel-indicators li{
-                display: inline-block;
-                margin: 0 5px;
-            }
-            .carousel-bullet{
-                color: #fff;
-                cursor: pointer;
-                display: block;
-                font-size: 35px;
-            }
-            .carousel-bullet:hover{
-                color: var(--second-color);
-            }
-            #carousel-1:checked ~.control-1~.carousel-indicators li:nth-child(1) .carousel-bullet,
-            #carousel-:checked ~.control-2~.carousel-indicators li:nth-child(2) .carousel-bullet,
-            #carousel-3:checked ~.control-3~.carousel-indicators li:nth-child(3) .carousel-bullet{
-                color: red;
-            }
-        
+
+
+
+
+
+
+

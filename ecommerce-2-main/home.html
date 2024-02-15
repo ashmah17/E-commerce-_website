@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="./fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="./home.css">
+</head>
+
+<body>
+
+    <!--************** SIDE BAR************ -->
+    <div class="sidebar" id="sidebar">
+        <div class="close_btn">
+             <img src="./dada.png" alt="">
+             <span id="icon_btn" onclick='toggleSidebar()'>&times;</span>
+        </div>
+
+          <ul class="menu">
+
+         <li class="list">
+             <a href="dashboard.php">
+                 <i class="fas fa-home"></i>
+                 <span>Dashboard</span>
+             </a>
+         </li>
+         
+         <li class="list">
+             <a href="data.php">
+                 <i class="fas fa-wifi"></i>
+                 <span>Data</span>
+             </a>
+         </li>
+
+         <li class="list">
+             <a href="airtime.php">
+                 <i class="fas fa-mobile"></i>
+                 <span>Airtime</span>
+             </a>
+         </li>
+
+         <li class="list">
+             <a href="cable.php">
+                 <i class="fas fa-tv"></i>
+                 <span>Cable</span>
+             </a>
+         </li>
+
+         <li class="list">
+             <a href="utility">
+                 <i class="fas fa-bolt"></i>
+                 <span>Utility</span>
+             </a>
+         </li>
+
+         <li class="list">
+             <a href="transaction.php">
+                 <i class="fas fa-receipt"></i>
+                 <span>Transactions</span>
+             </a>
+         </li>
+
+         <li class="list">
+             <a href="profil.php">
+                 <i class="fas fa-user"></i>
+                 <span>Referral</span>
+             </a>
+         </li>
+         
+         <li class="list" id="logout">
+             <a href="landing.php">
+                 <i class="fas fa-sign-out-alt"></i>
+                 <span>Log Out</span>
+             </a>
+         </li>
+
+         </ul>
+     </div>
+
+
+     <article class="main-content">
+
+        <!--********* HEADER SECTION ******-->
+
+        <div class="header-wrapper">
+
+            <div class="icon_box" >
+               <span id="icon_btn" onclick='toggleSidebar()'>&#9776;</span>
+            </div>
+
+             <div class="header-tittle">
+                 <h2>Dashboard</h2>
+             </div>
+            
+             <fieldset class="search-box">
+                <i class="fas fa-search" id="fa-search"></i>
+                <i class="fas fa-angle-left" id="fa-angle-left" onclick="hideSearch()"></i>
+               <input type="text" class="search_input" id="search_input" onkeyup="search()" placeholder="Search Items ">
+             </fieldset>
+           
+             <div class="add_to_chart">
+                <i class="fas fa-cart-shopping"></i>
+             </div>
+             <div class="user">
+                <i class="fas fa-user"></i>
+             </div>
+        </div>
+
+        <div class="search-result" id="search-result">
+
+            <div class="product_list" id="product_list" >            
+
+                <a href="">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./chair.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2 class="cen">Tub</h2>
+                            <h3 class="p-price cen" > $500</h3>
+                     </div>
+                    </div>
+                </a>
+                
+                <a href="">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./chandelier.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2 class="cen" id="h2">chandelier</h2>
+                            <h3 class="p-price cen"> $500</h3>
+                     </div>
+                    </div>
+                </a>
+                
+                <a href="">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./mirror.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2 class="cen" id="h2">Mirror</h2>
+                            <h3 class="p-price cen"> $200</h3>
+                     </div>
+                    </div>
+                </a>
+                
+                <a href="">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="../E-commerce-_website-main/properties/electric door.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2 class="cen" id="h2">electric door</h2>
+                            <h3 class="p-price cen" > $800</h3>
+                     </div>
+                    </div>
+                </a>
+                
+                <a href="">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./properties/i watch.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2 class="cen">i watch</h2>
+                            <h3 class="p-price cen"> $600</h3>
+                     </div>
+                    </div>
+                </a>
+                
+                <a href="">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./properties/gray kit.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2 class="cen">kitchen cabonet</h2>
+                            <h3 class="p-price cen"> $2000</h3>
+                     </div>
+                    </div>
+                </a>
+                
+                <a href="">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./properties/electric moper.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2 class="cen">electric moper</h2>
+                            <h3 class="p-price cen"> $1000</h3>
+                     </div>
+                    </div>
+                </a>
+                
+                <a href="">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./properties/iphone 13.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2 class="cen">i phone 13</h2>
+                            <h3 class="p-price cen"> $1200</h3>
+                     </div>
+                    </div>
+                </a>
+                
+                <a href="">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./properties/laptop3.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2 class="cen">laptop</h2>
+                            <h3 class="p-price cen"> $750</h3>
+                     </div>
+                    </div>
+                </a>
+                
+                <a href="">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./properties/a c.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2 class="cen">air condition</h2>
+                            <h3 class="p-price cen"> $800</h3>
+                     </div>
+                    </div>
+                </a>
+                
+                <a href="">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./properties/iphones.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2 class="cen">i phones accessories</h2>
+                            <h3 class="p-price cen"> $5000</h3>
+                     </div>
+                    </div>
+                </a>
+                
+                <a href="">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./baby_bag.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2 class="cen">Baby Bag</h2>
+                            <h3 class="p-price cen">$500</h3>
+                     </div>
+                    </div>
+                </a>
+                
+                <a href="">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./properties/fashion desing.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2 class="cen">fashion</h2>
+                            <h3 class="p-price cen"> $50</h3>
+                     </div>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./properties/desktop2.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2 class="cen">desktop all in one</h2>
+                            <h3 class="p-price cen"> $500</h3>
+                     </div>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./properties/IMG_5286.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2 class="cen">smart phones</h2>
+                            <h3 class="p-price cen"> $100</h3>
+                     </div>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./properties/white kit.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2 class="cen">white kit cabonet</h2>
+                            <h3 class="p-price cen"> $2000</h3>
+                     </div>
+                    </div>
+                </a>
+                <a href="">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./properties/sumsung pad.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2 class="cen">sumsung pad</h2>
+                            <h3 class="p-price cen"> $250</h3>
+                     </div>
+                    </div>
+                </a>
+             
+
+            </div>
+
+        </div>
+
+       <section class="landing-page">
+
+        <div class="land-container1">
+            <div class="box1" style="background-image: url(./properties/IMG_5332.JPG); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+            </div>
+        </div>
+
+        <section class="carousel">
+            <div id="slide">
+                <div class="item" style="background-image: url(./baby_bag.jpg);">
+                    <div class="content">
+                        <div class="name">Diaper Baby</div>
+                        <div class="des">Effortlessly carry all your baby essentials with our chic and sapcious bag</div>
+                        <button>See more</button>
+                    </div>
+                </div>
+
+                <div class="item" style="background-image: url(./properties/bg1.WEBP);">
+                    <div class="content">
+                        <div class="name" style="color: white; font-size: 30px;">kit</div>
+                        <div class="des" style="color: white; font-size: 20px;">desingnable kit </div>
+                        <button>See more</button>
+                    </div>
+                </div>
+
+                <div class="item" style="background-image: url(./chandelier.jpg);">
+                    <div class="content">
+                        <div class="name" style="color: white; font-size: 30px;">Chandelier</div>
+                        <div class="des" style="color: white; font-size: 20px;">Elevate your home with our equisite chandelier</div>
+                        <button>See more</button>
+                    </div>
+                    
+                </div>
+
+                <div class="item" style="background-image: url(./mirror.jpg);">
+                    <div class="content">
+                        <div class="name" style="color: white; font-size: 30px;">Circle mirror</div>
+                        <div class="des" style="color: white; font-size: 20px;">Reflect timeless in every glance with our sleek circle dressing mirror</div>
+                        <button>See more</button>
+                    </div>
+                </div>
+
+                <div class="item" style="background-image: url(./properties/IMG_5319.JPG);">
+                    <div class="content">
+                        <div class="name" style="color: white; font-size: 30px;">Electronics</div>
+                        <div class="des" style="color: white; font-size: 20px;">we are  dealers on all electronics device</div>
+                        <button>See more</button>
+                    </div>
+                </div>
+
+                <div class="item" style="background-image: url(./tote\ bag.jpg); ">
+                    <div class="content">
+                        <div class="name" style="color: white; font-size: 30px;">Travel Tote</div>
+                        <div class="des" style="color: white; font-size: 20px;">Affordable to pack your traveling items</div>
+                        <button>See more</button>
+                    </div>
+                </div>
+                <div class="item" style="background-image: url(./bg\ cloths3.jpg);">
+                    <div class="content">
+                        <div class="name" style="color: white; font-size: 30px;">clothes</div>
+                        <div class="des"><span style="color: white; font-size: 20px;"> fahonable clothes</span></div>
+                        <button>See more</button>
+                    </div>
+                </div>
+
+
+
+            </div>
+            <div class="buttons">
+                <button id="prev"><i class="fa-solid fa-angle-left"></i></button>
+                <button id="next"><i class="fa-solid fa-angle-right"></i></button>
+            </div>
+        </section>
+
+        <div class="land-container2">
+            <div class="box1" style="background-image: url(./properties/motocycle.JPG); background-position: center center; background-size: cover; background-repeat: no-repeat;">
+            </div>
+          
+
+        </div>
+        
+        </section>
+       <section class="con2">
+    <div class="in">
+        <div class="in1">
+            <figure>
+            <img class="mn" src="./money.png" alt="" width="100px" height="100px">
+        </figure>
+            <figcaption class="caption">payment</figcaption>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor repellendus rerumia </p>
+        </div>
+        <div class="in1">
+            <figure>
+            <img class="mn" src="./customer-service.png" alt="" width="100px" height="100px">
+        </figure>
+            <figcaption class="caption">customer service</figcaption>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor repellendus ficia </p>
+        </div>
+        
+        <div class="in1">
+            <figure>
+            <img class="mn" src="./van.png" alt="" width="100px" height="100px">
+        </figure>
+        <figcaption class="caption">order</figcaption>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolor repellendus  </p>
+        </div>
+    </div>
+     </section> 
+
+<section class="con3">
+    <div class="con-2">
+        
+        <div class="card ">
+
+            <div class="cir"><h3>sales!</h3></div>
+
+            <figure>
+                
+        <img class="show" src="./properties/electric door.JPG" alt="" width="200px" height="200px">
+
+    </figure>
+    <div class="box">
+        
+    <p style="text-align: center; font-size: 20px; margin: 10px;" > elecronic</p>
+    <p style="text-align: center;"> door</p>
+    <div class="cancel">
+    <p style="text-align: center; text-decoration: line-through; margin: 10px;"> $150</p>
+    <p style="text-align: center; margin: 10px;"> $80</p>
+
+ 
+</div>
+<button class="btn">add to card</button>
+</div>
+    </div>
+        <div class="card">
+
+            <div class="cir"><h3>sales!</h3></div>
+
+            <figure>
+                
+        <img class="show" src="./properties/white kit2.JPG" alt="" width="200px" height="200px">
+
+    </figure>
+    <div class="box">
+
+    <p style="text-align: center; font-size: 20px; margin: 10px;" > kitchen</p>
+    <p style="text-align: center;"> white carbonate</p>
+    <div class="cancel">
+    <p style="text-align: center; text-decoration: line-through; margin: 10px;"> $200</p>
+    <p style="text-align: center; margin: 10px;"> $150</p>
+
+ 
+</div>
+<button class="btn">add to card</button>
+</div>
+    </div>
+        <div class="card">
+
+            <div class="cir"><h3>sales!</h3></div>
+
+            <figure>
+                
+        <img class="show" src="./properties/fashion2.JPG" alt="" width="200px" height="200px">
+
+    </figure>
+    <div class="box">
+
+    <p style="text-align: center; font-size: 20px; margin: 10px;" > fashion</p>
+    <p style="text-align: center;">fashion clothes </p>
+    <div class="cancel">
+    <p style="text-align: center; text-decoration: line-through; margin: 10px;"> $50</p>
+    <p style="text-align: center; margin: 10px;"> $20</p>
+
+ 
+</div>
+<button class="btn">add to card</button>
+</div>
+    </div>
+        <div class="card">
+
+            <div class="cir"><h3>sales!</h3></div>
+
+            <figure>
+                
+        <img class="show" src="./properties/iphon12.JPG" alt="" width="200px" height="200px">
+
+    </figure>
+    <div class="box">
+
+    <p style="text-align: center; font-size: 20px; margin: 10px;" > elecronic</p>
+    <p style="text-align: center;">iphones 13</p>
+    <div class="cancel">
+    <p style="text-align: center; text-decoration: line-through; margin: 10px;"> $800</p>
+    <p style="text-align: center; margin: 10px;"> $750</p>
+
+ 
+</div>
+<button class="btn">add to card</button>
+</div>
+    </div>
+       
+      
+    </div>
+    <div class="con-2">
+        
+        <div class="card">
+
+            <div class="cir"><h3>sales!</h3></div>
+
+            <figure>
+                
+        <img class="show" src="./properties/i watch.JPG" alt="" width="200px" height="200px">
+
+    </figure>
+    <div class="box">
+        
+    <p style="text-align: center; font-size: 20px; margin: 10px;" > elecronic</p>
+    <p style="text-align: center;"> i watch</p>
+    <div class="cancel">
+    <p style="text-align: center; text-decoration: line-through; margin: 10px;"> $250</p>
+    <p style="text-align: center; margin: 10px;"> $200</p>
+
+ 
+</div>
+<button class="btn">add to card</button>
+</div>
+    </div>
+        <div class="card">
+
+            <div class="cir"><h3>sales!</h3></div>
+
+            <figure>
+                
+        <img class="show" src="./properties/gray kit.JPG" alt="" width="200px" height="200px">
+
+    </figure>
+    <div class="box">
+
+    <p style="text-align: center; font-size: 20px; margin: 10px;" > kitchen</p>
+    <p style="text-align: center;"> gray cabornate/p>
+    <div class="cancel">
+    <p style="text-align: center; text-decoration: line-through; margin: 10px;"> $400</p>
+    <p style="text-align: center; margin: 10px;"> $350</p>
+
+ 
+</div>
+<button class="btn">add to card</button>
+</div>
+    </div>
+        <div class="card">
+
+            <div class="cir"><h3>sales!</h3></div>
+
+            <figure>
+                
+        <img class="show" src="./properties/IMG_5332.JPG" alt="" width="200px" height="200px">
+
+    </figure>
+    <div class="box">
+
+    <p style="text-align: center; font-size: 20px; margin: 10px;" > fashion</p>
+    <p style="text-align: center;">fashion clothes </p>
+    <div class="cancel">
+    <p style="text-align: center; text-decoration: line-through; margin: 10px;"> $50</p>
+    <p style="text-align: center; margin: 10px;"> $40</p>
+
+ 
+</div>
+<button class="btn">add to card</button>
+</div>
+    </div>
+        <div class="card">
+
+            <div class="cir"><h3>sales!</h3></div>
+
+            <figure>
+                
+        <img class="show" src="./properties/iphone12pro.JPG" alt="" width="200px" height="200px">
+
+    </figure>
+    <div class="box">
+
+    <p style="text-align: center; font-size: 20px; margin: 10px;" > elecronic</p>
+    <p style="text-align: center;">iphones 13pro</p>
+    <div class="cancel">
+    <p style="text-align: center; text-decoration: line-through; margin: 10px;"> $800</p>
+    <p style="text-align: center; margin: 10px;"> $750</p>
+
+ 
+</div>
+<button class="btn">add to card</button>
+</div>
+    </div>
+       
+      
+    </div>
+    <div class="con-2">
+        
+        <div class="card">
+
+            <div class="cir"><h3>sales!</h3></div>
+
+            <figure>
+                
+        <img class="show" src="./properties/a c.JPG" alt="" width="200px" height="200px">
+
+    </figure>
+    <div class="box">
+        
+    <p style="text-align: center; font-size: 20px; margin: 10px;" > elecronic</p>
+    <p style="text-align: center;"> air condition </p>
+    <div class="cancel">
+    <p style="text-align: center; text-decoration: line-through; margin: 10px;"> $550</p>
+    <p style="text-align: center; margin: 10px;"> $500</p>
+
+ 
+</div>
+<button class="btn">add to card</button>
+</div>
+    </div>
+        <div class="card">
+
+            <div class="cir"><h3>sales!</h3></div>
+
+            <figure>
+                
+        <img class="show" src="./properties/android.JPG" alt="" width="200px" height="200px">
+
+    </figure>
+    <div class="box">
+
+    <p style="text-align: center; font-size: 20px; margin: 10px;" > electronics</p>
+    <p style="text-align: center;"> android smart phone</p>
+    <div class="cancel">
+    <p style="text-align: center; text-decoration: line-through; margin: 10px;"> $400</p>
+    <p style="text-align: center; margin: 10px;"> $350</p>
+
+ 
+</div>
+<button class="btn">add to card</button>
+</div>
+    </div>
+        <div class="card">
+
+            <div class="cir"><h3>sales!</h3></div>
+
+            <figure>
+                
+        <img class="show" src="./properties/desktop.JPG" alt="" width="200px" height="200px">
+
+    </figure>
+    <div class="box">
+
+    <p style="text-align: center; font-size: 20px; margin: 10px;" >electronics </p>
+    <p style="text-align: center;">desktop all in one </p>
+    <div class="cancel">
+    <p style="text-align: center; text-decoration: line-through; margin: 10px;"> $540</p>
+    <p style="text-align: center; margin: 10px;"> $520</p>
+
+ 
+</div>
+<button class="btn">add to card</button>
+</div>
+    </div>
+        <div class="card">
+
+            <div class="cir"><h3>sales!</h3></div>
+
+            <figure>
+                
+        <img class="show" src="./properties/headphone1.JPG" alt="" width="200px" height="200px">
+
+    </figure>
+    <div class="box">
+
+    <p style="text-align: center; font-size: 20px; margin: 10px;" > elecronic</p>
+    <p style="text-align: center;">headphone</p>
+    <div class="cancel">
+    <p style="text-align: center; text-decoration: line-through; margin: 10px;"> $100</p>
+    <p style="text-align: center; margin: 10px;"> $70</p>
+
+ 
+</div>
+<button class="btn">add to card</button>
+</div>
+    </div>
+       
+      
+    </div>
+    <div class="con-2">
+        
+        <div class="card">
+
+            <div class="cir"><h3>sales!</h3></div>
+
+            <figure>
+                
+        <img class="show" src="./properties/desktop2.JPG" alt="" width="200px" height="200px">
+
+    </figure>
+    <div class="box">
+        
+    <p style="text-align: center; font-size: 20px; margin: 10px;" > elecronic</p>
+    <p style="text-align: center;"> desktop</p>
+    <div class="cancel">
+    <p style="text-align: center; text-decoration: line-through; margin: 10px;"> $250</p>
+    <p style="text-align: center; margin: 10px;"> $200</p>
+
+ 
+</div>
+<button class="btn">add to card</button>
+</div>
+    </div>
+        <div class="card">
+
+            <div class="cir"><h3>sales!</h3></div>
+
+            <figure>
+                
+        <img class="show" src="./properties/sumsung2.JPG" alt="" width="200px" height="200px">
+
+    </figure>
+    <div class="box">
+
+    <p style="text-align: center; font-size: 20px; margin: 10px;" > electronics</p>
+    <p style="text-align: center;"> sumsung galaxy</p>
+    <div class="cancel">
+    <p style="text-align: center; text-decoration: line-through; margin: 10px;"> $400</p>
+    <p style="text-align: center; margin: 10px;"> $350</p>
+
+ 
+</div>
+<button class="btn">add to card</button>
+</div>
+    </div>
+        <div class="card">
+
+            <div class="cir"><h3>sales!</h3></div>
+
+            <figure>
+                
+        <img class="show" src="./properties/IMG_5319.JPG" alt="" width="200px" height="200px">
+
+    </figure>
+    <div class="box">
+
+    <p style="text-align: center; font-size: 20px; margin: 10px;" > elecronics</p>
+    <p style="text-align: center;">apple bluthoot </p>
+    <div class="cancel">
+    <p style="text-align: center; text-decoration: line-through; margin: 10px;"> $50</p>
+    <p style="text-align: center; margin: 10px;"> $40</p>
+
+ 
+</div>
+<button class="btn">add to card</button>
+</div>
+    </div>
+        <div class="card">
+
+            <div class="cir"><h3>sales!</h3></div>
+
+            <figure>
+                
+        <img class="show" src="./properties/IMG_5331.JPG" alt="" width="200px" height="200px">
+
+    </figure>
+    <div class="box">
+
+    <p style="text-align: center; font-size: 20px; margin: 10px;" > birth </p>
+    <p style="text-align: center;">birth sheet</p>
+    <div class="cancel">
+    <p style="text-align: center; text-decoration: line-through; margin: 10px;"> $800</p>
+    <p style="text-align: center; margin: 10px;"> $750</p>
+
+ 
+</div>
+<button class="btn">add to card</button>
+</div>
+    </div>
+       
+      
+    </div>
+</section>
+<section class="con4">
+    <section class="features">
+
+        <h1 class="fe" style="font-size: 25px;"> features product</h1>
+        <div class="fea">
+
+            <figure>
+                <div class="sw">
+                    <img class="br"
+                        src="./NayyarShaikh-eComm2022/Media/Products/Mens-Standard-Fit-Short-Sleeve-Crew-T-Shirt01-1-600x764.jpg"
+                        alt="suites" width="200px" height="300px" loading="lazy" title="suites">
+                </div>
+                <p class="po" style="list-style: none; text-align: center; font-size: 20px;">white shirt </p>
+                <figcaption>
+                    <li class="qc" style="list-style: none; text-align: center; font-size: 20px;">5$</li>
+                    
+                <p class="iiu" style="list-style: none; text-align: center; font-size: 20px;">
+                   <p  style="list-style: none; text-align: center; font-size: 20px";> <svg style="width:20px;" class="svs" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M253.3 35.1c6.1-11.8 1.5-26.3-10.2-32.4s-26.3-1.5-32.4 10.2L117.6 192H32c-17.7 0-32 14.3-32 32s14.3 32 32 32L83.9 463.5C91 492 116.6 512 146 512H430c29.4 0 55-20 62.1-48.5L544 256c17.7 0 32-14.3 32-32s-14.3-32-32-32H458.4L365.3 12.9C359.2 1.2 344.7-3.4 332.9 2.7s-16.3 20.6-10.2 32.4L404.3 192H171.7L253.3 35.1zM192 304v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16zm96-16c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16zm128 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16z"/></svg>add to card</p>
+                </figcaption>
+                <br>
+            </figure>
+            <figure>
+                <div class="sw2">
+                    <img class="br"
+                        src="./NayyarShaikh-eComm2022/Media/Products/green of t shirt.jpg"
+                        alt="suites" width="200px" height="300px" loading="lazy" title="suites">
+                </div>
+                <p class="po" style="list-style: none; text-align: center; font-size: 20px;">white shirt </p>
+                <figcaption>
+                    <li class="ec" style="list-style: none; text-align: center; font-size: 20px;">$6</li>
+                       <p class="iiu" style="list-style: none; text-align: center; font-size: 20px;">    <svg style="width:20px;" class="svs" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M253.3 35.1c6.1-11.8 1.5-26.3-10.2-32.4s-26.3-1.5-32.4 10.2L117.6 192H32c-17.7 0-32 14.3-32 32s14.3 32 32 32L83.9 463.5C91 492 116.6 512 146 512H430c29.4 0 55-20 62.1-48.5L544 256c17.7 0 32-14.3 32-32s-14.3-32-32-32H458.4L365.3 12.9C359.2 1.2 344.7-3.4 332.9 2.7s-16.3 20.6-10.2 32.4L404.3 192H171.7L253.3 35.1zM192 304v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16zm96-16c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16zm128 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16z"/></svg>  add to card</p>
+                </figcaption>
+                <br>
+            </figure>
+            <figure>
+                <div class="sw3">
+                    <img class="br" src="./NayyarShaikh-eComm2022/Media/Products/Mens-Standard-Fit-Crew-T-Shirt01-600x764.jpg " alt="suites"
+                        width="200px" height="300px" loading="lazy" title="T-shirt">
+                </div>
+                <p class="po" style="list-style: none; text-align: center; font-size: 20px;">white shirt </p>
+                <figcaption>
+                    <li class="ec" style="list-style: none; text-align: center; font-size: 20px;">$6</li>
+                       <p class="iiu" style="list-style: none; text-align: center; font-size: 20px;">    <svg style="width:20px;" class="svs" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M253.3 35.1c6.1-11.8 1.5-26.3-10.2-32.4s-26.3-1.5-32.4 10.2L117.6 192H32c-17.7 0-32 14.3-32 32s14.3 32 32 32L83.9 463.5C91 492 116.6 512 146 512H430c29.4 0 55-20 62.1-48.5L544 256c17.7 0 32-14.3 32-32s-14.3-32-32-32H458.4L365.3 12.9C359.2 1.2 344.7-3.4 332.9 2.7s-16.3 20.6-10.2 32.4L404.3 192H171.7L253.3 35.1zM192 304v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16zm96-16c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16zm128 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16z"/></svg>  add to card</p>
+
+                </figcaption>
+                <br>
+            </figure>
+            </div>
+            </div>
+        <div class="fea">
+
+            <figure>
+                <div class="sw4">
+                    <img class="br"
+                        src="./NayyarShaikh-eComm2022/Media/Products/red t shirt.jpg"
+                        alt="suites" width="200px" height="300px" loading="lazy" title="suites">
+                </div>
+                <p class="po" style="list-style: none; text-align: center; font-size: 20px;">white shirt </p>
+                <figcaption>
+                    <li class="qc" style="list-style: none; text-align: center; font-size: 20px;">5$</li>
+                    
+                <p class="iiu" style="list-style: none; text-align: center; font-size: 20px;">
+                   <p  style="list-style: none; text-align: center; font-size: 20px";> <svg style="width:20px;" class="svs" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M253.3 35.1c6.1-11.8 1.5-26.3-10.2-32.4s-26.3-1.5-32.4 10.2L117.6 192H32c-17.7 0-32 14.3-32 32s14.3 32 32 32L83.9 463.5C91 492 116.6 512 146 512H430c29.4 0 55-20 62.1-48.5L544 256c17.7 0 32-14.3 32-32s-14.3-32-32-32H458.4L365.3 12.9C359.2 1.2 344.7-3.4 332.9 2.7s-16.3 20.6-10.2 32.4L404.3 192H171.7L253.3 35.1zM192 304v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16zm96-16c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16zm128 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16z"/></svg>add to card</p>
+                </figcaption>
+                <br>
+            </figure>
+            <figure>
+                <div class="sw5">
+                    <img class="br"
+                        src="./NayyarShaikh-eComm2022/Media/Products/Mens-Standard-Fit-Sweater-Fleece-Jacket01-600x764.jpg"
+                        alt="suites" width="200px" height="300px" loading="lazy" title="suites">
+                </div>
+                <p class="po" style="list-style: none; text-align: center; font-size: 20px;">white shirt </p>
+                <figcaption>
+                    <li class="ec" style="list-style: none; text-align: center; font-size: 20px;">$6</li>
+                       <p class="iiu" style="list-style: none; text-align: center; font-size: 20px;">    <svg style="width:20px;" class="svs" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M253.3 35.1c6.1-11.8 1.5-26.3-10.2-32.4s-26.3-1.5-32.4 10.2L117.6 192H32c-17.7 0-32 14.3-32 32s14.3 32 32 32L83.9 463.5C91 492 116.6 512 146 512H430c29.4 0 55-20 62.1-48.5L544 256c17.7 0 32-14.3 32-32s-14.3-32-32-32H458.4L365.3 12.9C359.2 1.2 344.7-3.4 332.9 2.7s-16.3 20.6-10.2 32.4L404.3 192H171.7L253.3 35.1zM192 304v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16zm96-16c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16zm128 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16z"/></svg>  add to card</p>
+                </figcaption>
+                <br>
+            </figure>
+            <figure>
+                <div class="sw6">
+                    <img class="br" src="./NayyarShaikh-eComm2022/Media/Products/WD·NY-Black-Mens-Palm-Burgundy-Jacket01-600x764.jpg " alt="suites"
+                        width="200px" height="300px" loading="lazy" title="T-shirt">
+                </div>
+                <p class="po" style="list-style: none; text-align: center; font-size: 20px;">white shirt </p>
+                <figcaption>
+                    <li class="ec" style="list-style: none; text-align: center; font-size: 20px;">$6</li>
+                       <p class="iiu" style="list-style: none; text-align: center; font-size: 20px;">    <svg style="width:20px;" class="svs" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M253.3 35.1c6.1-11.8 1.5-26.3-10.2-32.4s-26.3-1.5-32.4 10.2L117.6 192H32c-17.7 0-32 14.3-32 32s14.3 32 32 32L83.9 463.5C91 492 116.6 512 146 512H430c29.4 0 55-20 62.1-48.5L544 256c17.7 0 32-14.3 32-32s-14.3-32-32-32H458.4L365.3 12.9C359.2 1.2 344.7-3.4 332.9 2.7s-16.3 20.6-10.2 32.4L404.3 192H171.7L253.3 35.1zM192 304v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16zm96-16c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16zm128 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16z"/></svg>  add to card</p>
+
+                </figcaption>
+                <br>
+            </figure>
+            </div>
+            </div>
+
+    </section>
+    <div class="of">
+        <hr>
+        <h1></h1>
+    </div>
+    <div class="con-4">
+
+    </div>
+</section>
+
+<!-- <footer class="con7">
+    <div class="con-7">
+    <div class="bg1"><a href=""><h4>about</h4></a><p class="e d">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio cupiditate dolor earum mus sunt natus cupiditate voluptas accusamus obcaecati a quia?</p>
+    </div>
+
+    <div class="bg1"><a href=""><h4>orders</h4></a>
+    <ul style="list-style: none;">
+        <li class="e"> account</li>
+        <li class="e">my return</li>
+        <li class="e">my orders</li>
+    </ul>
+    </div>
+    <div class="bg1"><a href=""><h4>information</h4></a>
+        <ul style="list-style: none;">
+            <li class="e">about us</li>
+            <li class="e">blog</li>
+            <li class="e">my orders</li>
+        </ul>
+        
+    </div>
+
+   
+</footer>
+ -->     </article> 
+    
+
+
+
+<script src="./home.js"></script>
+</body>
+</html>
+
