@@ -84,9 +84,11 @@
                  <h2>Dashboard</h2>
              </div>
            <fieldset class="cart">
-            
+             
             <div class="add_to_chart" id="add_to_chart">
-                <i class="fas fa-cart-shopping"></i>
+                <i class="fas fa-cart-shopping" ></i>    
+                <span>0</span>
+
              </div>
              <div class="user">
                 <i class="fas fa-user"></i>
@@ -98,11 +100,7 @@
                <div class="product_sample">
                     <div class="main-sample">
                         <img src="../images/cumin.JPG" alt="" id="main-image">
-                       <div class="small">
-                            <img src="../images/cumin.JPG" class="other-image">
-                            <img src="../new images/cumin 1.JPG" class="other-image">
-                            <img src="../new images/cumin.JPG"  class="other-image">
-                       </div>
+                      
                     </div>
                </div>
 
@@ -137,6 +135,11 @@
                         
                     </div>
                   
+                    <div class="small">
+                        <img src="../images/cumin.JPG" class="other-image">
+                        <img src="../new images/cumin 1.JPG" class="other-image">
+                        <img src="../new images/cumin.JPG"  class="other-image">
+                   </div>
                  </div>
             
                  <div class="payment_way">
@@ -204,6 +207,56 @@
 </script>
 
 <script>
+
+
+
+    
+let cartItems = localStorage.getItem('shopping_cart') ? JSON.parse(localStorage.getItem('cartItems')) : [];
+
+
+updateCartIcon();
+
+cartItems.forEach(item => {
+    addToCart(item);
+});
+document.querySelectorAll('#addChart').addEventListener('click', () => {
+    const product_id = document.querySelector('.product_id').getAttribute('data-id');
+    const product = document.querySelector('#product_id');
+    const details = document.querySelector('.sample_details');
+    const product_info = {
+        id:product_id,
+        name:product.querySelector('#product_name').textContent,
+        price: details.querySelector('#money').textContent,
+        Image: product.querySelector('#main-image').src,
+        size : details.querySelector('#size'),
+        quantity: parseInt(details.querySelector('input').value)|| 1
+    };
+    const existingIndex = cartItems.findIndex(item => item.id === product_info.id && item.size === product_info.size);
+        if (existingIndex !==-1){
+            cartItems[existingIndex].quantity += product_info.quantity;
+        }else{
+            cartItems.push(product_info);
+        }
+    
+
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        updateCartIcon();
+        addToCart(product_info)
+});
+
+    document.querySelector('.payment_way').addEventListener('click', (e) =>{
+        const targetClassList = e.target.classList;
+
+       if( targetClassList.contains('delete')){
+        const index = e.target.parentNode.dataset.index;
+            cartItems.splice(index, 1);
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            updateCartIcon();
+            e.target.parentNode.remove();
+        }else if(targetClassList.contains('pay')){
+            alert('payment success');
+        }
+    });
   function addToCart() {
             // Get the item count from local storage, default to 0 if not present
             let count = parseInt(localStorage.getItem('cartCount')) || 0;

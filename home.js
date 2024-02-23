@@ -1,7 +1,6 @@
 
 function toggleSidebar(){
     var sidebar = document.getElementById('sidebarr');
-
     var mainContent = document.getElementById('main-content');
     var openBtn = document.querySelector('#icon_btn');
 
@@ -132,43 +131,43 @@ const search = () => {
         }
     }
 
-    // ADD TO CART ICON INCREMENT
-        // Function to add item to cart
-        function addToCart(productName, productPrice) {
-            // Get the existing cart items from local storage
-            let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    // // ADD TO CART ICON INCREMENT
+    //     // Function to add item to cart
+    //     function addToCart(productName, productPrice) {
+    //         // Get the existing cart items from local storage
+    //         let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
         
-            // Add the new product to the cart items array
-            cartItems.push({ name: productName, price: productPrice });
+    //         // Add the new product to the cart items array
+    //         cartItems.push({ name: productName, price: productPrice });
         
-            // Save the updated cart items array to local storage
-            localStorage.setItem('cart', JSON.stringify(cartItems));
+    //         // Save the updated cart items array to local storage
+    //         localStorage.setItem('cart', JSON.stringify(cartItems));
         
-            // Update the cart count display
-            updateCartCount(cartItems.length);
-        }
+    //         // Update the cart count display
+    //         updateCartCount(cartItems.length);
+    //     }
         
-        // Function to update the cart count display
-        function updateCartCount(count) {
-            const add_to_chart = document.getElementById("add_to_chart");
-            add_to_chart.classList.add('show-count');
-            add_to_chart.setAttribute('data-count', count);
-            add_to_chart.classList.remove('not');
-            add_to_chart.offsetWidth = add_to_chart.offsetWidth;
-            add_to_chart.classList.add('not');
-        }
+    //     // Function to update the cart count display
+    //     function updateCartCount(count) {
+    //         const add_to_chart = document.getElementById("add_to_chart");
+    //         add_to_chart.classList.add('show-count');
+    //         add_to_chart.setAttribute('data-count', count);
+    //         add_to_chart.classList.remove('not');
+    //         add_to_chart.offsetWidth = add_to_chart.offsetWidth;
+    //         add_to_chart.classList.add('not');
+    //     }
         
-        // Event listener for the "Add to Cart" button
-        document.getElementById("addChart").addEventListener('click', () => {
-            addToCart("Product Name", "Product Price"); // Replace with actual product name and price
-        });
+    //     // Event listener for the "Add to Cart" button
+    //     document.getElementById("addChart").addEventListener('click', () => {
+    //         addToCart("Product Name", "Product Price"); // Replace with actual product name and price
+    //     });
         
-        // Update cart count on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            // Get the existing cart items from local storage
-            let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    //     // Update cart count on page load
+    //     document.addEventListener('DOMContentLoaded', () => {
+    //         // Get the existing cart items from local storage
+    //         let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
         
-            // Update the cart count display
-            updateCartCount(cartItems.length);
-        });
+    //         // Update the cart count display
+    //         updateCartCount(cartItems.length);
+    //     });
         
