@@ -91,83 +91,45 @@ const search = () => {
 }
 
 
-// PRODUCT SAMPLING 
-    // var mainImage = document.getElementById("main-image");
-    // var otherImage = document.getElementsByClassName("other-image");
-
-    // otherImage[0].onclick = function(){
-    //     mainImage.src = otherImage[0].src;
-    // }
-    // otherImage[1].onclick = function(){
-    //     mainImage.src = otherImage[1].src;
-    // }
-    // otherImage[2].onclick = function(){
-    //     mainImage.src = otherImage[2].src;
-    // }
-    // otherImage[3].onclick = function(){
-    //     mainImage.src = otherImage[3].src;
-    // }
 
 
-    // PRODUCT VALIDATE
-    function validate(){
-        var size = document.getElementById("size").value;
-        var number = document.getElementById("input").value;
-    
-    var sizeError = document.getElementById("sizeError").innerHTML = "";
-    var numberError = document.getElementById("numberError").innerHTML = "";
-    
- 
-        if (size === ''){
-            document.getElementById("sizeError").innerText = "Select Size";
-            return false;
-        }
-    
-        if (number === ''){
-            document.getElementById("numberError").innerText = "Select Quantity";
-                return false;
-        }
-        if(size !='' & number !='' ){
-        }
+function toggleCart(){
+    var payment_way = document.getElementById('payment_way');
+    var closeCart = document.getElementById('close');
+
+
+    if (payment_way.style.right === '0px'){
+        payment_way.style.right = '-91vh';
+
+
+    }else{
+        payment_way.style.right = '0px';
+        closeCart.innerHTML = 'Close &times;';
+
+        
     }
+}
 
-    // // ADD TO CART ICON INCREMENT
-    //     // Function to add item to cart
-    //     function addToCart(productName, productPrice) {
-    //         // Get the existing cart items from local storage
-    //         let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+function closeCart(){
+    var payment_way = document.getElementById('payment_way');
+    var closeCart = document.getElementById('close');
+
+
+    if (payment_way.style.right === '-91vh'){
+        payment_way.style.right = '0px';
+
+
+    }else{
+        payment_way.style.right = '-91vh';
+        closeCart.innerHTML = 'Close &times;';
+
         
-    //         // Add the new product to the cart items array
-    //         cartItems.push({ name: productName, price: productPrice });
-        
-    //         // Save the updated cart items array to local storage
-    //         localStorage.setItem('cart', JSON.stringify(cartItems));
-        
-    //         // Update the cart count display
-    //         updateCartCount(cartItems.length);
-    //     }
-        
-    //     // Function to update the cart count display
-    //     function updateCartCount(count) {
-    //         const add_to_chart = document.getElementById("add_to_chart");
-    //         add_to_chart.classList.add('show-count');
-    //         add_to_chart.setAttribute('data-count', count);
-    //         add_to_chart.classList.remove('not');
-    //         add_to_chart.offsetWidth = add_to_chart.offsetWidth;
-    //         add_to_chart.classList.add('not');
-    //     }
-        
-    //     // Event listener for the "Add to Cart" button
-    //     document.getElementById("addChart").addEventListener('click', () => {
-    //         addToCart("Product Name", "Product Price"); // Replace with actual product name and price
-    //     });
-        
-    //     // Update cart count on page load
-    //     document.addEventListener('DOMContentLoaded', () => {
-    //         // Get the existing cart items from local storage
-    //         let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-        
-    //         // Update the cart count display
-    //         updateCartCount(cartItems.length);
-    //     });
-        
+    }
+}
+
+
+
+
+
+
+

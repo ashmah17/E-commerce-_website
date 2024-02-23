@@ -183,7 +183,6 @@
 
                 <div class="payment_way" id="payment_way">
                     <div class="listCart">
-                        <!-- Cart items will be added here dynamically -->
                     </div>
                     
                     <div class="btnClass">
@@ -222,40 +221,6 @@
 
 
 <script>
-
-    function toggleCart(){
-    var payment_way = document.getElementById('payment_way');
-    var closeCart = document.getElementById('close');
-
-
-    if (payment_way.style.right === '0px'){
-        payment_way.style.right = '-91vh';
-
-
-    }else{
-        payment_way.style.right = '0px';
-        closeCart.innerHTML = 'Close &times;';
-
-        
-    }
-}
-
-function closeCart(){
-    var payment_way = document.getElementById('payment_way');
-    var closeCart = document.getElementById('close');
-
-
-    if (payment_way.style.right === '-91vh'){
-        payment_way.style.right = '0px';
-
-
-    }else{
-        payment_way.style.right = '-91vh';
-        closeCart.innerHTML = 'Close &times;';
-
-        
-    }
-}
 
 document.addEventListener('DOMContentLoaded', function () {
     let cartItems = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [];
@@ -358,12 +323,12 @@ document.addEventListener('DOMContentLoaded', function () {
     updateCartIcon();
     renderCartItems();
 });
-
 </script>
 
  
 <script>
-  var mainImage = document.getElementById("main-image");
+
+var mainImage = document.getElementById("main-image");
         var otherImages = document.getElementsByClassName("other-image");
         var price = document.getElementById("money");
         var productName = document.getElementById("product_name");
@@ -401,11 +366,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
 
-  
     </script>
 
  
-</script>
+
 
 <script src="../home.js"></script>
 </body>

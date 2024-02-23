@@ -1857,10 +1857,12 @@
             </div>
        </section>
 
+
        <div class="latest-collection">
-        <a href="all_categories.html">
-            <div class="latest-collection-label" style="background-color: rgb(22, 48, 87);">All Categories  <i class="fas fa-arrow-right"></i></div>
-        </a>
+            <a class="label-link" href="all_categories.html">
+                <div class="latest-collection-label"  style=" background-color: rgb(22, 48, 87);">All Categories  <i class="fas fa-arrow-right"></i></div>
+            </a>
+
             <section class="container" id="container">
                     
             <a href="">
@@ -2215,7 +2217,7 @@
             </a>
             </section>
         </div>
-     
+   
         <div class="categories">
             <div class="information">Shop from Our Collections</div>
             <div class="portofolio-container">
@@ -2286,7 +2288,7 @@
      
  
      <div class="latest-collection">
-        <a href="">
+        <a href="" class="label-link">
             <div class="latest-collection-label" style="background-color: brown;">Limited Stocks  <i class="fas fa-arrow-right"></i></div>
         </a>
         <section class="container" id="container">
@@ -2796,7 +2798,7 @@
 
      
      <div class="latest-collection">
-        <a href="">
+        <a class="label-link" href="">
             <div class="latest-collection-label" style="background-color: goldenrod;">Products on Sales <i class="fas fa-arrow-right"></i></div>  
         </a>
         <section class="container" id="container">
@@ -3005,7 +3007,7 @@
      </div>
 
      <div class="latest-collection">
-        <a href="">
+        <a class="label-link" href="">
             <div class="latest-collection-label" style="background-color: brown;">Products Under &#8358;1000 <i class="fas fa-arrow-right"></i></div>  
         </a>
         <section class="container" id="container">
@@ -3214,7 +3216,7 @@
      </div>
 
      <div class="latest-collection">
-        <a href="">
+        <a class="label-link" href="">
             <div class="latest-collection-label" style="background-color: goldenrod;">Top Pick Products <i class="fas fa-arrow-right"></i></div>  
         </a>
         <section class="container" id="container">
@@ -3420,7 +3422,7 @@
         </a>
        </section>
 
-     </div>
+     </div> 
 
      <footer>
         <div class="web-name"><h2>ShopEase</h2></div>
@@ -3446,40 +3448,7 @@
      </div>
 
 
-     <script>
-             function addToCart() {
-            // Get the item count from local storage, default to 0 if not present
-            let count = parseInt(localStorage.getItem('cartCount')) || 0;
-            // Increment the count
-            count++;
-            // Save the updated count to local storage
-            localStorage.setItem('cartCount', count);
-            // Update the display
-            updateCartCount(count);
-        }
-    
-        // Function to update the cart count display
-        function updateCartCount(count) {
-            const add_to_chart = document.getElementById("add_to_chart");
-            add_to_chart.classList.add('show-count');
-            add_to_chart.setAttribute('data-count', count);
-            add_to_chart.classList.remove('not');
-            add_to_chart.offsetWidth = add_to_chart.offsetWidth;
-            add_to_chart.classList.add('not');
-        }
-    
-        // Event listener for the "Add to Cart" button
-        document.getElementById("addChart").addEventListener('click', () => {
-            addToCart();
-        });
-    
-        // Update cart count on page load
-        document.addEventListener('DOMContentLoaded', () => {
-            let count = parseInt(localStorage.getItem('cartCount')) || 0;
-            updateCartCount(count);
-        });
-     </script>
-
+   
 
 <script src="./home.js"></script>
 </body>
