@@ -6,6 +6,12 @@
     <title>Home Page</title>
     <link rel="stylesheet" href="./fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="./home.css">
+
+    <style>
+        .product_container{
+            visibility: hidden;
+        }
+    </style>
 </head>
 
 <body>
@@ -31,7 +37,7 @@
          </li>
          
          <li class="list">
-             <a href="all_categories.html">
+             <a href="collection.html">
                  <i class="side_bar_icon">
                     <img src="./icons/tags-category-categories-labels-svgrepo-com.svg" alt="">
                  </i>
@@ -105,14 +111,19 @@
                 <img src="./icons/angle-left-svgrepo-com.svg" alt=""></i>
                <input type="text" class="search_input" id="search_input" onkeyup="search()" placeholder="Search Items ">
              </fieldset>
-           
-            
-                
-                 <div class="user">
-                    <i class="side_bar_icon">
-                        <img src="./icons/user-heart-svgrepo-com.svg" alt="">
-                    </i>
+             
+             <fieldset class="cart">
+                <div class="add_to_chart" id="add_to_chart">
+                    <i class="shopping_bag" id="shopping_cart">
+                        <img src="./icons/cart-large-2-svgrepo-com (1).svg" width="50px" onclick="toggleCart()">
+                    </i>    
+                    <span>0</span>
                  </div>
+    
+                 <div class="user">
+                        <img src="./icons/user-heart-svgrepo-com.svg" width="40px">
+                 </div>
+            </fieldset>
         </div>
 
         <div class="search-result" id="search-result">
@@ -1797,11 +1808,11 @@
         <section class="landing-page">
 
             <div class="land-container1">
-                <div class="box1">
+                <!-- <div class="box1">
                         <h1>Shop Ease</h1><br>
                         <h4>Welcome to ShopEase your Ultimate Online Shopping Destination</h3> <br><br>
                         <h4>Discover a wold of endless choices at ShopEase! With just a click , explore thousand products ranging from fashion, electronics,beauty essential and more</h4>
-                        </div>
+                        </div> -->
             </div>
 
             <section class="carousel">
@@ -1866,7 +1877,7 @@
             </section>
 
             <div class="land-container2">
-                <div class="box1">
+                <!-- <div class="box1">
                         <h3>Why Choose Us?</h3><br>
                         <h4>
                             <li>Fast and Realiable Delivery</li>
@@ -1875,7 +1886,7 @@
                             <li>Buyer Protection Guarntee</li>
                         </h4><br><br>
                         <h4>Whether you're looking for the latest trends of everyday essentials, ShopEase has got you covered</h4>
-                </div>
+                </div> -->
             
 
             </div>
@@ -3473,6 +3484,19 @@
 
      </div> 
 
+   
+
+     <div class="payment_way" id="payment_way">
+        <div class="listCart">
+        </div>
+        
+        <div class="btnClass">
+            <button class="close" id="close" onclick="closeCart()">Close</button>
+        </div>
+
+           
+    </div>
+
      <footer>
         <div class="web-name"><h2>ShopEase</h2></div>
         <div class="web-info">
@@ -3495,11 +3519,11 @@
         </div>
      </footer>
      </div>
+ 
 
+<!-- <script src="./home.js"></script> -->
+<script src="./h.js"></script>
 
-   
-
-<script src="./home.js"></script>
 </body>
 </html>
 

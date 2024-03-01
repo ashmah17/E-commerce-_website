@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="./fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="./home.css">
+
+</head>
+
+<body class="showCart">
+
+    <!--************** SIDE BAR************ -->
+    <div class="sidebar" id="sidebarr">
+        <div class="close_btn">
+             <img src="./dada.png" alt="">
+             <span id="icon_btn" class="side_bar_search_icon" onclick='toggleSidebar()'>
+                <img src="./icons/close-svgrepo-com.svg" alt="">
+            </span>
+        </div>
+
+          <ul class="menu">
+
+         <li class="list">
+             <a href="home.html">
+                 <i class="side_bar_home_icon">
+                    <img src="./icons/home-svgrepo-com (1).svg" alt="">
+                 </i>
+                 <span>Home</span>
+             </a>
+         </li>
+         
+         <li class="list">
+             <a href="collection.html">
+                 <i class="side_bar_icon">
+                    <img src="./icons/tags-category-categories-labels-svgrepo-com.svg" alt="">
+                 </i>
+                 <span>Collections</span>
+             </a>
+         </li>
+
+         <li class="list">
+             <a href="airtime.php">
+                 <i class="side_bar_cap_icon">
+                    <img src="./icons/apparel-cap-clothing-svgrepo-com (1).svg" alt="">
+                 </i>
+                 <span>Men Clothes</span>
+             </a>
+         </li>
+
+         <li class="list">
+             <a href="cable.php">
+                 <i class="side_bar_icon">
+                    <img src="./icons/perfume-svgrepo-com.svg" alt="">
+                 </i>
+                 <span>Perfumes</span>
+             </a>
+         </li>
+
+         <li class="list">
+             <a href="utility">
+                 <i class="side_bar_icon">
+                    <img src="./icons/kitchen-cooker-utensils-svgrepo-com.svg" alt="">
+                 </i>
+                 <span>kitchen Items</span>
+             </a>
+         </li>
+
+      
+         <li class="list">
+               <a href="#">
+                <div class="select" id="select">
+                    <i class="side_bar_icon">
+                        <img src="./icons/setting-material-svgrepo-com.svg" alt="">
+                    </i>
+                    <span >Setting</span>
+               </div>
+            </a>
+         </li>
+
+      
+        
+
+         </ul>
+    </div>
+
+     <div class="main-content">
+
+        <!--********* HEADER SECTION ******-->
+
+        <div class="header-wrapper">
+
+            <div class="icon_box" >
+               <span id="icon_btn" onclick='toggleSidebar()'>&#9776;</span>
+            </div>
+
+             <div class="header-tittle">
+                 <h2>Dashboard</h2>
+             </div>
+           <fieldset class="cart">
+            
+            <div class="add_to_chart" id="add_to_chart">
+                <i class="shopping_bag" id="shopping_cart">
+                    <img src="./icons/cart-large-2-svgrepo-com (1).svg" width="50px">
+                </i>    
+                <span>0</span>
+             </div>
+             <div class="user">
+                    <img src="./icons/user-heart-svgrepo-com.svg" width="40px">
+             </div>
+           </fieldset>
+        </div>
+
+        
+        <div class="categories">
+            <div class="latest-collection-label"  style=" background-color: rgb(22, 48, 87);">Shop from Our Collections  
+                <i class="side_bar_search_icon">
+                </i>
+            </div>
+            
+        <div class="portofolio-container">
+                
+            <div class="portofolio-box">
+                <img src="./images/bg cloths3.jpg" alt="">
+
+                <div class="portofolio-layer">
+                    <h4>Fashion</h4>
+                    <p>Explore our chic fashion collection for effortless style that speak volume <br>
+                        <a href="fashion.html">  <i class="fa-solid fa-angle-down"></i> </a>
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="portofolio-box">
+                <img src="./images/star arice.JPG" alt="">
+                <div class="portofolio-layer">
+                    <h4>Spices</h4>
+                    <p>Add a burst of flavours to your dishes with our premium spice blend<br>
+                        <a href="spices.html">  <i class="fa-solid fa-angle-down"></i> </a>
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="portofolio-box">
+                <img src="./images/hardcover.JPG" alt="">
+                <div class="portofolio-layer">
+                    <h4>Stationeries</h4>
+                    <p>Elevate your creativity with our sleek and functional stationery<br>
+                        <a href="stationery.html">  <i class="fa-solid fa-angle-down"></i> </a>
+                    </p></div>
+            </div>
+
+            <div class="portofolio-box">
+                <img src="./images/digital camera.jpeg" alt="">
+                <div class="portofolio-layer">
+                    <h4>Gadgets</h4>
+                    <p>Ugrade your tech game with our cutting edge gadgets for every lifestyle
+                        <a href="gadget.html">  <i class="fa-solid fa-angle-down"></i> </a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="portofolio-box">
+                <img src="./images/brastemp refrigerator.JPG" alt="">
+                <div class="portofolio-layer">
+                    <h4>Electronics</h4>
+                    <p>Experience innovation at its finest with our top-of-line elecronic devices
+                        <a href="electronics.html">  <i class="fa-solid fa-angle-down"></i> </a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="portofolio-box">
+                <img src="./images/soup egies.JPG" alt="">
+                <div class="portofolio-layer">
+                    <h4>Groceries</h4>
+                    <p>Shop fresh and quality groceries convieniently from our wide selection
+                        <a href="groceries.html">  <i class="fa-solid fa-angle-down"></i> </a>
+                    </p></div>
+            </div>
+
+        </div>
+   </div>
+
+        <footer id="footer">
+            <div class="web-name"><h2>ShopEase</h2></div>
+            <div class="web-info">
+                <i class="fas- fa-globe">English</i>
+                <h3>$ USD - &#8358; Naira</h3>
+                <h3>Katsina State, Nigeria</h3>
+            </div>
+
+            <div class="login">
+                <p>Already a customer ? <a href="">Sign in here</a></p>
+            </div>
+            <div class="terms-condtitions">
+                <li> Condition of use</li>
+                <li>About us</li>
+                <li>Customer Care</li>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024, ShopEase.com</p>
+            </div>
+        </footer>
+     </div>
+
+
+
+
+
+<script src="../home.js"></script>
+</body>
+</html>
