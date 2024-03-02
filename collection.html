@@ -7,6 +7,17 @@
     <link rel="stylesheet" href="./fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="./home.css">
 
+    <style>
+        .header-wrapper{
+            padding-top: .5rem;
+            padding-bottom: .5rem;
+        }
+        .header-tittle{
+            padding-top: 1rem;
+            padding-bottom: .8rem;
+
+        }
+    </style>
 </head>
 
 <body class="showCart">
@@ -88,28 +99,29 @@
      <div class="main-content">
 
         <!--********* HEADER SECTION ******-->
-
         <div class="header-wrapper">
 
             <div class="icon_box" >
-               <span id="icon_btn" onclick='toggleSidebar()'>&#9776;</span>
+               <span id="side_bar_icon" onclick='toggleSidebar()'>&#9776;</span>
             </div>
 
              <div class="header-tittle">
-                 <h2>Dashboard</h2>
+                 <h2>ShopEase</h2>
              </div>
-           <fieldset class="cart">
             
-            <div class="add_to_chart" id="add_to_chart">
-                <i class="shopping_bag" id="shopping_cart">
-                    <img src="./icons/cart-large-2-svgrepo-com (1).svg" width="50px">
-                </i>    
-                <span>0</span>
-             </div>
-             <div class="user">
-                    <img src="./icons/user-heart-svgrepo-com.svg" width="40px">
-             </div>
-           </fieldset>
+                         
+             <fieldset class="cart">
+                <!-- <div class="add_to_chart" id="add_to_chart">
+                    <i class="shopping_bag" id="shopping_cart">
+                        <img src="./icons/cart-large-2-svgrepo-com (1).svg" width="43px" onclick="toggleCart()">
+                    </i>    
+                    <span>0</span>
+                 </div> -->
+    
+                 <div class="user">
+                        <img src="./icons/user-heart-svgrepo-com.svg" width="35px">
+                 </div>
+            </fieldset>
         </div>
 
         
@@ -212,6 +224,6 @@
 
 
 
-<script src="../home.js"></script>
+<script src="./script.js"></script>
 </body>
 </html>

@@ -10,6 +10,10 @@
     <style>
         .product_container{
             visibility: hidden;
+            z-index: 70;
+        }
+        .sample_details{
+            display: none;
         }
     </style>
 </head>
@@ -102,7 +106,7 @@
             </div>
 
              <div class="header-tittle">
-                 <h2>Dashboard</h2>
+                 <h2>ShopEase</h2>
              </div>
             
              <fieldset class="search-box">
@@ -115,13 +119,13 @@
              <fieldset class="cart">
                 <div class="add_to_chart" id="add_to_chart">
                     <i class="shopping_bag" id="shopping_cart">
-                        <img src="./icons/cart-large-2-svgrepo-com (1).svg" width="50px" onclick="toggleCart()">
+                        <img src="./icons/cart-large-2-svgrepo-com (1).svg" width="43px" onclick="toggleCart()">
                     </i>    
                     <span>0</span>
                  </div>
     
                  <div class="user">
-                        <img src="./icons/user-heart-svgrepo-com.svg" width="40px">
+                        <img src="./icons/user-heart-svgrepo-com.svg" width="35px">
                  </div>
             </fieldset>
         </div>
@@ -1821,8 +1825,10 @@
                         <div class="content">
                             <div class="name">Baby Snickers</div>
                             <div class="des">Affordable Covienient for Your Kids</div>
-                            <a href=""><button>See more</button>
-                            </a>                        </div>
+                            <a href="">
+                                <button>See more</button>
+                            </a>                        
+                        </div>
                     </div>
 
                     <div class="item" style="background-image: url(./images/cumin.JPG);">
@@ -2272,7 +2278,9 @@
                     <div class="portofolio-layer">
                         <h4>Fashion</h4>
                         <p>Explore our chic fashion collection for effortless style that speak volume <br>
-                            <a href="">  <i class="fa-solid fa-angle-down"></i> </a>
+                            <a href="">  
+                                <i class="fa-solid fa-angle-down"></i> 
+                            </a>
                         </p>
                     </div>
                 </div>
@@ -3484,7 +3492,68 @@
 
      </div> 
 
-   
+     <div class="sample_details">
+        <div class="product_details">
+            <h1 id="product_name">White Cauliflower</h1>
+            
+            <fieldset class="select-details1">
+                <h2><b>Price:</b> </h2>&nbsp; &nbsp;
+                <h2 id="money">&#8358;1,000</h2>
+            </fieldset>
+            
+            <fieldset class="select-details1">
+                <h2><b>Size:</b> </h2>&nbsp; &nbsp;
+               <h2 id="size">500g</h2>
+            </fieldset>
+
+            <fieldset class="select-details1">
+                <h2><b>Color:</b> </h2>&nbsp; &nbsp;
+               <h2 id="color">Brown</h2>
+            </fieldset>
+            
+
+            <fieldset class="select-input-details">
+                <span id="numberError"></span>
+                <input type="number" placeholder="1" id="input">
+                <button id="addChart">Add to chart</button>
+            </fieldset>
+
+            <h3 class="product-des">Product Details</h3>
+            <p class="product-des" id="product-des">
+                White Cauliflower is popular and versatile vegetable for its mild flavour and dense, crunchy texture. Its harvested when thehead is compact and creamy white in color with tightly packed florets. Its rich in vitamins, it can be enjoyes raw as crunchy snack or slad ingredient, or cooked in various ways including steaming, roasting, sauteing or even marsh as low-carb alternate for marsh potates.
+            </p>
+        
+            
+        </div>
+
+        <div class="paymentDetails">
+                <select class="ship_to">
+                    <option value="">
+                        <p>Ship To <i class="fas fa-angle-down"></i></p>
+                    </option>
+                    <option>Nigeria</option>
+                    <option>South Africa</option>
+                    <option>China</option>
+                    <option>Canada</option>
+                </select>
+
+            <select class="delivery">
+                <option value="">
+                    <p>Delivery Choice &nbsp; &nbsp;<i class="fas fa-angle-down"></i></p>                        <span>
+                </option>
+                <option> Free Delivery</option>
+                <option> Paid Delivery</option>
+            </select>
+
+            <select class="buyer_right" readonly="true">
+                <option>
+                    <p>Buyer Rights &nbsp; &nbsp;<i class="fas fa-angle-down"></i></p> 
+                </option>
+                <option>When the product you selected, was not the one delivered, you have the right to return it.</option>
+                <option> When the delivery time exceeded.</option>
+            </select>
+        </div>
+    </div>
 
      <div class="payment_way" id="payment_way">
         <div class="listCart">
@@ -3497,32 +3566,36 @@
            
     </div>
 
-     <footer>
-        <div class="web-name"><h2>ShopEase</h2></div>
-        <div class="web-info">
-            <i class="fas- fa-globe">English</i>
-            <h3>$ USD - &#8358; Naira</h3>
-            <h3>Katsina State, Nigeria</h3>
-        </div>
+        <footer id="footer">
+            <div class="web-name"><h2>ShopEase</h2></div>
+                <div class="web-info">
+                    <span class="language">
+                        <span>language</span>
+                        <span>English</span>
+                    </span>
+                    <span class="currency">
+                       <h4>USSD $</h4>
+                       <h4>NAIRA &#8358;</h4>
+                    </span>
+                </div>
 
-        <div class="login">
-            <p>Already a customer ? <a href="">Sign in here</a></p>
-        </div>
-        <div class="terms-condtitions">
-            <li> Condition of use</li>
-            <li>About us</li>
-            <li>Customer Care</li>
-        </div>
-        
-        <div class="copyright">
-            <p>&copy; 2024, ShopEase.com</p>
-        </div>
-     </footer>
-     </div>
+            <div class="login">
+                <p>Already a customer ? <a href="">Sign in here</a></p>
+            </div>
+            <div class="terms-condtitions">
+                <li> Condition of use</li>
+                <li>About us</li>
+                <li>Customer Care</li>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024, ShopEase.com</p>
+            </div>
+        </footer>
+</div>
  
 
-<!-- <script src="./home.js"></script> -->
-<script src="./h.js"></script>
+<script src="./script.js"></script>
 
 </body>
 </html>

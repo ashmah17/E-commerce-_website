@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="./home.css">
 </head>
+
 <body>
     <div class="sidebar" id="sidebarr">
         <div class="close_btn">
@@ -92,7 +93,7 @@
             </div>
 
              <div class="header-tittle">
-                 <h2>Dashboard</h2>
+                 <h2>ShopEase</h2>
              </div>
             
              <fieldset class="search-box">
@@ -102,16 +103,18 @@
                <input type="text" class="search_input" id="search_input" onkeyup="search()" placeholder="Search Items ">
              </fieldset>
              
-             <div class="add_to_chart" id="add_to_chart">
-                <i class="shopping_bag" id="shopping_cart">
-                    <img src="./icons/cart-large-2-svgrepo-com (1).svg" width="55px">
-                </i>    
-                <span>0</span>
-             </div>
-                
+             <fieldset class="cart">
+                <!-- <div class="add_to_chart" id="add_to_chart">
+                    <i class="shopping_bag" id="shopping_cart">
+                        <img src="./icons/cart-large-2-svgrepo-com (1).svg" width="43px" onclick="toggleCart()">
+                    </i>    
+                    <span>0</span>
+                 </div> -->
+    
                  <div class="user">
-                        <img src="./icons/user-heart-svgrepo-com.svg" width="40px">
+                        <img src="./icons/user-heart-svgrepo-com.svg" width="35px">
                  </div>
+            </fieldset>
         </div>
 
         <div class="search-result" id="search-result">
@@ -2500,63 +2503,8 @@
         </div>
      </div>
 
-     <script>
-        const search_container = document.getElementById("search-result");
-const input = document.getElementById("search_input");
-
-const search_icon = document.getElementById("fa-search");
-const hide_search = document.getElementById("fa-angle-left");
-
-input.addEventListener('input', function(event){
-    search_container.style.display = "block";
-    search_icon.style.display = "none";
-    hide_search.style.display = "inline";
-});
-
-// HIDE SEARCH 
-
-function hideSearch(){
-    const search_container = document.getElementById("search-result");
-    const hide_search = document.getElementById("fa-angle-left");
-    const search_icon = document.getElementById("fa-search");
-    
-    search_container.style.display ="none";
    
-
-    if(hide_search.style.display = "none"){
-        search_icon.style.display ="block";
- 
-    }
-}
-
-// SEARCH PRODUCT
-
-const search = () => {
-   const searchBox = document.getElementById("search_input").value.toUpperCase();
-   const storeItems = document.getElementById("product_list")
-   const product = document.querySelectorAll(".product")
-   const pname = document.getElementsByTagName("h2")
-
-    for( var i =0; i <  pname.length; i++){
-        let match = product[i].getElementsByTagName("h2")[0];
-
-        if(match){
-          let textValue = match.textContent || match.innerHTML
-
-            if (textValue.toUpperCase().indexOf(searchBox) > -1) {
-                product[i].style.display = "";
-            }else{
-                product[i].style.display = "none";
-
-            }
-        }
-    }
-
-  
-}
-     </script>
-    
-     <script src="./home.js"></script>
+     <script src="./script.js"></script>
 
 </body>
 </html>
