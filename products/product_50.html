@@ -166,40 +166,15 @@
                     
                         
                     </div>
-
-                    <div class="paymentDetails">
-                            <select class="ship_to">
-                                <option value="">
-                                    <p>Ship To <i class="fas fa-angle-down"></i></p>
-                                </option>
-                                <option>Nigeria</option>
-                                <option>South Africa</option>
-                                <option>China</option>
-                                <option>Canada</option>
-                            </select>
-    
-                        <select class="delivery">
-                            <option value="">
-                                <p>Delivery Choice &nbsp; &nbsp;<i class="fas fa-angle-down"></i></p>                        <span>
-                            </option>
-                            <option> Free Delivery</option>
-                            <option> Paid Delivery</option>
-                        </select>
-    
-                        <select class="buyer_right" readonly="true">
-                            <option>
-                                <p>Buyer Rights &nbsp; &nbsp;<i class="fas fa-angle-down"></i></p> 
-                            </option>
-                            <option>When the product you selected, was not the one delivered, you have the right to return it.</option>
-                            <option> When the delivery time exceeded.</option>
-                        </select>
-                    </div>
                 </div>
+
 
 
                 <div class="payment_way" id="payment_way">
                     <div class="amount">
-                        <button class="close" id="close" onclick="closeCart()">Close</button>
+                        <button class="close_cart" id="close" onclick="closeCart()">
+                                <img src="../icons/close-svgrepo-com.svg" width="20px">
+                        </button>
                         <h3 id="total_amount">&#8358;0.00</h3>
                     </div>
 
@@ -215,8 +190,10 @@
                 </div>
 
                
-        </div>
+               
 
+
+        </div>
 
         <footer id="footer">
             <div class="web-name"><h2>ShopEase</h2></div>
@@ -239,7 +216,8 @@
                 <p>&copy; 2024, ShopEase.com</p>
             </div>
         </footer>
-     </div>
+ 
+    </div>
 
 
 <script>
@@ -296,18 +274,17 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="namy">
                     ${item.name}
                 </div>
-                <div class="totalPrice">&#8358;
-                    ${item.totalPrice}
+                <div class="totalPrice">₦${item.totalPrice}
                 </div>
                 <div class="quantity">
-                    <button class="decrease">-</button>
-                    <span class="quantity_span" style="color:rgb(24, 36, 58); font-size:1rem;">${item.quantity}</span>
-                    <button class="increase">+</button>
+                    <span class="decrease">-</span>
+                    <span class="quantity_span" style="color:rgb(24, 36, 58); font-size:1.2rem; text-align:center;">${item.quantity}</span>
+                    <span class="increase">+</span>
                 </div>
                
                 <span class="pay">
-                    <img src="../icons/trash-list-alt-svgrepo-com.svg" style="width: 25px;">
-                    <img src="../icons/checkout-svgrepo-com.svg" style="width: 25px;">
+                    <img src="../icons/trash-list-alt-svgrepo-com.svg" style="width: 20px;">
+                    <img src="../icons/checkout-svgrepo-com.svg" style="width: 20px;">
                     </span>
             `;
 
@@ -345,7 +322,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Update the total amount element with the calculated total amount
     const totalAmountElement = document.getElementById('total_amount');
-    totalAmountElement.textContent = `Amount:  ₦${totalAmount.toFixed(2)}`;
+    totalAmountElement.textContent = ` ₦${totalAmount.toFixed(2)}`;
 }
 
 document.getElementById('addChart').addEventListener('click', function () {
