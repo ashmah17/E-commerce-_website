@@ -1,0 +1,36 @@
+
+  [
+    {
+      "id": 1,
+      "name": "Costway 2-1 Airfryer",
+      "description": "COSTWAY Electric Hot Air Fryers Oven, 1700W Oilless Cooker with Timer & Temperature Control, NonstickFry Basket, Auto Shutoff Protection, Black, 5.3 QT",
+      "image": "../images/2-in Airfyer oven.JPG",
+      "price": "60,000",
+      "size": "5Litre",
+      "color": "black",
+      "image2": "../images/airfyer.JPG",
+      "price2": "60,000",
+      "size2": "5Litre",
+      "color2": "black",
+      "image3": "../images/cosori.JPG",
+      "price3": "60,000",
+      "size3": "5Litre",
+      "color3": "black"
+      
+    },
+    {
+      "id": 2,
+      "name": "Silver Crest Airfryer",
+      "description": "Silver Crest Electric Hot Air Fryers Oven, 1600W Oilless Cooker with Timer & Temperature Control, NonstickFry Basket, Auto Shutoff Protection, Black, 6QT",
+      "image": "../images/airfryer.JPG"
+    },
+
+  {
+      "id": 3,
+      "name": "Silver Crest Airfryer",
+      "description": "Silver Crest Electric Hot Air Fryers Oven, 1600W Oilless Cooker with Timer & Temperature Control, NonstickFry Basket, Auto Shutoff Protection, Black, 6QT",
+      "image": "../images/airfryer.JPG"
+    }
+  ]
+
+  
