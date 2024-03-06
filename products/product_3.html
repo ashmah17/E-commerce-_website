@@ -15,68 +15,52 @@
     <div class="sidebar" id="sidebarr">
         <div class="close_btn">
              <img src="./dada.png" alt="">
-             <span id="icon_btn" class="side_bar_search_icon" onclick='toggleSidebar()'>
-                <img src="../icons/close-svgrepo-com.svg" alt="">
-            </span>
+             <span id="icon_btn" onclick='toggleSidebar()'>&times;</span>
         </div>
 
           <ul class="menu">
 
          <li class="list">
-             <a href="home.html">
-                 <i class="side_bar_home_icon">
-                    <img src="../icons/home-svgrepo-com (1).svg" alt="">
-                 </i>
+             <a href="../home.html">
+                 <i class="fas fa-home"></i>
                  <span>Home</span>
              </a>
          </li>
          
          <li class="list">
-             <a href="collection.html">
-                 <i class="side_bar_icon">
-                    <img src="../icons/tags-category-categories-labels-svgrepo-com.svg" alt="">
-                 </i>
+             <a href="all_categories.html">
+                 <i class="fas fa-list"></i>
                  <span>Collections</span>
              </a>
          </li>
 
          <li class="list">
              <a href="airtime.php">
-                 <i class="side_bar_cap_icon">
-                    <img src="../icons/apparel-cap-clothing-svgrepo-com (1).svg" alt="">
-                 </i>
+                 <i class="fas fa-shirt"></i>
                  <span>Men Clothes</span>
              </a>
          </li>
 
          <li class="list">
              <a href="cable.php">
-                 <i class="side_bar_icon">
-                    <img src="../icons/perfume-svgrepo-com.svg" alt="">
-                 </i>
+                 <i class="fas fa-spray-can-sparkles"></i>
                  <span>Perfumes</span>
              </a>
          </li>
 
          <li class="list">
              <a href="utility">
-                 <i class="side_bar_icon">
-                    <img src="../icons/kitchen-cooker-utensils-svgrepo-com.svg" alt="">
-                 </i>
+                 <i class="fas fa-spoon"></i>
                  <span>kitchen Items</span>
              </a>
          </li>
 
       
          <li class="list">
-               <a href="#">
-                <div class="select" id="select">
-                    <i class="side_bar_icon">
-                        <img src="../icons/setting-material-svgrepo-com.svg" alt="">
-                    </i>
-                    <span >Setting</span>
+               <div class="select" id="select">
+                    <i class="fas fa-angle-down"></i>
+                    <span>Setting</span>
                </div>
-            </a>
          </li>
 
       
@@ -116,7 +100,7 @@
                 <div class="product-info">
                     <div class="product_sample">
                         <div class="main-sample">
-                            <img src="../images/bolb_chandelier.jpg" alt="" id="main-image">
+                            <img src="../images/garlic.JPG" alt="" id="main-image">
                         </div>
                     </div>
 
@@ -124,9 +108,9 @@
                     <div class="small">
                         <h4 class="small-label">Choose Another Sample</h4>
                         <div class="pictures">
-                            <img src="../images/bolb_chandelier.jpg" class="other-image">
-                            <img src="../images/chandelier.jpg"  class="other-image">
-                            <img src="../images/cement_chandelier.jpg"  class="other-image">                    
+                            <img src="../images/garlic.JPG" class="other-image">
+                            <img src="../new images/garlic (1).JPG"  class="other-image">
+                            <img src="../new images/garlic (2).JPG"  class="other-image">                    
                     
                         </div>
                     </div>
@@ -135,16 +119,16 @@
 
                 <div class="sample_details">
                     <div class="product_details">
-                        <h1 id="product_name">White Cauliflower</h1>
+                        <h1 id="product_name">Hardneck Garlic</h1>
                         
                         <fieldset class="select-details1">
                             <h2><b>Price:</b> </h2>&nbsp; &nbsp;
-                            <h2 id="money">&#8358;1,000</h2>
+                            <h2 id="money">&#8358;9000</h2>
                         </fieldset>
                         
                         <fieldset class="select-details1">
                             <h2><b>Size:</b> </h2>&nbsp; &nbsp;
-                           <h2 id="size">500g</h2>
+                           <h2 id="size">100g</h2>
                         </fieldset>
 
                         <fieldset class="select-details1">
@@ -161,7 +145,8 @@
 
                         <h3 class="product-des">Product Details</h3>
                         <p class="product-des" id="product-des">
-                            White Cauliflower is popular and versatile vegetable for its mild flavour and dense, crunchy texture. Its harvested when thehead is compact and creamy white in color with tightly packed florets. Its rich in vitamins, it can be enjoyes raw as crunchy snack or slad ingredient, or cooked in various ways including steaming, roasting, sauteing or even marsh as low-carb alternate for marsh potates.
+                            Unlock bold flavors with our exqlusive Hardneck Garlic, Grown with passion enhace yourflavour with items
+                            robust and aromatic qualities
                         </p>
                     
                         
@@ -199,6 +184,20 @@
 
                 <div class="payment_way" id="payment_way">
                     <div class="listCart">
+                        <div class="items">
+                            <div class="imagy">
+                            </div>
+                            <div class="namy">
+                                
+                            </div>
+                            <div class="totalPrice">
+                              
+                            </div>
+                            <div class="quantity">
+                             
+                            </div>
+                        </div>
+                     
                     </div>
                     
                     <div class="btnClass">
@@ -238,113 +237,141 @@
 
 <script>
 
+    function toggleCart(){
+    var payment_way = document.getElementById('payment_way');
+    var closeCart = document.getElementById('close');
+
+
+    if (payment_way.style.right === '0px'){
+        payment_way.style.right = '-91vh';
+
+
+    }else{
+        payment_way.style.right = '0px';
+        closeCart.innerHTML = 'Close &times;';
+
+        
+    }
+}
+
+function closeCart(){
+    var payment_way = document.getElementById('payment_way');
+    var closeCart = document.getElementById('close');
+
+
+    if (payment_way.style.right === '-91vh'){
+        payment_way.style.right = '0px';
+
+
+    }else{
+        payment_way.style.right = '-91vh';
+        closeCart.innerHTML = 'Close &times;';
+
+        
+    }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     let cartItems = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [];
 
+    // updateicon count
     function updateCartIcon() {
         const cartIcon = document.getElementById('shopping_cart');
         const cartCount = document.getElementById('add_to_chart').querySelector('span');
         let totalCount = 0;
 
+        // Calculate total quantity of items in the cart
         cartItems.forEach(item => {
             totalCount += item.quantity;
         });
 
+        // Update the cart icon count
         cartCount.textContent = totalCount;
     }
 
 
+    // Function to add a product to the cart container
     function addToPaymentWay(product_info) {
         const paymentWay = document.querySelector('.listCart');
 
-        const existingIndex = cartItems.findIndex(item => 
-            item.name === product_info.name && item.size === product_info.size
-        );
+        // Create HTML elements for the product
+        const productItem = document.createElement('div');
+        productItem.classList.add('items');
+        productItem.innerHTML = `
+            <div class="imagy">
+                <img src="${product_info.Image}" alt="">
+            </div>
+            <div class="namy">
+                ${product_info.name}
+            </div>
+            <div class="totalPrice">
+                ${product_info.price}
+            </div>
+            <div class="quantity">
+                <span>${product_info.quantity}</span>
+            </div>
+            <button class="delete">Delete</button>
+            <button class="pay">Pay</button>
+        `;
 
+        // Add event listeners for delete and pay buttons
+        productItem.querySelector('.delete').addEventListener('click', function () {
+            const index = cartItems.findIndex(item => item.id === product_info.id && item.size === product_info.size);
+            if (index !== -1) {
+                cartItems.splice(index, 1);
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                productItem.remove();
+                updateCartIcon();
+            }
+        });
+
+        productItem.querySelector('.pay').addEventListener('click', function () {
+            alert('Payment success!');
+        });
+
+
+        // Append the product item to the payment_way container
+        paymentWay.appendChild(productItem);
+    }
+
+    // Add to Cart button
+    document.getElementById('addChart').addEventListener('click', function () {
+        const product_id = document.querySelector('.product_container').getAttribute('data-id');
+        const product = document.querySelector('#product_id');
+        const details = document.querySelector('.sample_details');
+        const product_info = {
+            id: product_id,
+            name: product.querySelector('#product_name').textContent,
+            price: details.querySelector('#money').textContent,
+            Image: product.querySelector('#main-image').src,
+            size: details.querySelector('#size').value,
+            quantity: parseInt(details.querySelector('input').value) || 1
+        };
+        // const existingIndex = cartItems.findIndex(item => item.id === product_info.id && item.size === product_info.size);
+        const existingIndex = cartItems.findIndex(item => item.id === product_info.id && item.size === product_info.size && item.name === product_info.name && item.price === product_info.price);
         if (existingIndex !== -1) {
             cartItems[existingIndex].quantity += product_info.quantity;
-            cartItems[existingIndex].totalPrice += product_info.price * product_info.quantity;
         } else {
             cartItems.push(product_info);
         }
 
         localStorage.setItem('cartItems', JSON.stringify(cartItems));
         updateCartIcon();
-        renderCartItems();
-    }
-
-    function renderCartItems() {
-        const paymentWay = document.querySelector('.listCart');
-        paymentWay.innerHTML = '';
-
-        cartItems.forEach(item => {
-            const productItem = document.createElement('div');
-            productItem.classList.add('items');
-            productItem.innerHTML = `
-                <div class="imagy">
-                    <img src="${item.Image}" alt="">
-                </div>
-                <div class="namy">
-                    ${item.name}
-                </div>
-                <div class="totalPrice">
-                    ${item.totalPrice}
-                </div>
-                <div class="quantity">
-                    <span>${item.quantity}</span>
-                </div>
-                <button class="delete">Delete</button>
-                <button class="pay">Pay</button>
-            `;
-
-            productItem.querySelector('.delete').addEventListener('click', function () {
-                const index = cartItems.findIndex(cartItem => cartItem.id === item.id && cartItem.size === item.size);
-                if (index !== -1) {
-                    cartItems.splice(index, 1);
-                    localStorage.setItem('cartItems', JSON.stringify(cartItems));
-                    renderCartItems();
-                    updateCartIcon();
-                }
-            });
-
-            productItem.querySelector('.pay').addEventListener('click', function () {
-                alert('Payment success!');
-            });
-
-            paymentWay.appendChild(productItem);
-        });
-    }
-
-    document.getElementById('addChart').addEventListener('click', function () {
-    const product_id = document.querySelector('.product_container').getAttribute('data-id');
-    const product = document.querySelector('#product_id');
-    const details = document.querySelector('.sample_details');
-
-    const sizeDropdown = document.getElementById("size");
-    const selectedSize = sizeDropdown ? sizeDropdown.value : '';
-
-    const product_info = {
-        id: product_id,
-        name: product.querySelector('#product_name').textContent,
-        price: parseInt(details.querySelector('#money').textContent.replace(/\D/g, '')),
-        Image: product.querySelector('#main-image').src,
-        size: selectedSize,
-        quantity: parseInt(details.querySelector('input').value) || 1,
-        totalPrice: parseInt(details.querySelector('#money').textContent.replace(/\D/g, '')) * parseInt(details.querySelector('input').value) || parseInt(details.querySelector('#money').textContent.replace(/\D/g, ''))
-    };
-
-    addToPaymentWay(product_info);
-});
+        addToPaymentWay(product_info);
+    });
 
     updateCartIcon();
-    renderCartItems();
+
+    cartItems.forEach(item => {
+        addToPaymentWay(item);
+    });
 });
+
 </script>
 
  
 <script>
-
-var mainImage = document.getElementById("main-image");
+  var mainImage = document.getElementById("main-image");
         var otherImages = document.getElementsByClassName("other-image");
         var price = document.getElementById("money");
         var productName = document.getElementById("product_name");
@@ -356,37 +383,39 @@ var mainImage = document.getElementById("main-image");
 
         otherImages[0].onclick = function(){
             mainImage.src = otherImages[0].src;
-            price.innerHTML = '&#8358;1,000';
-            productName.innerHTML = 'keiky Cucumber';
+            price.innerHTML = '#&8358;1,000';
+            productName.innerHTML = 'Costway';
             sizes.innerHTML = '500g';
-            color.innerHTML = 'White';
-            productDes.innerHTML = 'White Cauliflower is popular and versatile vegetable for its mild flavour and dense, crunchy texture. Its harvested when thehead is compact and creamy white in color with tightly packed florets. Its rich in vitamins, it can be enjoyes raw as crunchy snack or slad ingredient, or cooked in various ways including steaming, roasting, sauteing or even marsh as low-carb alternate for marsh potates.';
+            color.innerHTML = 'Blrown';
+            productDes.innerHTML =  'Unlock bold flavors with our exqlusive Hardneck Garlic, Grown with passion enhace yourflavour with items robust and aromatic qualities';
         }
 
         otherImages[1].onclick = function(){
             mainImage.src = otherImages[1].src;
-            price.innerHTML = '&#8358;10,000';
-            productName.innerHTML = 'Cheddar Cauliflower';
-            productDes.innerHTML = 'Orange Cauliflower also knowan as"Cheddar Cauliflower" is a vibrant and colorful variation of white cauliflower, unlike the white cauliflower that has a creamy head cheddar has a bright orange hue due to its higher level of beta-carotene" a pigment found in veges. such as carrot its mild and sweet as the white cauliflower but with added benefit of an increased value due to its higher beta-carotine content, it can be prepared as steaming, roasting,sauteing or even enjoyed as raw.';
-            sizes.innerHTML = '250g';
-            color.innerHTML = 'Orange';
+            price.innerHTML = '&#8358;2,000';
+            productName.innerHTML = 'Elephant Garlic';
+            productDes.innerHTML = 'Larger in size, mild Flavour and bulbous cloves. Its milder and sweeter compared to tradional garlic, it can be used raw in salad, roasted as side dish or incorporated in soup and stew, its easy to peel.';
+            sizes.innerHTML = '2.1 QT';
+            color.innerHTML = 'Black';
         }
 
         otherImages[2].onclick = function(){
             mainImage.src = otherImages[2].src;
-            price.innerHTML = '&#8358;210,900';
-            productName.innerHTML = 'Graffiti Cauliflower';
-            productDes.innerHTML = 'Its stunning variant of cauliflower, the purple color comes from the presence of anthocyanins with is antioxidant also found in red cabbage, its mild and slightly swwet taste with ';
-            sizes.innerHTML = '250g';
-            color.innerHTML = 'Purple';
+            price.innerHTML = '&#8358;5,900';
+            productName.innerHTML = 'Chesnok Garlic';
+            productDes.innerHTML = 'Chesnok also known as "Rsussina Red" its versatile and popular for it exceptional flavor and beautiful appearance, its rich, sweet and spicywith hints of nuttiness, its cloves are easy to peel and have a smooth texture, its favorite ingredient for spreads and sauces';
+            sizes.innerHTML = '3.1QT';
+            color.innerHTML = 'Grey';
         }
 
 
+  
     </script>
 
  
-
+</script>
 
 <script src="../home.js"></script>
 </body>
 </html>
+

@@ -15,68 +15,52 @@
     <div class="sidebar" id="sidebarr">
         <div class="close_btn">
              <img src="./dada.png" alt="">
-             <span id="icon_btn" class="side_bar_search_icon" onclick='toggleSidebar()'>
-                <img src="../icons/close-svgrepo-com.svg" alt="">
-            </span>
+             <span id="icon_btn" onclick='toggleSidebar()'>&times;</span>
         </div>
 
           <ul class="menu">
 
          <li class="list">
-             <a href="home.html">
-                 <i class="side_bar_home_icon">
-                    <img src="../icons/home-svgrepo-com (1).svg" alt="">
-                 </i>
+             <a href="../home.html">
+                 <i class="fas fa-home"></i>
                  <span>Home</span>
              </a>
          </li>
          
          <li class="list">
-             <a href="collection.html">
-                 <i class="side_bar_icon">
-                    <img src="../icons/tags-category-categories-labels-svgrepo-com.svg" alt="">
-                 </i>
+             <a href="all_categories.html">
+                 <i class="fas fa-list"></i>
                  <span>Collections</span>
              </a>
          </li>
 
          <li class="list">
              <a href="airtime.php">
-                 <i class="side_bar_cap_icon">
-                    <img src="../icons/apparel-cap-clothing-svgrepo-com (1).svg" alt="">
-                 </i>
+                 <i class="fas fa-shirt"></i>
                  <span>Men Clothes</span>
              </a>
          </li>
 
          <li class="list">
              <a href="cable.php">
-                 <i class="side_bar_icon">
-                    <img src="../icons/perfume-svgrepo-com.svg" alt="">
-                 </i>
+                 <i class="fas fa-spray-can-sparkles"></i>
                  <span>Perfumes</span>
              </a>
          </li>
 
          <li class="list">
              <a href="utility">
-                 <i class="side_bar_icon">
-                    <img src="../icons/kitchen-cooker-utensils-svgrepo-com.svg" alt="">
-                 </i>
+                 <i class="fas fa-spoon"></i>
                  <span>kitchen Items</span>
              </a>
          </li>
 
       
          <li class="list">
-               <a href="#">
-                <div class="select" id="select">
-                    <i class="side_bar_icon">
-                        <img src="../icons/setting-material-svgrepo-com.svg" alt="">
-                    </i>
-                    <span >Setting</span>
+               <div class="select" id="select">
+                    <i class="fas fa-angle-down"></i>
+                    <span>Setting</span>
                </div>
-            </a>
          </li>
 
       
@@ -116,7 +100,7 @@
                 <div class="product-info">
                     <div class="product_sample">
                         <div class="main-sample">
-                            <img src="../images/black nike snicker.JPG" alt="" id="main-image">
+                            <img src="../images/metel book glider.JPG" alt="" id="main-image">
                         </div>
                     </div>
 
@@ -124,9 +108,9 @@
                     <div class="small">
                         <h4 class="small-label">Choose Another Sample</h4>
                         <div class="pictures">
-                            <img src="../images/black nike snicker.JPG" class="other-image">
-                            <img src="../images/nike white snicker.JPG"  class="other-image">
-                            <img src="../images/black AFI snicker.JPG"  class="other-image">                    
+                            <img src="../images/metel book glider.JPG" class="other-image">
+                            <img src="../new images/metal glider (1).JPG"  class="other-image">
+                            <img src="../new images/metal glider (2).JPG"  class="other-image">                    
                     
                         </div>
                     </div>
@@ -199,6 +183,7 @@
 
                 <div class="payment_way" id="payment_way">
                     <div class="listCart">
+                        <!-- Cart items will be added here dynamically -->
                     </div>
                     
                     <div class="btnClass">
@@ -237,6 +222,40 @@
 
 
 <script>
+
+    function toggleCart(){
+    var payment_way = document.getElementById('payment_way');
+    var closeCart = document.getElementById('close');
+
+
+    if (payment_way.style.right === '0px'){
+        payment_way.style.right = '-91vh';
+
+
+    }else{
+        payment_way.style.right = '0px';
+        closeCart.innerHTML = 'Close &times;';
+
+        
+    }
+}
+
+function closeCart(){
+    var payment_way = document.getElementById('payment_way');
+    var closeCart = document.getElementById('close');
+
+
+    if (payment_way.style.right === '-91vh'){
+        payment_way.style.right = '0px';
+
+
+    }else{
+        payment_way.style.right = '-91vh';
+        closeCart.innerHTML = 'Close &times;';
+
+        
+    }
+}
 
 document.addEventListener('DOMContentLoaded', function () {
     let cartItems = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [];
@@ -339,12 +358,12 @@ document.addEventListener('DOMContentLoaded', function () {
     updateCartIcon();
     renderCartItems();
 });
+
 </script>
 
  
 <script>
-
-var mainImage = document.getElementById("main-image");
+  var mainImage = document.getElementById("main-image");
         var otherImages = document.getElementsByClassName("other-image");
         var price = document.getElementById("money");
         var productName = document.getElementById("product_name");
@@ -382,10 +401,11 @@ var mainImage = document.getElementById("main-image");
         }
 
 
+  
     </script>
 
  
-
+</script>
 
 <script src="../home.js"></script>
 </body>

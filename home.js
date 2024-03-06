@@ -90,9 +90,43 @@ const search = () => {
   
 }
 
+// ********TOGGLE FAVORITE***********
+function toggleFavorite(){
+    var saved_products = document.getElementById('saved_products');
+    var closeFavorite = document.getElementById('close_favorite');
 
 
+    if (saved_products.style.right === '0px'){
+        saved_products.style.right = '-91vh';
 
+
+    }else{
+        saved_products.style.right = '0px';
+        closeFavorite.innerHTML = 'Close &times;';
+
+        
+    }
+}
+
+function closeFavorite(){
+    var saved_products = document.getElementById('saved_products');
+    // var closeFavorite = document.getElementById('close_favorite');
+
+
+    if (saved_products.style.right === '-91vh'){
+        saved_products.style.right = '0px';
+
+
+    }else{
+        saved_products.style.right = '-91vh';
+        // closeFavorite.innerHTML = 'x';
+
+        
+    }
+}
+
+
+// **************Toggle cart**************
 function toggleCart(){
     var payment_way = document.getElementById('payment_way');
     var closeCart = document.getElementById('close');
@@ -121,7 +155,7 @@ function closeCart(){
 
     }else{
         payment_way.style.right = '-91vh';
-        closeCart.innerHTML = 'Close &times;';
+        closeCart.innerHTML = '';
 
         
     }
@@ -129,7 +163,8 @@ function closeCart(){
 
 
 // ADDTO CART
-// document.addEventListener('DOMContentLoaded', function () {
+// 
+document.addEventListener('DOMContentLoaded', function () {
     let cartItems = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [];
 
     function updateCartIcon() {
@@ -163,12 +198,15 @@ function closeCart(){
         updateCartIcon();
         renderCartItems();
     }
-
+   
     function renderCartItems() {
-        const paymentWay = document.querySelector('.listCart');
-        paymentWay.innerHTML = '';
+    const paymentWay = document.querySelector('.listCart');
+    paymentWay.innerHTML = '';
 
-        cartItems.forEach(item => {
+    let totalAmount = 0; // Initialize total amount
+
+    cartItems.forEach(item => {
+        if (item.quantity > 0) { // Only render items with quantity greater than 0
             const productItem = document.createElement('div');
             productItem.classList.add('items');
             productItem.innerHTML = `
@@ -178,34 +216,58 @@ function closeCart(){
                 <div class="namy">
                     ${item.name}
                 </div>
-                <div class="totalPrice">
-                    ${item.totalPrice}
+                <div class="totalPrice">₦${item.totalPrice}
                 </div>
                 <div class="quantity">
-                    <span>${item.quantity}</span>
+                    <span class="decrease">-</span>
+                    <span class="quantity_span" style="color:rgb(24, 36, 58); font-size:1.2rem; text-align:center;">${item.quantity}</span>
+                    <span class="increase">+</span>
                 </div>
-                <button class="delete">Delete</button>
-                <button class="pay"  onclick="showModal()">Pay</button>
+               
+                <span class="pay">
+                    <img src="./icons/trash-list-alt-svgrepo-com.svg" style="width: 20px;">
+                    <img src="./icons/checkout-svgrepo-com.svg" style="width: 20px;" onclick="closePayment()">
+                    </span>
             `;
 
-            productItem.querySelector('.delete').addEventListener('click', function () {
-                const index = cartItems.findIndex(cartItem => cartItem.id === item.id && cartItem.size === item.size);
-                if (index !== -1) {
-                    cartItems.splice(index, 1);
+            totalAmount += item.totalPrice; // Add current item's total price to total amount
+
+            productItem.querySelector('.pay').addEventListener('click', function () {
+
+            });
+
+            productItem.querySelector('.increase').addEventListener('click', function () {
+                item.quantity++; // Increase quantity
+                item.totalPrice = item.price * item.quantity; // Update total price
+                localStorage.setItem('cartItems', JSON.stringify(cartItems));
+                renderCartItems();
+                updateCartIcon();
+            });
+
+            productItem.querySelector('.decrease').addEventListener('click', function () {
+                if (item.quantity > 0) { // Ensure quantity doesn't go below 0
+                    item.quantity--; // Decrease quantity
+                    if (item.quantity === 0) {
+                        const index = cartItems.indexOf(item);
+                        cartItems.splice(index, 1); // Remove product if quantity is reduced to 0
+                    }
+                    item.totalPrice = item.price * item.quantity; // Update total price
                     localStorage.setItem('cartItems', JSON.stringify(cartItems));
                     renderCartItems();
                     updateCartIcon();
                 }
             });
 
-            productItem.querySelector('.pay').addEventListener('click', function () {
-            });
-
             paymentWay.appendChild(productItem);
-        });
-    }
+        }
+    });
 
-    document.getElementById('addChart').addEventListener('click', function () {
+    // Update the total amount element with the calculated total amount
+    const totalAmountElement = document.getElementById('total_amount');
+    totalAmountElement.textContent = ` ₦${totalAmount.toFixed(2)}`;
+}
+
+document.getElementById('addChart').addEventListener('click', function () {
     const product_id = document.querySelector('.product_container').getAttribute('data-id');
     const product = document.querySelector('#product_id');
     const details = document.querySelector('.sample_details');
@@ -227,5 +289,18 @@ function closeCart(){
 });
 
     updateCartIcon();
-    renderCartItems();
-// });
+    renderCartItems(); 
+
+    function deleteAllProducts() {
+    cartItems = []; // Clear the cartItems array
+    localStorage.setItem('cartItems', JSON.stringify(cartItems)); // Update localStorage
+    renderCartItems(); // Update the cart display
+    updateCartIcon(); // Update the cart icon
+}
+
+// Add event listener to the delete all button
+document.getElementById('delete_all_button').addEventListener('click', deleteAllProducts);
+
+
+});
+

@@ -19,7 +19,7 @@
           <ul class="menu">
 
          <li class="list">
-             <a href="home.html">
+             <a href="#">
                  <i class="side_bar_home_icon">
                     <img src="./icons/home-svgrepo-com (1).svg" alt="">
                  </i>
@@ -28,7 +28,7 @@
          </li>
          
          <li class="list">
-             <a href="all_categories.html">
+             <a href="./collection.html">
                  <i class="side_bar_icon">
                     <img src="./icons/tags-category-categories-labels-svgrepo-com.svg" alt="">
                  </i>
@@ -37,7 +37,7 @@
          </li>
 
          <li class="list">
-             <a href="airtime.php">
+             <a href="./men_clothes.html">
                  <i class="side_bar_cap_icon">
                     <img src="./icons/apparel-cap-clothing-svgrepo-com (1).svg" alt="">
                  </i>
@@ -46,7 +46,7 @@
          </li>
 
          <li class="list">
-             <a href="cable.php">
+             <a href="./perfumes.html">
                  <i class="side_bar_icon">
                     <img src="./icons/perfume-svgrepo-com.svg" alt="">
                  </i>
@@ -55,7 +55,7 @@
          </li>
 
          <li class="list">
-             <a href="utility">
+             <a href="./electronics.html">
                  <i class="side_bar_icon">
                     <img src="./icons/kitchen-cooker-utensils-svgrepo-com.svg" alt="">
                  </i>
@@ -75,9 +75,6 @@
             </a>
          </li>
 
-      
-        
-
          </ul>
     </div>
 
@@ -92,7 +89,7 @@
             </div>
 
              <div class="header-tittle">
-                 <h2>Dashboard</h2>
+                 <h2>ShopEase</h2>
              </div>
             
              <fieldset class="search-box">
@@ -101,14 +98,19 @@
                 <img src="./icons/angle-left-svgrepo-com.svg" alt=""></i>
                <input type="text" class="search_input" id="search_input" onkeyup="search()" placeholder="Search Items ">
              </fieldset>
-           
-            
-                
-                 <div class="user">
-                    <i class="side_bar_icon">
-                        <img src="./icons/user-heart-svgrepo-com.svg" alt="">
-                    </i>
+             
+             <fieldset class="cart">
+                <div class="add_to_chart" id="add_to_chart">
+                    <i class="shopping_bag" id="shopping_cart">
+                        <img src="./icons/cart-large-2-svgrepo-com (1).svg" width="43px" onclick="toggleCart()">
+                    </i>    
+                    <span>0</span>
                  </div>
+    
+                 <div class="user">
+                        <img src="./icons/user-heart-svgrepo-com.svg" width="35px">
+                 </div>
+            </fieldset>
         </div>
 
         <div class="search-result" id="search-result">

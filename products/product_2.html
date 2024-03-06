@@ -16,52 +16,52 @@
         <div class="close_btn">
              <img src="./dada.png" alt="">
              <span id="icon_btn" class="side_bar_search_icon" onclick='toggleSidebar()'>
-                <img src="../icons/close-svgrepo-com.svg" alt="">
+                <img src="./icons/close-svgrepo-com.svg" alt="">
             </span>
         </div>
 
           <ul class="menu">
 
          <li class="list">
-             <a href="../home.html">
+             <a href="./home.html">
                  <i class="side_bar_home_icon">
-                    <img src="../icons/home-svgrepo-com (1).svg" alt="">
+                    <img src="./icons/home-svgrepo-com (1).svg" alt="">
                  </i>
                  <span>Home</span>
              </a>
          </li>
          
          <li class="list">
-             <a href="../collection.html">
+             <a href="./collection.html">
                  <i class="side_bar_icon">
-                    <img src="../icons/tags-category-categories-labels-svgrepo-com.svg" alt="">
+                    <img src="./icons/tags-category-categories-labels-svgrepo-com.svg" alt="">
                  </i>
                  <span>Collections</span>
              </a>
          </li>
 
          <li class="list">
-             <a href="../men_clothes.html">
+             <a href="./men_clothes.html">
                  <i class="side_bar_cap_icon">
-                    <img src="../icons/apparel-cap-clothing-svgrepo-com (1).svg" alt="">
+                    <img src="./icons/apparel-cap-clothing-svgrepo-com (1).svg" alt="">
                  </i>
                  <span>Men Clothes</span>
              </a>
          </li>
 
          <li class="list">
-             <a href="perfumes.html">
+             <a href="./perfumes.html">
                  <i class="side_bar_icon">
-                    <img src="../icons/perfume-svgrepo-com.svg" alt="">
+                    <img src="./icons/perfume-svgrepo-com.svg" alt="">
                  </i>
                  <span>Perfumes</span>
              </a>
          </li>
 
          <li class="list">
-             <a href="electronics.html">
+             <a href="./electronics.html">
                  <i class="side_bar_icon">
-                    <img src="../icons/kitchen-cooker-utensils-svgrepo-com.svg" alt="">
+                    <img src="./icons/kitchen-cooker-utensils-svgrepo-com.svg" alt="">
                  </i>
                  <span>kitchen Items</span>
              </a>
@@ -72,7 +72,7 @@
                <a href="#">
                 <div class="select" id="select">
                     <i class="side_bar_icon">
-                        <img src="../icons/setting-material-svgrepo-com.svg" alt="">
+                        <img src="./icons/setting-material-svgrepo-com.svg" alt="">
                     </i>
                     <span >Setting</span>
                </div>
@@ -105,8 +105,19 @@
                 <span>0</span>
 
              </div>
+
+             <div class="favorite" id="favorite">
+                <i id="favorite_cart" onclick="toggleCart()" >
+                   <img src="../icons/favorite-filled-svgrepo-com.svg" style="width: 30px; margin-left: 1rem; cursor: pointer;" >
+                </i>    
+                <span>0</span>
+            </div>
+
              <div class="user">
-                <i class="fas fa-user"></i>
+              <a href="">
+                <img src="../icons/user-heart-svgrepo-com.svg" style="width: 30px; margin-left: 1rem; cursor: pointer;" onclick="addFavorite()">
+
+              </a>
              </div>
            </fieldset>
         </div>
@@ -154,8 +165,9 @@
         
                         <fieldset class="select-input-details">
                             <span id="numberError"></span>
-                            <input type="number" placeholder="1" id="input">
+                            <input type="number" placeholder="1" id="input" min="0">
                             <button id="addChart">Add to chart</button>
+                            <img src="../icons/favorite-svgrepo-com (1).svg" id="addFavorite" style="width: 30px; cursor: pointer;">
                         </fieldset>
 
                         <h3 class="product-des">Product Details</h3>
@@ -166,6 +178,16 @@
                         
                     </div>
                 </div>
+
+                <!-- ************* FAVORITES*************** -->
+                <div class="saved_products" id="saved_products">
+                    
+
+                    <div class="listCarts">
+                    </div>
+                          
+                </div>
+
 
                 <div class="payment_way" id="payment_way">
                     <div class="amount">
@@ -295,8 +317,92 @@
         </footer>
  
     </div>
-
-
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let favoriteItems = localStorage.getItem('favoriteItems') ? JSON.parse(localStorage.getItem('favoriteItems')) : [];
+    
+            function updatefavoriteIcon() {
+                const favoriteCount = document.getElementById('favorite').querySelector('span');
+                let totalCounts = 0;
+    
+                favoriteItems.forEach(item => {
+                    totalCounts += item.quantity;
+                });
+    
+                favoriteCount.textContent = totalCounts;
+            }
+    
+            function addToFavorite(savedProducts) {
+                const existingIndex = favoriteItems.findIndex(item => 
+                    item.name === savedProducts.name && item.size === savedProducts.size
+                );
+    
+                if (existingIndex !== -1) {
+                    favoriteItems[existingIndex].quantity += savedProducts.quantity;
+                    favoriteItems[existingIndex].totalPrice += savedProducts.price * savedProducts.quantity;
+                } else {
+                    favoriteItems.push(savedProducts);
+                }
+    
+                localStorage.setItem('favoriteItems', JSON.stringify(favoriteItems));
+                updatefavoriteIcon();
+                renderfavoriteItems();
+            }
+    
+            function renderfavoriteItems() {
+                const favoriteContainer = document.querySelector('.listCarts');
+                favoriteContainer.innerHTML = '';
+    
+                favoriteItems.forEach(item => {
+                    if (item.quantity > 0) {
+                        const productItem = document.createElement('div');
+                        productItem.classList.add('item');
+                        productItem.innerHTML = `
+                            <div class="imagyy">
+                                <img src="${item.Image}" alt="">
+                            </div>
+                            <div class="namyy">
+                                ${item.name}
+                            </div>
+                            <div class="totalPrice">₦${item.totalPrice}</div>
+                            <span class="payy">
+                                <button>Move to Cart</button>
+                            </span>
+                        `;
+    
+                        favoriteContainer.appendChild(productItem);
+                    }
+                });
+            }
+    
+            document.getElementById('addFavorite').addEventListener('click', function () {
+                const product_id = document.querySelector('.product_container').getAttribute('data-id');
+                const product = document.querySelector('#product_id');
+                const details = document.querySelector('.sample_details');
+    
+                const sizeDropdown = document.getElementById("size");
+                const selectedSize = sizeDropdown ? sizeDropdown.value : '';
+    
+                const savedProducts = {
+                    id: product_id,
+                    name: product.querySelector('#product_name').textContent,
+                    price: parseInt(details.querySelector('#money').textContent.replace(/\D/g, '')),
+                    Image: product.querySelector('#main-image').src,
+                    size: selectedSize,
+                    quantity: parseInt(details.querySelector('input').value) || 1,
+                    totalPrice: parseInt(details.querySelector('#money').textContent.replace(/\D/g, '')) * parseInt(details.querySelector('input').value) || parseInt(details.querySelector('#money').textContent.replace(/\D/g, ''))
+                };
+    
+                addToFavorite(savedProducts);
+            });
+    
+            updatefavoriteIcon();
+            renderfavoriteItems(); 
+        });
+    </script>
+    
+        
+ 
 <script>
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -428,9 +534,9 @@ document.getElementById('addChart').addEventListener('click', function () {
     renderCartItems(); 
 
     function deleteAllProducts() {
-    cartItems = []; // Clear the cartItems array
+    cartItems = []; 
     localStorage.setItem('cartItems', JSON.stringify(cartItems)); // Update localStorage
-    renderCartItems(); // Update the cart display
+    renderCartItems(); 
     updateCartIcon(); // Update the cart icon
 }
 
