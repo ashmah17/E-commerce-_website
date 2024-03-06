@@ -549,7 +549,7 @@ body{
         }
          .cards{
             /* width: 21vh; */
-            height: 17rem;
+            height: 19rem;
             position: relative;
             background-color:#fff;
             border-radius: .5rem;
@@ -560,19 +560,24 @@ body{
             box-shadow: 0 1px 4px rgba(143, 141, 141, 0.37);
             transition: 1s ease;
         }
-        .image{
+          .cards a{
+            width:100%;
+            cursor: pointer;
+
+        }
+        .cards a.image{
             width: 100%;
             background-color:transparent;
-            height: 16rem;
+            height: 14rem;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 1rem;
-            /* overflow: hidden; */
+
         }
-        .image img{
-            width: 120px;
-            height: 120px;
+        .cards a .image img{
+            width: 190px;
+            height: 180px;
             border-radius: .5rem;
         }
        
@@ -933,7 +938,7 @@ body{
             background-color:#ffffff;
            box-shadow:  0 0 11px rgba(126, 125, 125, 0.5);
            border-radius: .5rem;
-           width: 73vh;
+           width: 68vh;
            height: 100vh;
            padding: .5rem;
            display: flex;
@@ -951,7 +956,7 @@ body{
                background-color:#fff;
                box-shadow:  0 0 11px rgba(126, 125, 125, 0.5);
                border-radius: .5rem;
-               width: 73vh;;
+               width: 68vh;;
                height: 100vh;
                padding: .5rem;
                display: flex;
@@ -1200,13 +1205,16 @@ body{
         flex-wrap: wrap;
         background-color: #fff;
         border-radius: .5rem;
-        padding: 0.5rem rem;
+        padding: 0.5rem 0.5rem;
         margin-bottom: 1rem;
         
     }
     .header-tittle{
-        color:var(--second-color);
-        padding: 1rem;
+        
+        padding: .2rem;
+    }
+    .header-tittle img{
+       width: 90px;
     }
     .user-info{
         display: flex;align-items: center;

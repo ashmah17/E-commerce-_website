@@ -170,8 +170,7 @@
                             <input type="number" placeholder="1" id="input" min="0">
                            <span class="holder">
                             <button id="addChart">Add to chart</button>
-                            <img src="../icons/favorite-svgrepo-com (1).svg" id="addFavorite" style="width: 30px; cursor: pointer;" >
-                            <img src="../icons/favorite-filled-svgrepo-com.svg" id="filledAddFavorite" style="width: 30px; cursor: pointer; display: none;" >
+                            <img src="../icons/favorite-filled-svgrepo-com.svg" id="addFavorite" style="width: 30px; cursor: pointer;" >
                            </span>
                         
                         </fieldset>
@@ -330,7 +329,7 @@
             document.addEventListener('DOMContentLoaded', function () {
     let favoriteItems = localStorage.getItem('favoriteItems') ? JSON.parse(localStorage.getItem('favoriteItems')) : [];
 
-    function updatefavoriteIcon() {
+    function updateFavoriteIcon() {
         const favoriteCount = document.getElementById('favorite').querySelector('span');
         let totalCounts = 0;
 
@@ -342,25 +341,18 @@
     }
 
     function addToFavorite(savedProducts) {
-        const existingIndex = favoriteItems.findIndex(item => 
-            item.name === savedProducts.name && item.size === savedProducts.size
+        const existingIndex = favoriteItems.findIndex(item =>
+            item.name === savedProducts.name && item.Image === savedProducts.Image
         );
 
-        if (existingIndex !== -1) {
-            // Item already exists, do nothing
-            return;
+        if (existingIndex === -1) {
+            favoriteItems.push(savedProducts);
+            localStorage.setItem('favoriteItems', JSON.stringify(favoriteItems));
+            updateFavoriteIcon();
         }
-
-        // Item doesn't exist, add it to favoriteItems
-        favoriteItems.push(savedProducts);
-        localStorage.setItem('favoriteItems', JSON.stringify(favoriteItems));
-
-        // Update UI
-        updatefavoriteIcon();
-        renderfavoriteItems();
     }
 
-    function renderfavoriteItems() {
+    function renderFavoriteItems() {
         const favoriteContainer = document.querySelector('.favorite_listCarts');
         favoriteContainer.innerHTML = '';
 
@@ -384,44 +376,18 @@
 
                 productItem.querySelector('.deleteFavorite').addEventListener('click', function () {
                     favoriteItems = favoriteItems.filter(favorite => 
-                        favorite.name !== item.name || favorite.size !== item.size
+                        favorite.name !== item.name || favorite.Image !== item.Image
                     );
 
                     localStorage.setItem('favoriteItems', JSON.stringify(favoriteItems));
 
-                    updatefavoriteIcon();
-                    renderfavoriteItems();
+                    updateFavoriteIcon();
+                    renderFavoriteItems();
                 });
 
                 favoriteContainer.appendChild(productItem);
             }
         });
-
-            const product_id = document.querySelector('.product_container').getAttribute('data-id');
-            const product = document.querySelector('#product_id');
-            const details = document.querySelector('.sample_details');
-            const sizeDropdown = document.getElementById("size");
-            const selectedSize = sizeDropdown ? sizeDropdown.value : '';
-            const savedProducts = {
-                id: product_id,
-                name: product.querySelector('#product_name').textContent,
-                size: selectedSize
-            };
-
-        const existingIndex = favoriteItems.findIndex(item => 
-            item.name === savedProducts.name && item.size === savedProducts.size
-        );
-
-        if (existingIndex !== -1) {
-            // Item exists in favorite list, hide "Add to Favorite" button
-            document.getElementById("addFavorite").style.display = "none";
-            // Show "Filled Add Favorite" button
-            document.getElementById("filledAddFavorite").style.display = "inline";
-        } else {
-            document.getElementById("addFavorite").style.display = "inline";
-
-            document.getElementById("filledAddFavorite").style.display = "none";
-        }
     }
 
     document.getElementById('addFavorite').addEventListener('click', function () {
@@ -443,8 +409,8 @@
         addToFavorite(savedProducts);
     });
 
-    updatefavoriteIcon();
-    renderfavoriteItems(); 
+    updateFavoriteIcon();
+    renderFavoriteItems();
 });
 
         </script>
