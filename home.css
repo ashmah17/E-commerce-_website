@@ -2259,7 +2259,8 @@ body{
         margin-bottom: 1rem;
     }
     .header-tittle{
-        color:var(--second-color);
+        
+        padding: .2rem;
     }
     .header-tittle img{
        width: 100px;
@@ -2679,10 +2680,13 @@ body{
             padding: 1rem;
             align-items: center; 
             box-shadow: 0 1px 4px rgba(0, 0, 0, 0.37);
-            cursor: pointer;
         }
-       
-        .cards .image{
+        .cards a{
+            width:100%;
+            cursor: pointer;
+
+        }
+        .cards a.image{
             width: 100%;
             background-color:transparent;
             height: 14rem;
@@ -2735,11 +2739,16 @@ body{
             display: flex;
             flex-direction: row;
         }
-         .stars{
-            margin: .8rem;
-            color: goldenrod;
+        .star{
+            font-size: 30px;
+            cursor: pointer;
+        }
+         .star .filled{
+          color: goldenrod;
+           cursor: pointer;
             
         }
+       
     
         .portofolio-container{
             display: grid;
@@ -2882,7 +2891,6 @@ body{
             width:98%;
             background-color:var(--second-color);
             padding: 1rem;
-            background-color: yellow;
             border-radius: .7rem;
             font-size: 1rem;
             margin: 1rem;

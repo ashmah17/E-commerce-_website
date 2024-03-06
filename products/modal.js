@@ -26,3 +26,5 @@ function closePayment(){
     paymentShadow.style.display = "none";
    
 }
+
+

@@ -102,8 +102,8 @@
                <span id="icon_btn" onclick='toggleSidebar()'>&#9776;</span>
             </div>
 
-             <div class="header-tittle" style="background-color: blueviolet; height: 4rem;">
-                <img src="./icons/shopease 2.svg" width="120px">
+             <div class="header-tittle">
+                <img src="./icons/shopease11.png" alt="">
              </div>
 
            <fieldset class="cart">
@@ -125,7 +125,7 @@
 
              <div class="user">
               <a href="">
-                <img src="../icons/user-heart-svgrepo-com.svg"  onclick="addFavorite()">
+                <img src="./icons/user-heart-svgrepo-com.svg"  onclick="addFavorite()">
 
               </a>
              </div>
@@ -1913,13 +1913,13 @@
 
             <section class="container" id="container">
                     
-            <a href="./products/product_50.html">
             <div class="cards" id="cards">
     
-                <div class="image">
-                    <img src="./images/boohoo hills.JPG" width="100px" height="100px" alt="">
-                </div>
-
+                <a href="./products/product_1.html">
+                    <div class="image">
+                        <img src="./images/boohoo hills.JPG" width="100px" height="100px" alt="">
+                    </div>
+                </a>
                 <div class="price">
                     <h2>&#8358;231,913</h2>
                     <h5><s>&#8358;463,826</s></h5>
@@ -1927,16 +1927,17 @@
     
                 <h4 id="product_name">Booho Hills</h4>
                 
-                <div class="stars">
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
-                    <span class="fa fa-star checked"></span>
+                <div class="stars" id="stars">
+                    <span class="star" onclick="rate(1)">☆</span>
+                    <span class="star" onclick="rate(2)">☆</span>
+                    <span class="star" onclick="rate(3)">☆</span>
+                    <span class="star" onclick="rate(4)">☆</span>
+                    <span class="star" onclick="rate(5)">☆</span>
+                    
                 </div>
             
             </div>
-            </a>
+           
     
             <a href="">
             <div class="cards" id="cards">
@@ -3606,7 +3607,7 @@
 </div>
 
 <script>
- 
+        
 
 </script>
 
@@ -3614,7 +3615,8 @@
 
 <script src="./home.js"></script>
 <script src="../cart.js"></script>
-<script src="./products/json.json"></script>
+<script src="./products/modal.js"></script>
+<!-- <script src="./star_rating.js"></script> -->
 
 </body>
 </html>
