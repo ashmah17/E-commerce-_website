@@ -1848,6 +1848,7 @@ button{
             align-items: center;
             gap: 2rem;
             padding: 2.5rem;
+            /* margin-top: ; */
         }
         .portofolio-container .portofolio-box{
             position: relative;
@@ -2214,7 +2215,7 @@ button{
             align-items: left;
             border: 1px solid rgb(179, 178, 178);
             position: fixed;
-            z-index: 100;
+            z-index: 99;
             inset: 0 -91vh 0 auto;
             overflow: auto;
             transition: all 1s ease;
