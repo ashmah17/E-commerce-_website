@@ -1,156 +1,95 @@
+document.addEventListener('DOMContentLoaded', function () {
+let favoriteItems = localStorage.getItem('favoriteItems') ? JSON.parse(localStorage.getItem('favoriteItems')) : [];
 
-    document.addEventListener('DOMContentLoaded', async function () {
-        try {
-        const response = await fetch("json.json");
-        const dataJson = await response.json();
+function updateFavoriteIcon() {
+const favoriteCount = document.getElementById('favorite').querySelector('span');
+let totalCounts = 0;
 
-        if (dataJson && dataJson.length > 0) {
-            const firstData = dataJson[0];
+favoriteItems.forEach(item => {
+totalCounts += item.quantity;
+});
 
-
-            const itemElement = document.createElement("div");
-            itemElement.classList.add('product-info');
-            itemElement.innerHTML =`
-            <div class="product_container" id="product_id" data-id="1">
-             <div class="product-info">
-                <div class="product_sample">
-                    <div class="main-sample">
-                        <img src="${firstData.image}" alt="" id="main-image">
-                    </div>
-                </div>
-
-                   
-                <div class="small">
-                    <h4 class="small-label">Choose Another Sample</h4>
-                    <div class="pictures">
-                        <img src="${firstData.image}" class="other-image">
-                        <img src="${firstData.image2}"  class="other-image">
-                        <img src="${firstData.image3}"  class="other-image">                    
-                
-                    </div>
-                </div>
-            </div>
-           
-
-            <div class="sample_details">
-                <div class="product_details">
-                    <h1 id="product_name">${firstData.name} </h1>
-                    
-                    <fieldset class="select-details1">
-                        <h2><b>Price:</b> </h2>&nbsp; &nbsp;
-                        <h2 id="money">&#8358;${firstData.price}</h2>
-                    </fieldset>
-                    
-                    <fieldset class="select-details1">
-                        <h2><b>Size:</b> </h2>&nbsp; &nbsp;
-                       <h2 id="size">${firstData.size}</h2>
-                    </fieldset>
-
-                    <fieldset class="select-details1">
-                        <h2><b>Color:</b> </h2>&nbsp; &nbsp;
-                       <h2 id="color">${firstData.color}</h2>
-                    </fieldset>
-                    
-    
-                    <fieldset class="select-input-details">
-                        <span id="numberError"></span>
-                        <input type="number" placeholder="1" id="input">
-                        <button id="addChart">Add to chart</button>
-                    </fieldset>
-
-                    <h3 class="product-des">Product Details</h3>
-                    <p class="product-des" id="product-des">
-                        ${firstData.description}                         
-                        </p>
-                
-                    
-                </div>
-
-                <div class="paymentDetails">
-                        <select class="ship_to">
-                            <option value="">
-                                <p>Ship To <i class="fas fa-angle-down"></i></p>
-                            </option>
-                            <option>Nigeria</option>
-                            <option>South Africa</option>
-                            <option>China</option>
-                            <option>Canada</option>
-                        </select>
-
-                    <select class="delivery">
-                        <option value="">
-                            <p>Delivery Choice &nbsp; &nbsp;<i class="fas fa-angle-down"></i></p>                        <span>
-                        </option>
-                        <option> Free Delivery</option>
-                        <option> Paid Delivery</option>
-                    </select>
-
-                    <select class="buyer_right" readonly="true">
-                        <option>
-                            <p>Buyer Rights &nbsp; &nbsp;<i class="fas fa-angle-down"></i></p> 
-                        </option>
-                        <option>When the product you selected, was not the one delivered, you have the right to return it.</option>
-                        <option> When the delivery time exceeded.</option>
-                    </select>
-                </div>
-            </div>
-
-            `;
-        document.getElementById("product_id").appendChild(itemElement);
-    } else {
-        alert("No data found in the JSON file.");
-    }
-} catch (error) {
-    console.error("Error fetching data:", error);
+favoriteCount.textContent = totalCounts;
 }
 
-    
-    var mainImage = document.getElementById("main-image");
-    var otherImages = document.getElementsByClassName("other-image");
-    var price = document.getElementById("money");
-    var productName = document.getElementById("product_name");
-    var sizeDropdown = document.getElementById("size");
-    var productDes= document.getElementById("product-des");
-    var sizes= document.getElementById("size");
-    var color= document.getElementById("color");
+function addToFavorite(savedProducts) {
+const existingIndex = favoriteItems.findIndex(item =>
+item.name === savedProducts.name && item.Image === savedProducts.Image
+);
+
+if (existingIndex === -1) {
+favoriteItems.push(savedProducts);
+localStorage.setItem('favoriteItems', JSON.stringify(favoriteItems));
+updateFavoriteIcon();
+}
+}
+
+function renderFavoriteItems() {
+const favoriteContainer = document.querySelector('.favorite_listCarts');
+favoriteContainer.innerHTML = '';
+
+favoriteItems.forEach(item => {
+if (item.quantity > 0) {
+    const productItem = document.createElement('div');
+    productItem.classList.add('favorite_item');
+    productItem.innerHTML = `
+       <a href=""> 
+        <div class="favorite_image">
+            <img src="${item.Image}" alt="">
+        </div>
+       </a>
+        <div class="favorite_name">
+            ${item.name}
+        </div>
+        <div class="totalPrice">₦${item.totalPrice}</div>
+        <span class="pay_favorite">
+            <img src="./icons/trash-list-alt-svgrepo-com.svg" class="deleteFavorite" style="width: 25px;">     
+            <a href="product_50.html"><button id="moveChart" >View Product</button></a>
+        </span>
+    `;
+
+    productItem.querySelector('.deleteFavorite').addEventListener('click', function () {
+        favoriteItems = favoriteItems.filter(favorite => 
+            favorite.name !== item.name || favorite.Image !== item.Image
+        );
+
+        localStorage.setItem('favoriteItems', JSON.stringify(favoriteItems));
+
+        updateFavoriteIcon();
+        renderFavoriteItems();
+    });
+
+    favoriteContainer.appendChild(productItem);
+}
+});
+}
+
+document.getElementById('addFavorite').addEventListener('click', function () {
+const product_id = document.querySelector('.product_container').getAttribute('data-id');
+const product = document.querySelector('#product_id');
+const details = document.querySelector('.sample_details');
+const sizeDropdown = document.getElementById("size");
+const selectedSize = sizeDropdown ? sizeDropdown.value : '';
+const savedProducts = {
+id: product_id,
+name: product.querySelector('#product_name').textContent,
+price: parseInt(details.querySelector('#money').textContent.replace(/\D/g, '')),
+Image: product.querySelector('#main-image').src,
+size: selectedSize,
+quantity: parseInt(details.querySelector('input').value) || 1,
+totalPrice: parseInt(details.querySelector('#money').textContent.replace(/\D/g, '')) * parseInt(details.querySelector('input').value) || parseInt(details.querySelector('#money').textContent.replace(/\D/g, ''))
+};
+
+addToFavorite(savedProducts);
+});
+
+updateFavoriteIcon();
+renderFavoriteItems();
+});
 
 
-    otherImages[0].onclick = function(){
-        mainImage.src = otherImages[0].src;
-        price.innerHTML = '&#8358;1,000';
-        productName.innerHTML = 'keiky Cucumber';
-        sizes.innerHTML = '500g';
-        color.innerHTML = 'White';
-        productDes.innerHTML = 'White Cauliflower is popular and versatile vegetable for its mild flavour and dense, crunchy texture. Its harvested when thehead is compact and creamy white in color with tightly packed florets. Its rich in vitamins, it can be enjoyes raw as crunchy snack or slad ingredient, or cooked in various ways including steaming, roasting, sauteing or even marsh as low-carb alternate for marsh potates.';
-    }
 
-    otherImages[1].onclick = function(){
-        mainImage.src = otherImages[1].src;
-        price.innerHTML = '&#8358;10,000';
-        productName.innerHTML = 'Cheddar Cauliflower';
-        productDes.innerHTML = 'Orange Cauliflower also knowan as"Cheddar Cauliflower" is a vibrant and colorful variation of white cauliflower, unlike the white cauliflower that has a creamy head cheddar has a bright orange hue due to its higher level of beta-carotene" a pigment found in veges. such as carrot its mild and sweet as the white cauliflower but with added benefit of an increased value due to its higher beta-carotine content, it can be prepared as steaming, roasting,sauteing or even enjoyed as raw.';
-        sizes.innerHTML = '250g';
-        color.innerHTML = 'Orange';
-    }
-
-    otherImages[2].onclick = function(){
-        mainImage.src = otherImages[2].src;
-        price.innerHTML = '&#8358;210,900';
-        productName.innerHTML = 'Graffiti Cauliflower';
-        productDes.innerHTML = 'Its stunning variant of cauliflower, the purple color comes from the presence of anthocyanins with is antioxidant also found in red cabbage, its mild and slightly swwet taste with ';
-        sizes.innerHTML = '250g';
-        color.innerHTML = 'Purple';
-    }
-
-
-    
-
-
-
-
-
-
-
+document.addEventListener('DOMContentLoaded', function () {
 let cartItems = localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : [];
 
 function updateCartIcon() {
@@ -165,10 +104,11 @@ function updateCartIcon() {
     cartCount.textContent = totalCount;
 }
 
+
 function addToPaymentWay(product_info) {
     const paymentWay = document.querySelector('.listCart');
 
-    const existingIndex = cartItems.findIndex(item =>
+    const existingIndex = cartItems.findIndex(item => 
         item.name === product_info.name && item.size === product_info.size
     );
 
@@ -185,69 +125,111 @@ function addToPaymentWay(product_info) {
 }
 
 function renderCartItems() {
-    const paymentWay = document.querySelector('.listCart');
-    paymentWay.innerHTML = '';
+const paymentWay = document.querySelector('.listCart');
+paymentWay.innerHTML = '';
 
-    cartItems.forEach(item => {
+let totalAmount = 0; // Initialize total amount
+
+cartItems.forEach(item => {
+    if (item.quantity > 0) { // Only render items with quantity greater than 0
         const productItem = document.createElement('div');
         productItem.classList.add('items');
         productItem.innerHTML = `
-            <div class="imagy">
-                <img src="${item.Image}" alt="">
-            </div>
+            <a href=""> 
+                <div class="favorite_image">
+                    <img src="${item.Image}" alt="">
+                </div>
+            </a>
             <div class="namy">
                 ${item.name}
             </div>
-            <div class="totalPrice">
-                ${item.totalPrice}
+            <div class="totalPrice">₦${item.totalPrice}
             </div>
             <div class="quantity">
-                <span>${item.quantity}</span>
+                <span class="decrease">-</span>
+                <span class="quantity_span" style="color:rgb(24, 36, 58); font-size:1.2rem; text-align:center;">${item.quantity}</span>
+                <span class="increase">+</span>
             </div>
-            <button class="delete">Delete</button>
-            <button class="pay"  onclick="showModal()">Pay</button>
+           
+            <span class="pay">
+                <img src="./icons/trash-list-alt-svgrepo-com.svg" style="width: 20px;">
+                <img src="./icons/checkout-svgrepo-com.svg" style="width: 20px;" onclick="showModal()">
+                </span>
         `;
 
-        productItem.querySelector('.delete').addEventListener('click', function () {
-            const index = cartItems.findIndex(cartItem => cartItem.id === item.id && cartItem.size === item.size);
-            if (index !== -1) {
-                cartItems.splice(index, 1);
+        totalAmount += item.totalPrice; // Add current item's total price to total amount
+
+
+        // productItem.querySelector('.pay').addEventListener('click', function () {
+          
+        // });
+
+        productItem.querySelector('.increase').addEventListener('click', function () {
+            item.quantity++; // Increase quantity
+            item.totalPrice = item.price * item.quantity; // Update total price
+            localStorage.setItem('cartItems', JSON.stringify(cartItems));
+            renderCartItems();
+            updateCartIcon();
+        });
+
+        productItem.querySelector('.decrease').addEventListener('click', function () {
+            if (item.quantity > 0) { // Ensure quantity doesn't go below 0
+                item.quantity--; // Decrease quantity
+                if (item.quantity === 0) {
+                    const index = cartItems.indexOf(item);
+                    cartItems.splice(index, 1); // Remove product if quantity is reduced to 0
+                }
+                item.totalPrice = item.price * item.quantity; // Update total price
                 localStorage.setItem('cartItems', JSON.stringify(cartItems));
                 renderCartItems();
                 updateCartIcon();
             }
         });
 
-        productItem.querySelector('.pay').addEventListener('click', function () {
-        });
-
         paymentWay.appendChild(productItem);
-    });
+    }
+});
+
+// Update the total amount element with the calculated total amount
+const totalAmountElement = document.getElementById('total_amount');
+totalAmountElement.textContent = ` ₦${totalAmount.toFixed(2)}`;
 }
 
 document.getElementById('addChart').addEventListener('click', function () {
-    const product_id = document.querySelector('.product_container').getAttribute('data-id');
-    const product = document.querySelector('#product_id');
-    const details = document.querySelector('.sample_details');
+const product_id = document.querySelector('.product_container').getAttribute('data-id');
+const product = document.querySelector('#product_id');
+const details = document.querySelector('.sample_details');
 
-    const sizeDropdown = document.getElementById("size");
-    const selectedSize = sizeDropdown ? sizeDropdown.value : '';
+const sizeDropdown = document.getElementById("size");
+const selectedSize = sizeDropdown ? sizeDropdown.value : '';
 
-    const product_info = {
-        id: product_id,
-        name: product.querySelector('#product_name').textContent,
-        price: parseInt(details.querySelector('#money').textContent.replace(/\D/g, '')),
-        Image: product.querySelector('#main-image').src,
-        size: selectedSize,
-        quantity: parseInt(details.querySelector('input').value) || 1,
-        totalPrice: parseInt(details.querySelector('#money').textContent.replace(/\D/g, '')) * parseInt(details.querySelector('input').value) || parseInt(details.querySelector('#money').textContent.replace(/\D/g, ''))
-    };
+const product_info = {
+    id: product_id,
+    name: product.querySelector('#product_name').textContent,
+    price: parseInt(details.querySelector('#money').textContent.replace(/\D/g, '')),
+    Image: product.querySelector('#main-image').src,
+    size: selectedSize,
+    quantity: parseInt(details.querySelector('input').value) || 1,
+    totalPrice: parseInt(details.querySelector('#money').textContent.replace(/\D/g, '')) * parseInt(details.querySelector('input').value) || parseInt(details.querySelector('#money').textContent.replace(/\D/g, ''))
+};
 
-    addToPaymentWay(product_info);
+addToPaymentWay(product_info);
 });
 
 updateCartIcon();
-renderCartItems();
+renderCartItems(); 
+
+function deleteAllProducts() {
+cartItems = []; 
+localStorage.setItem('cartItems', JSON.stringify(cartItems)); // Update localStorage
+renderCartItems(); 
+updateCartIcon(); // Update the cart icon
+}
+
+// Add event listener to the delete all button
+document.getElementById('delete_all_button').addEventListener('click', deleteAllProducts);
 
 
 });
+
+

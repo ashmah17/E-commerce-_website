@@ -19,8 +19,10 @@
 body{
     display: flex;
     height: 100vh;
-    overflow: hidden;
-    
+    overflow: hidden;  
+}
+button{
+    cursor: pointer;
 }
 @keyframes animate{
     from{
@@ -36,7 +38,7 @@ body{
 }
 
 /* MOBILE */
-@media only screen and (min-width:300px) and (max-width:600px){
+@media only screen and (min-width:200px) and (max-width:600px){
     .sidebar{
         position: fixed;
         top: 0;
@@ -536,7 +538,7 @@ body{
             font-size: 1rem;
         }
         .container{
-            padding: 1.5rem;
+            padding:2rem;
             width: 100%;
             display:grid;
             align-items: center;
@@ -548,9 +550,8 @@ body{
 
         }
          .cards{
-            /* width: 21vh; */
             height: 19rem;
-            position: relative;
+            /* position: relative; */
             background-color:#fff;
             border-radius: .5rem;
             flex-direction: column;
@@ -561,22 +562,22 @@ body{
             transition: 1s ease;
         }
           .cards a{
-            width:100%;
+            width:90%;
             cursor: pointer;
 
         }
         .cards a.image{
-            width: 100%;
+            width: 90%;
             background-color:transparent;
             height: 14rem;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 1rem;
-
+            /* overflow: hidden; */
         }
         .cards a .image img{
-            width: 190px;
+            width: 150px;
             height: 180px;
             border-radius: .5rem;
         }
@@ -650,14 +651,13 @@ body{
             width: 100%;
             grid-template-columns: repeat(2, 1fr);
             align-items: center;
-            gap: 1.5rem;
+            gap: 2.5rem;
             padding: .5rem;
         }
         .portofolio-container .portofolio-box{
             position: relative;
             border-radius:1rem;
-            width: 9rem;
-            height: 10rem;
+            height: 12rem;
             box-shadow:  0 5px 10px rgba(150, 150, 150, 0.5);
             overflow: hidden;
             display: flex;
@@ -665,8 +665,8 @@ body{
             justify-content: center;
         }
         .portofolio-box img{
-            width: 8.5rem;
-            height: 9.5rem;
+            width: 13rem;
+            height: 11rem;
             transition: 1s ease;
             border-radius:.5rem;
 
@@ -938,7 +938,7 @@ body{
             background-color:#ffffff;
            box-shadow:  0 0 11px rgba(126, 125, 125, 0.5);
            border-radius: .5rem;
-           width: 68vh;
+           width: 100%;
            height: 100vh;
            padding: .5rem;
            display: flex;
@@ -947,7 +947,7 @@ body{
            align-items: left;
            border: 1px solid rgb(179, 178, 178);
            position: fixed;
-           z-index: 100;
+           z-index: 99;
            inset: 0 -91vh 0 auto;
            overflow: auto;
            transition: all 1s ease;
@@ -1023,6 +1023,7 @@ body{
           display: flex;
           flex-direction: row;
             gap: 2px;
+            cursor: pointer;
            
         }
         .amount{
@@ -1059,7 +1060,7 @@ body{
            background-color:var(--main-color);
            color: #fff;
            font-size: 1rem;
-           margin-left: .7; 
+            cursor: pointer;
         }
         #delete_all_button{
             width: 50%;
@@ -1068,7 +1069,7 @@ body{
             color: #fff;
            font-size: 1rem;
            margin-left: .7;
-
+            cursor: pointer;
         }
 
         .pay{
@@ -1078,7 +1079,7 @@ body{
            gap:.8rem;
            padding-right: .5rem;
            width: 5rem;
-
+            cursor: pointer;
         }
         .quantity{
             display:flex;
@@ -1090,6 +1091,209 @@ body{
             width: 100%;
             height: 1rem;
         }
+        .shadow, .shadowy{
+            width: 100%;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            background-color: #07070796;
+            backdrop-filter: blur(.3rem);
+            display:flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            z-index: 99;
+            display: none;
+        }
+        .shadowy{
+            z-index: 100;
+        }
+        .confirm_delivery_button{
+            width: 100%;
+            border-radius: .3rem;
+            padding: .8rem;
+            background-color: var(--main-color);
+            color: #fff;
+            font-size: 1rem;
+            margin-top: 2rem ;
+            padding: .5rem;
+            cursor: pointer;
+        }
+        .close_modal{
+            width: 100%;
+            background-color: var(--main-color);
+            display:flex;
+            padding: .3rem;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            cursor: pointer;border-radius: .3rem;
+        }
+        .modal, .modaly{
+            width: 80%;
+            height: 90vh;
+            border-radius: .5rem;
+            background-color: #fff;
+            border-radius: .5rem;
+            margin: auto;
+            margin-top: -100%;
+            overflow: auto;
+            animation: showModal 1s ease-in-out 0.3s 1 forwards;
+            display:flex;
+            align-items: center;
+            flex-direction: column;
+            padding: 0 1rem 1rem 1rem;
+        }
+        @keyframes showModal{
+            from{
+                margin-top: -100%;
+            }
+            to{
+                margin-top: 3rem;
+            }
+        }
+        .modal h2{
+            text-align: center;
+            columns: var(--second-color);
+        }
+         .pay_box{
+            display: flex;
+           flex-direction: column;
+            width: 100%;
+            height: 55vh;
+            margin-top: 2rem;
+        }
+        .payment_card{
+            width: 100%;
+            height: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+       
+        .visa_icon{
+            margin: 1rem;
+            background-color: #dddddd;
+            padding: .2rem;
+            height: 3.8rem;
+            border-radius: .5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 5.5rem;
+            cursor: pointer;
+        }
+        input{
+            cursor:pointer;
+        }
+        .visa_icon img{
+            width: 60px;
+        }
+        .visa{
+            height: 100vh;
+            width: 100%;
+            /* margin-top: .6rem;
+            display: flex;
+            align-items: center;
+            flex-direction: column; */
+            padding: 1rem;
+        }
+        .person_info{
+            width: 100%;
+            display: grid;
+            padding: .5rem;
+            gap: .5rem;
+            grid-template-columns: repeat(2, 1fr);
+        }
+         .visa .year{
+            width: 100%;
+            display: grid;
+            padding: .5rem;
+            gap: .5rem;
+            grid-template-columns: repeat(2, 1fr);
+        }
+        .person_info input{
+            width: 95%;
+            padding: .8rem;
+            margin: .5rem;
+            border-radius: .3rem;
+            border: 1px solid grey;
+        }
+        .visa .year input{
+            width: 100%;
+            padding: .8rem;
+            margin: .5rem;
+            border-radius: .3rem;
+            border: 1px solid grey;
+        }
+        .visa_card{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: .8rem;
+            border: 1px solid grey;
+            height: 3.6rem;
+            width: 96%;
+            margin: auto;
+            border-radius: .3rem;
+        }
+        .visa h2{
+            color: var(--main-color);
+            margin: .5rem;
+            font-size: 1rem;
+            margin-left: 1.3rem;
+            margin-top: 1.5rem;
+        }
+        .year{
+            display: flex;
+            flex-direction: row;
+            /* background-color: #b15151; */
+            
+        }
+       
+       .confirm_delivery{
+        width: 100%;
+        /* background-color: #8d0808; */
+        margin-top: 1rem;
+       }
+       .pickup{
+        width: 97%;
+        margin: .5rem;
+        margin-top: 1.5rem;
+        background-color: #ffffff;
+        border: 1px solid rgb(216, 216, 216);
+        border: 1px solid;
+        padding: .5rem;
+        border-radius: .5rem;
+       }
+       .pickup button{
+        width: 100%;
+        background-color: var(--second-color);
+        font-size: 1rem;
+        color: #fff;
+        padding: .5rem;
+        border-radius: .5rem;
+       }
+       .pickup p{
+        font-size: .8rem;
+        margin-top: .5rem;
+        width: 100%;
+       }
+       .pickup label{
+        font-size: .8rem;
+
+       }
+       .card_button{
+        margin-bottom: 1rem;
+        padding: .8rem;
+        background-color:var(--main-color);
+        width: 100%;
+        border-radius: .3rem;
+        margin-top: .5rem;
+        font-size: 1rem;
+        color: #fff;
+        cursor: pointer;
+}
        
 }
 
@@ -2156,6 +2360,179 @@ body{
                 width: 100%;
                 height: 1rem;
             }
+            /* MODAL */
+            .shadow, .shadowy{
+                width: 100%;
+                height: 100vh;
+                position: fixed;
+                left: 0;
+                background-color: #07070796;
+                backdrop-filter: blur(.3rem);
+                display:flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+                z-index: 99;
+                display: none;
+            }
+            .shadowy{
+                z-index: 100;
+            }
+            .confirm_delivery_button{
+                width: 100%;
+                border-radius: .3rem;
+                padding: .8rem;
+                background-color: var(--main-color);
+                color: #fff;
+                font-size: 1rem;
+                margin-top: 2rem ;
+                padding: .5rem;
+                cursor: pointer;
+            }
+            .close_modal{
+                width: 100%;
+                background-color: var(--main-color);
+                display:flex;
+                padding: .3rem;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+                cursor: pointer;border-radius: .3rem;
+            }
+            .modal, .modaly{
+                width: 70%;
+                height: 90vh;
+                border-radius: .5rem;
+                background-color: #fff;
+                border-radius: .5rem;
+                margin: auto;
+                margin-top: -100%;
+                overflow: auto;
+                animation: showModal 1.5s ease-in-out 0.3s 1 forwards;
+                display:flex;
+                align-items: center;
+                flex-direction: column;
+                padding: 0 1rem 1rem 1rem;
+            }
+            @keyframes showModal{
+                from{
+                    margin-top: -100%;
+                }
+                to{
+                    margin-top: 3rem;
+                }
+            }
+            .modal h2{
+                text-align: center;
+                columns: var(--second-color);
+            }
+             .pay_box{
+                display: flex;
+               flex-direction: column;
+                width: 100%;
+                height: 55vh;
+                margin-top: 2rem;
+            }
+            .payment_card{
+                width: 100%;
+                height: 5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .visa_icon{
+                margin: 1rem;
+                background-color: #dddddd;
+                padding: .2rem;
+                height: 4.5rem;
+                border-radius: .5rem;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 5.5rem;
+                cursor: pointer;
+            }
+            input{
+                cursor:pointer;
+            }
+            .visa{
+                /* background-color: #9b4a4a; */
+                height: 100vh;
+                width: 100%;
+                /* margin-top: .6rem;
+                display: flex;
+                align-items: center;
+                flex-direction: column; */
+                padding: 1rem;
+            }
+            .person_info, .year{
+                /* background-color: #b15151; */
+                width: 100%;
+                display: grid;
+                padding: .5rem;
+                gap: .5rem;
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .person_info input,  .year input{
+                width: 95%;
+                padding: .8rem;
+                margin: .5rem;
+                border-radius: .3rem;
+                border: 1px solid grey;
+            }
+            .visa_card{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: .8rem;
+                border: 1px solid grey;
+                height: 3.6rem;
+                width: 96%;
+                margin: auto;
+                border-radius: .3rem;
+            }
+            .visa h2{
+                color: var(--main-color);
+                margin: .5rem;
+                font-size: 1rem;
+                margin-left: 1.3rem;
+                margin-top: 1.5rem;
+            }
+            .year{
+                display: flex;
+                flex-direction: row;
+                /* background-color: #b15151; */
+                
+            }
+           
+           .confirm_delivery{
+            width: 100%;
+            /* background-color: #8d0808; */
+            margin-top: 1rem;
+           }
+           .pickup{
+            width: 97%;
+            margin: .5rem;
+            margin-top: 1.5rem;
+            background-color: #ffffff;
+            border: 1px solid;
+            padding: .55rem;
+           }
+           #pickup_station{
+            width: 100%;
+            /* background-color: yellow; */
+           }
+           .card_button{
+                margin-bottom: 1rem;
+                padding: .8rem;
+                background-color:var(--main-color);
+                width: 100%;
+                border-radius: .3rem;
+                margin-top: .5rem;
+                font-size: 1rem;
+                color: #fff;
+                cursor: pointer;
+        }
 }
 
 
@@ -3263,7 +3640,6 @@ body{
            margin-left: .7;
 
         }
-
         .pay{
            margin: .4rem;
            display: flex;
@@ -3284,14 +3660,15 @@ body{
         #product_amount{
             width: 100%;
             height: 1rem;
-        }se{
+        }
+        /* se{
             border-radius: .5rem;
             padding: 1rem;
             background-color: var(--main-color);
             color: #fff;
             font-size: 1rem;
             width:100%;
-        }
+        } */
         .shadow, .shadowy{
             width: 100%;
             height: 100vh;
@@ -3435,17 +3812,7 @@ body{
             /* background-color: #b15151; */
             
         }
-        .card_button{
-            margin-bottom: 1rem;
-            padding: .8rem;
-            background-color:var(--main-color);
-            width: 100%;
-            border-radius: .3rem;
-            margin-top: .5rem;
-            font-size: 1rem;
-            color: #fff;
-            cursor: pointer;
-        }
+       
        .confirm_delivery{
         width: 100%;
         /* background-color: #8d0808; */
@@ -3463,7 +3830,17 @@ body{
         width: 100%;
         /* background-color: yellow; */
        }
-
+       .card_button{
+            margin-bottom: 1rem;
+            padding: .8rem;
+            background-color:var(--main-color);
+            width: 100%;
+            border-radius: .3rem;
+            margin-top: .5rem;
+            font-size: 1rem;
+            color: #fff;
+            cursor: pointer;
+    }
 
        
         

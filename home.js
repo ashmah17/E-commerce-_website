@@ -425,3 +425,33 @@ updateFavoriteIcon();
 renderFavoriteItems();
 });
 
+// CHANGE PAYMENT CARDS
+
+function changeMasterCard(){
+    const master = document.getElementById("master_card");
+    const visa = document.getElementById("visa_card");
+    const paypal = document.getElementById("paypal_card");
+    
+    master.style.display ="block";
+    visa.style.display ="none";
+    paypal.style.display ="none";
+}
+function changeVisaCard(){
+    const master = document.getElementById("master_card");
+    const visa = document.getElementById("visa_card");
+    const paypal = document.getElementById("paypal_card");
+    
+    master.style.display ="none";
+    visa.style.display ="block";
+    paypal.style.display ="none";
+}
+function changePaypalCard(){
+    const master = document.getElementById("master_card");
+    const visa = document.getElementById("visa_card");
+    const paypal = document.getElementById("paypal_card");
+    
+    master.style.display ="none";
+    visa.style.display ="none";
+    paypal.style.display ="block";
+}
+

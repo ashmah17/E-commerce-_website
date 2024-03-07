@@ -3562,6 +3562,94 @@
            
     </div>
 
+    <div class="shadowy" id="upperShadow">
+           
+        <div class="modaly" id="paymentModal">
+            <div class="close_modal" onclick="closePayment()">
+                <img src="./icons/close-svgrepo-com.svg"  style="width:20px;">
+            </div>
+            <div class="pay_box">
+                
+                <div class="payment_card"> 
+                    <div class="visa_icon">
+                        <img src="./icons/mastercard-full-svgrepo-com.svg" onclick="changeMasterCard()">
+                    </div>
+                    <div class="visa_icon">
+                        <img src="./icons/visa-classic-svgrepo-com.svg"  onclick="changeVisaCard()">
+                    </div>
+                    <div class="visa_icon">
+                        <img src="./icons/paypal-svgrepo-com.svg"  onclick="changePaypalCard()">
+                    </div>
+                </div>
+                <div class="visa">
+                    <div class="person_info">
+                        <fieldset class="fname">
+                            <input type="text" placeholder="First Name">
+                        </fieldset>
+                        <fieldset class="fname">
+                            <input type="text" placeholder="Last Name">
+                        </fieldset>
+                        <fieldset class="fname">
+                            <input type="text" placeholder="Email">
+                        </fieldset>
+                        <fieldset class="fname">
+                            <input type="text" placeholder="Phone Number">
+                        </fieldset>
+                    </div>
+                    <fieldset class="card_type">
+                       <div class="visa_card">
+                        <h4>Credit Card</h4>
+                        <img src="./icons/mastercard-full-svgrepo-com.svg"style="width:60px;" id="master_card">
+                        <img src="./icons/visa-classic-svgrepo-com.svg"style="width:60px; display:none;" id="visa_card">
+                        <img src="./icons/paypal-svgrepo-com.svg"style="width:60px; display:none;" id="paypal_card">
+                       </div>
+                    </fieldset>
+                    <h2>Card Details</h2>
+
+                    <fieldset class="year">
+                        <input type="date" placeholder="Expiry Date">
+                        <input type="date" placeholder="CVV">
+                    </fieldset>
+                    <button class="card_button">Pay with Visa</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="shadow" id="downShadow">
+        <div class="modal" id="modal">
+            <div class="close_modal" onclick="closeModal()">
+                <img src="./icons/close-svgrepo-com.svg"  style="width:20px;">
+            </div>
+
+            <div class="confirm_delivery">
+                <h2>Select Delivery Method</h2>
+                <div class="pickup">
+                    <button type="radio">Pickup Station</button>
+                    <P>FREE</P> <br>
+                    <p>Delivery Between --- and ----</p>
+                </div>
+                <div class="pickup">
+                    <label>Select Pickup Station</label>
+                    <select id="pickup_station">
+                        <option value=""></option>
+                        <option>NATO</option>
+                        <option>KTSTA</option>
+                    </select>
+                </div>
+                <div class="pickup">
+                    <button type="radio">Doo Delivery</button>
+                    <P>FREE</P> <br>
+                    <p>Delivery Between --- and ----</p>
+                    
+                </div>
+                <button class="confirm_delivery_button" onclick="showPayment()">Confirm Delivery</button>
+            </div>
+        </div>
+       </div>
+
+
         <footer id="footer">
             <div class="web-name"><h2>ShopEase</h2></div>
                 <div class="web-info">
@@ -3591,16 +3679,42 @@
 </div>
 
 <script>
-        
+
+const shadow= document.getElementById("downShadow");
+const modal = document.getElementById("modal");
+const paymentShadow = document.getElementById("upperShadow");
+const paymentModal = document.getElementById("paymentModal");
+
+function showModal(){
+    shadow.style.display = "block";
+    modal.style.display = "block";
+
+}
+function closeModal(){
+    shadow.style.display = "none";
+    modal.style.display = "none";
+}
+
+
+function showPayment(){
+    shadow.style.display = "none";
+    modal.style.display = "none";
+    paymentShadow.style.display = "block";
+    paymentModal.style.display = "block";
+  }
+
+function closePayment(){
+    paymentModal.style.display = "none";
+    paymentShadow.style.display = "none";
+   
+}
+
 
 </script>
 
 
-
 <script src="./home.js"></script>
-<script src="../cart.js"></script>
-<script src="./products/modal.js"></script>
-<!-- <script src="./star_rating.js"></script> -->
+<script src="./cart.js"></script>
 
 </body>
 </html>
