@@ -59,7 +59,7 @@ function hideSearch(){
    
 
     if(hide_search.style.display = "none"){
-        search_icon.style.display ="block";
+        search_icon.style.display ="inline";
  
     }
 }
@@ -307,33 +307,6 @@ document.getElementById('delete_all_button').addEventListener('click', deleteAll
 
 
 // *************STAR RATING*************
-function rate(rating) {
-    const stars = document.querySelectorAll(".star");
-    stars.forEach((star, index) => {
-        if (index < rating) {
-            star.textContent = '★'; // Filled star
-        } else {
-            star.textContent = '☆'; // Empty star
-        }
-    });
-
-    localStorage.setItem('rating', rating);
-}
-
-document.addEventListener('DOMContentLoaded', function(){
-    const savedRating = localStorage.getItem('rating');
-    if (savedRating !== null) {
-        rate(parseInt(savedRating));
-    }
-});
-
-// Add event listeners to handle clicks on stars
-document.querySelectorAll('.star').forEach((star) => {
-    star.addEventListener('click', () => {
-        const rating = parseInt(star.getAttribute('data-rating'));
-        rate(rating);
-    });
-});
 
 
     // favorite

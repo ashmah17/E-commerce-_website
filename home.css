@@ -2679,11 +2679,7 @@ button{
         height: 17px;
     }
    
-    .fa-search{
-        color: var(--second-color);
-        margin:  .5rem;
-        margin-left: .8rem;
-    }
+    
     #fa-angle-left{
         color: var(--second-color);
         margin:  .5rem;
@@ -2691,11 +2687,7 @@ button{
         cursor: pointer;
         display: none;
     }
-    .fa-angle-left{
-        color: var(--second-color);
-        margin:  .5rem;
-        cursor: pointer;
-    }
+     
     .cart{
         display: flex;
          align-items: center; 
@@ -2768,7 +2760,6 @@ button{
         flex-direction: row;
         width: 30%;
         margin:1rem;
-        border:  1px solid var(--tertiary-color);
     }
     .search_input{
         padding: .5rem;
@@ -2776,7 +2767,8 @@ button{
         font-size: .9rem;
         width: 78%;
         border-radius: .8rem;
-
+        border:  1px solid var(--tertiary-color);
+        margin-left:.5rem;
     }
     .search_input::placeholder{
         font-size: .9rem;
