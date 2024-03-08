@@ -7,6 +7,15 @@
     <link rel="stylesheet" href="./fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="./home.css">
 </head>
+<style>
+    .product_container{
+        visibility: hidden;
+        z-index: 70;
+    }
+    .sample_details{
+        display: none;
+    }
+</style>
 <body>
     <div class="sidebar" id="sidebarr">
         <div class="close_btn">
@@ -19,7 +28,7 @@
           <ul class="menu">
 
          <li class="list">
-             <a href="#">
+             <a href="home.html">
                  <i class="side_bar_home_icon">
                     <img src="./icons/home-svgrepo-com (1).svg" alt="">
                  </i>
@@ -37,29 +46,29 @@
          </li>
 
          <li class="list">
-             <a href="./men_clothes.html">
+             <a href="./fashion 2.html">
                  <i class="side_bar_cap_icon">
                     <img src="./icons/apparel-cap-clothing-svgrepo-com (1).svg" alt="">
                  </i>
-                 <span>Men Clothes</span>
+                 <span>Fashion</span>
              </a>
          </li>
 
          <li class="list">
-             <a href="./perfumes.html">
+             <a href="./beauty.html">
                  <i class="side_bar_icon">
                     <img src="./icons/perfume-svgrepo-com.svg" alt="">
                  </i>
-                 <span>Perfumes</span>
+                 <span>Beauty Products</span>
              </a>
          </li>
 
          <li class="list">
-             <a href="./electronics.html">
+             <a href="./spices.html">
                  <i class="side_bar_icon">
                     <img src="./icons/kitchen-cooker-utensils-svgrepo-com.svg" alt="">
                  </i>
-                 <span>kitchen Items</span>
+                 <span>Spices</span>
              </a>
          </li>
 
@@ -75,6 +84,9 @@
             </a>
          </li>
 
+      
+        
+
          </ul>
     </div>
 
@@ -85,32 +97,38 @@
         <div class="header-wrapper">
 
             <div class="icon_box" >
-               <span id="side_bar_icon" onclick='toggleSidebar()'>&#9776;</span>
+               <span id="icon_btn" onclick='toggleSidebar()'>&#9776;</span>
             </div>
 
              <div class="header-tittle">
-                 <h2>ShopEase</h2>
+                <img src="./icons/shopease11.png" alt="">
              </div>
+
+           <fieldset class="cart">
             
-             <fieldset class="search-box">
-                <i class="fas fa-search" id="fa-search"></i>
-                <i class="side_bar_search_icon" id="fa-angle-left" onclick="hideSearch()">
-                <img src="./icons/angle-left-svgrepo-com.svg" alt=""></i>
-               <input type="text" class="search_input" id="search_input" onkeyup="search()" placeholder="Search Items ">
-             </fieldset>
-             
-             <fieldset class="cart">
-                <div class="add_to_chart" id="add_to_chart">
-                    <i class="shopping_bag" id="shopping_cart">
-                        <img src="./icons/cart-large-2-svgrepo-com (1).svg" width="43px" onclick="toggleCart()">
-                    </i>    
-                    <span>0</span>
-                 </div>
-    
-                 <div class="user">
-                        <img src="./icons/user-heart-svgrepo-com.svg" width="35px">
-                 </div>
-            </fieldset>
+            <div class="add_to_chart" id="add_to_chart">
+                <i id="shopping_cart" onclick="toggleCart()" >
+                    <img src="./icons/cart-large-2-svgrepo-com (1).svg">
+                </i>    
+                <span>0</span>
+
+             </div>
+
+             <div class="favorite" id="favorite">
+                <i id="favorite_cart" onclick="toggleFavorite()" >
+                   <img src="./icons/favorite-filled-svgrepo-com.svg">
+                </i>    
+                <span>0</span>
+            </div>
+
+             <div class="user">
+              <a href="">
+                <img src="./icons/user-heart-svgrepo-com.svg"  onclick="addFavorite()">
+
+              </a>
+             </div>
+           </fieldset>
+
         </div>
 
         <div class="search-result" id="search-result">
@@ -1791,762 +1809,605 @@
             </div>
 
         </div>
+
         <div class="container" id="container">
-            <a href="./products/product_1.html">
-                <div class="cards" id="cards">
-        
-                    <div class="image">
-                        <img src="./images/cauliflower.JPG" width="100px" height="100px" alt="">
-                    </div>
+            <div class="cards" id="cards">
     
-                    <div class="price">
-                        <h2>&#8358;231,913</h2>
-                        <h5><s>&#8358;463,826</s></h5>
+                <a href="./products/product_1.html">
+                    <div class="image">
+                        <img src="./images/boohoo hills.JPG" width="100px" height="100px" alt="">
                     </div>
-        
-                    <h4 id="product_name">Cauliflower</h4>
-                
-                    <div class="stars">
-                        <span class="fa fa-star checked"></span>
-                         <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </div>
-                
+                </a>
+
+                <div class="price">
+                    <h2>NGN 31,913</h2>
+                    <h5><s>NGN 33,826</s></h5>
                 </div>
-            </a> 
-                  
-            <a href="">
-                <div class="cards" id="cards">
-        
-                    <div class="image">
-                        <img src="./images/2-in Airfyer oven.JPG" width="100px" height="100px" alt="">
-                    </div>
     
-                    <div class="price">
-                        <h2>&#8358;231,913</h2>
-                        <h5><s>&#8358;463,826</s></h5>
-                    </div>
-        
-                    <h4 id="product_name">2-1 Airfyer</h4>
-                   
-                    <div class="stars">
-                        <span class="fa fa-star checked"></span>
-                         <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </div>
+                <h4 id="product_name">Booho Hills</h4>
                 
+                <div class="stars" id="stars">
+                    <span class="star" onclick="rate(1)">☆</span>
+                    <span class="star" onclick="rate(2)">☆</span>
+                    <span class="star" onclick="rate(3)">☆</span>
+                    <span class="star" onclick="rate(4)">☆</span>
+                    <span class="star" onclick="rate(5)">☆</span>
+                    
                 </div>
-               </a>
-        
-               <a href="./products/product_2.html">
+            
+                </div>
+
                 <div class="cards" id="cards">
-        
-                    <div class="image">
-                        <img src="./images/apple watch.JPG" width="100px" height="100px" alt="">
-                    </div>
-    
+                    
+                    <a href="./products/product_2.html">
+                        <div class="image">
+                            <img src="./images/apple watch.JPG" width="100px" height="100px" alt="">
+                        </div>
+                    </a>
                     <div class="price">
-                        <h2>&#8358;231,913</h2>
-                        <h5><s>&#8358;463,826</s></h5>
+                        <h2>NGN 71,913</h2>
+                        <h5><s>NGN 463,826</s></h5>
                     </div>
         
                     <h4 id="product_name">Apple Watch</h4>
         
-                    <div class="stars">
-                        <span class="fa fa-star checked"></span>
-                         <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </div>
+                      
+                <div class="stars" id="stars">
+                    <span class="star" onclick="rate(1)">☆</span>
+                    <span class="star" onclick="rate(2)">☆</span>
+                    <span class="star" onclick="rate(3)">☆</span>
+                    <span class="star" onclick="rate(4)">☆</span>
+                    <span class="star" onclick="rate(5)">☆</span>
+                    
+                </div>
                 
                 </div>
-               </a>
-        
-               <a href="./products/product_3.html">
-                <div class="cards" id="cards">
-        
-                    <div class="image">
-                        <img src="./images/aquazzura hills.JPG" width="100px" height="100px" alt="">
-                    </div>
-    
+
+            <div class="cards" id="cards">
+                    
+                    <a href="./products/product_3.html">
+                        <div class="image">
+                            <img src="./images/toi  et moi boy set.JPG" width="100px" height="100px" alt="">
+                        </div>
+                    </a>
                     <div class="price">
-                        <h2>&#8358;231,913</h2>
-                        <h5><s>&#8358;463,826</s></h5>
+                        <h2>NGN 25,913</h2>
+                        <h5><s>NGN 27,826</s></h5>
                     </div>
         
-                    <h4 id="product_name">Aquazzura Hills</h4>
-                   
-                    <div class="stars">
-                        <span class="fa fa-star checked"></span>
-                         <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
+                    <h4 id="product_name">Toi et moi Baby Set</h4>
+        
+                      
+                <div class="stars" id="stars">
+                    <span class="star" onclick="rate(1)">☆</span>
+                    <span class="star" onclick="rate(2)">☆</span>
+                    <span class="star" onclick="rate(3)">☆</span>
+                    <span class="star" onclick="rate(4)">☆</span>
+                    <span class="star" onclick="rate(5)">☆</span>
+                    
+                </div>
+                
+             </div>
+             
+            <div class="cards" id="cards">
+                    
+                    <a href="./products/product_4.html">
+                        <div class="image">
+                            <img src="./images/sandy brown kaftan.JPG" width="100px" height="100px" alt="">
+                        </div>
+                    </a>
+                    <div class="price">
+                        <h2>NGN 31,913</h2>
+                        <h5><s>NGN 33,826</s></h5>
                     </div>
+        
+                    <h4 id="product_name">Beige Kaftan</h4>
+                  
+                      
+                <div class="stars" id="stars">
+                    <span class="star" onclick="rate(1)">☆</span>
+                    <span class="star" onclick="rate(2)">☆</span>
+                    <span class="star" onclick="rate(3)">☆</span>
+                    <span class="star" onclick="rate(4)">☆</span>
+                    <span class="star" onclick="rate(5)">☆</span>
+                    
+                </div>
                 
                 </div>
-               </a>
-        
-               <a href="./products/product_4.html">
+                
                 <div class="cards" id="cards">
-        
-                    <div class="image">
-                        <img src="./images/armless_chair.jpg" width="100px" height="100px" alt="">
-                    </div>
-    
+                    
+                    <a href="./products/product_5.html">
+                        <div class="image">
+                            <img src="./images/ash baby snicker.JPG" width="100px" height="100px" alt="">
+                        </div>
+                    </a>
                     <div class="price">
-                        <h2>&#8358;231,913</h2>
-                        <h5><s>&#8358;463,826</s></h5>
+                        <h2>NGN 31,913</h2>
+                        <h5><s>NGN 33,826</s></h5>
                     </div>
         
                     <h4 id="product_name">Armless Tub</h4>
                   
-                    <div class="stars">
-                        <span class="fa fa-star checked"></span>
-                         <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </div>
-                
-                </div>
-               </a>
-        
-               <a href="./products/product_5.html">
-                <div class="cards" id="cards">
-        
-                    <div class="image">
-                        <img src="./images/army green kaftan.JPG" width="100px" height="100px" alt="">
-                    </div>
-    
-                    <div class="price">
-                        <h2>&#8358;231,913</h2>
-                        <h5><s>&#8358;463,826</s></h5>
-                    </div>
-        
-                    <h4 id="product_name">Army Green Kaftan</h4>
-                
-                    <div class="stars">
-                        <span class="fa fa-star checked"></span>
-                         <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </div>
-                
-                </div>
-               </a>
-        
-               <a href="">
-                <div class="cards" id="cards">
-        
-                    <div class="image">
-                        <img src="./images/avocado body cream.JPG" width="100px" height="100px" alt="">
-                    </div>
-    
-                    <div class="price">
-                        <h2>&#8358;31,913</h2>
-                        <h5><s>&#8358;43,826</s></h5>
-                    </div>
-        
-                    <h4 id="product_name">Avocado Body Cream</h4>
-                   
+                      
+                <div class="stars" id="stars">
+                    <span class="star" onclick="rate(1)">☆</span>
+                    <span class="star" onclick="rate(2)">☆</span>
+                    <span class="star" onclick="rate(3)">☆</span>
+                    <span class="star" onclick="rate(4)">☆</span>
+                    <span class="star" onclick="rate(5)">☆</span>
                     
-                    <div class="stars">
-                        <span class="fa fa-star checked"></span>
-                         <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </div>
-                
                 </div>
-               </a>
-        
-               <a href="">
-                <div class="cards" id="cards">
-        
-                    <div class="image">
-                        <img src="./images/banana.JPG" width="100px" height="100px" alt="">
-                    </div>
-    
-                    <div class="price">
-                        <h2>&#8358;5,913</h2>
-                        <h5><s>&#8358;6,826</s></h5>
-                    </div>
-        
-                    <h4 id="product_name">Banana</h4>
-                   
-                    <div class="stars">
-                        <span class="fa fa-star checked"></span>
-                         <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </div>
-                
                 </div>
-               </a>
-        
-               <a href="">
+              
                 <div class="cards" id="cards">
-        
-                    <div class="image">
-                        <img src="./images/beedteak tomatoe.JPG" width="100px" height="100px" alt="">
-                    </div>
-    
-                    <div class="price">
-                        <h2>&#8358;23,913</h2>
-                        <h5><s>&#8358;25,826</s></h5>
-                    </div>
-        
-                    <h4 id="product_name">Beedsteak Tomato</h4>
-                   
-                    <div class="stars">
-                        <span class="fa fa-star checked"></span>
-                         <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </div>
-                
-                </div>
-               </a>
-        
-               <a href="">
-                <div class="cards" id="cards">
-        
-                    <div class="image">
-                        <img src="./images/ash baby snicker.JPG" width="100px" height="100px" alt="">
-                    </div>
-    
-                    <div class="price">
-                        <h2>&#8358;31,913</h2>
-                        <h5><s>&#8358;40,826</s></h5>
-                    </div>
-        
-                    <h4 id="product_name">baby snicker</h4>
                     
+                    <a href="./products/product_6.html">
+                        <div class="image">
+                            <img src="./images/black AFI snicker.JPG" width="100px" height="100px" alt="">
+                        </div>
+                    </a>
+                    <div class="price">
+                        <h2>NGN 41,913</h2>
+                        <h5><s>NGN 43,826</s></h5>
+                    </div>
+        
+                    <h4 id="product_name">Black AFI Snickers</h4>
+                  
+                      
+                <div class="stars" id="stars">
+                    <span class="star" onclick="rate(1)">☆</span>
+                    <span class="star" onclick="rate(2)">☆</span>
+                    <span class="star" onclick="rate(3)">☆</span>
+                    <span class="star" onclick="rate(4)">☆</span>
+                    <span class="star" onclick="rate(5)">☆</span>
                     
-                    <div class="stars">
-                        <span class="fa fa-star checked"></span>
-                         <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </div>
-                
                 </div>
-               </a>
-        
-               <a href="">
-                <div class="cards" id="cards">
-        
-                    <div class="image">
-                        <img src="./images/black AFI snicker.JPG" width="100px" height="100px" alt="">
-                    </div>
-    
-                    <div class="price">
-                        <h2>&#8358;71,913</h2>
-                        <h5><s>&#8358;73,826</s></h5>
-                    </div>
-        
-                    <h4 id="product_name">Black AFI Snicker</h4>
-                
-                    <div class="stars">
-                        <span class="fa fa-star checked"></span>
-                         <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </div>
-                
                 </div>
-               </a>
-               <a href="">
+                
                 <div class="cards" id="cards">
-        
-                    <div class="image">
-                        <img src="./images/blue baby gown.JPG" width="100px" height="100px" alt="">
-                    </div>
-    
+                    
+                    <a href="./products/product_7.html">
+                        <div class="image">
+                            <img src="./images/blue baby gown.JPG" width="100px" height="100px" alt="">
+                        </div>
+                    </a>
                     <div class="price">
-                        <h2>&#8358;231,913</h2>
-                        <h5><s>&#8358;463,826</s></h5>
-                    </div>
-        
-                    <h4 id="product_name">Baby Bag</h4>
-                
-                    <div class="stars">
-                        <span class="fa fa-star checked"></span>
-                         <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </div>
-                
-                </div>
-               </a>
-               <a href="">
-                <div class="cards" id="cards">
-        
-                    <div class="image">
-                        <img src="./images/board clip.JPG" width="100px" height="100px" alt="">
-                    </div>
-    
-                    <div class="price">
-                        <h2>&#8358;1,913</h2>
-                        <h5><s>&#8358;2,826</s></h5>
-                    </div>
-        
-                    <h4 id="product_name">Clip Board</h4>
-                
-                    <div class="stars">
-                        <span class="fa fa-star checked"></span>
-                         <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </div>
-                
-                </div>
-               </a>
-               <a href="">
-                <div class="cards" id="cards">
-        
-                    <div class="image">
-                        <img src="./images/bolb_chandelier.jpg" width="100px" height="100px" alt="">
-                    </div>
-    
-                    <div class="price">
-                        <h2>&#8358;231,913</h2>
-                        <h5><s>&#8358;463,826</s></h5>
-                    </div>
-        
-                    <h4 id="product_name">Chandelier</h4>
-                
-                    <div class="stars">
-                        <span class="fa fa-star checked"></span>
-                         <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </div>
-                
-                </div>
-               </a>
-               <a href="">
-                <div class="cards" id="cards">
-        
-                    <div class="image">
-                        <img src="./images/brastemp refrigerator.JPG" width="100px" height="100px" alt="">
-                    </div>
-    
-                    <div class="price">
-                        <h2>&#8358;431,913</h2>
-                        <h5><s>&#8358;463,826</s></h5>
-                    </div>
-        
-                    <h4 id="product_name">Brastemp Refrigerator</h4>
-                
-                    <div class="stars">
-                        <span class="fa fa-star checked"></span>
-                         <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </div>
-                
-                </div>
-               </a>
-               <a href="">
-                <div class="cards" id="cards">
-        
-                    <div class="image">
-                        <img src="./images/brown sweater boy set.JPG" width="100px" height="100px" alt="">
-                    </div>
-    
-                    <div class="price">
-                        <h2>&#8358;231,913</h2>
-                        <h5><s>&#8358;463,826</s></h5>
-                    </div>
-        
-                    <h4 id="product_name">Brown Boy Sweater</h4>
-                
-                    <div class="stars">
-                        <span class="fa fa-star checked"></span>
-                         <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </div>
-                
-                </div>
-               </a>
-            
-    
-               <a href="product_18.html">
-                <div class="cards" id="cards">
-        
-                    <div class="image">
-                        <img src="./images/bakarat perfume.JPG" width="100px" height="100px" alt="">
-                    </div>
-    
-                    <div class="price">
-                        <h2>&#8358;31,913</h2>
-                        <h5><s>&#8358;32,826</s></h5>
-                    </div>
-        
-                    <h4 id="product_name">Bakarat Perfume</h4>
-                
-                    <div class="stars">
-                        <span class="fa fa-star checked"></span>
-                         <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </div>
-                
-                </div>
-               </a>
-    
-               <a href="product_19.html">
-                <div class="cards" id="cards">
-        
-                    <div class="image">
-                        <img src="./images/cinnamon.JPG" width="100px" height="100px" alt="">
-                    </div>
-    
-                    <div class="price">
-                        <h2>&#8358;1,913</h2>
-                        <h5><s>&#8358;4,826</s></h5>
-                    </div>
-        
-                    <h4 id="product_name">Cinnamon</h4>
-                
-                    <div class="stars">
-                        <span class="fa fa-star checked"></span>
-                         <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </div>
-                
-                </div>
-               </a>
-    
-               <a href="product_20.html">
-                <div class="cards" id="cards">
-        
-                    <div class="image">
-                        <img src="./images/coconut.JPG" width="100px" height="100px" alt="">
-                    </div>
-    
-                    <div class="price">
-                        <h2>&#8358;231,913</h2>
-                        <h5><s>&#8358;463,826</s></h5>
-                    </div>
-        
-                    <h4 id="product_name">Brown Coconut</h4>
-                
-                    <div class="stars">
-                        <span class="fa fa-star checked"></span>
-                         <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </div>
-                
-                </div>
-               </a>
-    
-               <a href="product_21.html">
-                <div class="cards" id="cards">
-        
-                    <div class="image">
-                        <img src="./images/clove.JPG" width="100px" height="100px" alt="">
-                    </div>
-    
-                    <div class="price">
-                        <h2>&#8358;231,913</h2>
-                        <h5><s>&#8358;463,826</s></h5>
-                    </div>
-        
-                    <h4 id="product_name">Whole Clove</h4>
-                
-                    <div class="stars">
-                        <span class="fa fa-star checked"></span>
-                         <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </div>
-                
-                </div>
-               </a>
-    
-               <a href="product_22.html">
-                <div class="cards" id="cards">
-        
-                    <div class="image">
-                        <img src="./images/correction fluid.JPG" width="100px" height="100px" alt="">
-                    </div>
-    
-                    <div class="price">
-                        <h2>&#8358;913</h2>
-                        <h5><s>&#8358;1,826</s></h5>
-                    </div>
-        
-                    <h4 id="product_name">Correction Fluid</h4>
-                
-                    <div class="stars">
-                        <span class="fa fa-star checked"></span>
-                         <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </div>
-                
-                </div>
-               </a>
-    
-               <a href="product_23.html">
-                <div class="cards" id="cards">
-        
-                    <div class="image">
-                        <img src="./images/cucumber.JPG" width="100px" height="100px" alt="">
-                    </div>
-    
-                    <div class="price">
-                        <h2>&#8358;5,913</h2>
-                        <h5><s>&#8358;6,826</s></h5>
-                    </div>
-        
-                    <h4 id="product_name">Kirby Cucumber</h4>
-                
-                    <div class="stars">
-                        <span class="fa fa-star checked"></span>
-                         <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </div>
-                
-                </div>
-               </a>
-               <a href="product_24.html">
-                <div class="cards" id="cards">
-        
-                    <div class="image">
-                        <img src="./images/black seed.JPG" width="100px" height="100px" alt="">
-                    </div>
-    
-                    <div class="price">
-                        <h2>&#8358;231,913</h2>
-                        <h5><s>&#8358;463,826</s></h5>
-                    </div>
-        
-                    <h4 id="product_name">Black Seed</h4>
-                
-                    <div class="stars">
-                        <span class="fa fa-star checked"></span>
-                         <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </div>
-                
-                </div>
-               </a>
-               <a href="product_24.html">
-                <div class="cards" id="cards">
-        
-                    <div class="image">
-                        <img src="./images/cumin.JPG" width="100px" height="100px" alt="">
-                    </div>
-    
-                    <div class="price">
-                        <h2>&#8358;231,913</h2>
-                        <h5><s>&#8358;463,826</s></h5>
-                    </div>
-        
-                    <h4 id="product_name">White Cumin</h4>
-                
-                    <div class="stars">
-                        <span class="fa fa-star checked"></span>
-                         <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </div>
-                
-                </div>
-               </a>
-               <a href="product_26.html">
-                <div class="cards" id="cards">
-        
-                    <div class="image">
-                        <img src="./images/dell laptop.jpeg" width="100px" height="100px" alt="">
-                    </div>
-    
-                    <div class="price">
-                        <h2>&#8358;331,913</h2>
-                        <h5><s>&#8358;463,826</s></h5>
-                    </div>
-        
-                    <h4 id="product_name">Dell Laptop</h4>
-                
-                    <div class="stars">
-                        <span class="fa fa-star checked"></span>
-                         <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </div>
-                
-                </div>
-               </a>
-               <a href="product_27.html">
-                <div class="cards" id="cards">
-        
-                    <div class="image">
-                        <img src="./images/blue baby gown.JPG" width="100px" height="100px" alt="">
-                    </div>
-    
-                    <div class="price">
-                        <h2>&#8358;231,913</h2>
-                        <h5><s>&#8358;463,826</s></h5>
+                        <h2>NGN 22,913</h2>
+                        <h5><s>NGN 23,826</s></h5>
                     </div>
         
                     <h4 id="product_name">Blue Baby Gown</h4>
-                
-                    <div class="stars">
-                        <span class="fa fa-star checked"></span>
-                         <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </div>
-                
+                  
+                      
+                <div class="stars" id="stars">
+                    <span class="star" onclick="rate(1)">☆</span>
+                    <span class="star" onclick="rate(2)">☆</span>
+                    <span class="star" onclick="rate(3)">☆</span>
+                    <span class="star" onclick="rate(4)">☆</span>
+                    <span class="star" onclick="rate(5)">☆</span>
+                    
                 </div>
-               </a>
-               
-               <a href="product_28.html">
-                <div class="cards" id="cards">
-        
-                    <div class="image">
-                        <img src="./images/digital camera.jpeg" width="100px" height="100px" alt="">
-                    </div>
-    
-                    <div class="price">
-                        <h2>&#8358;431,913</h2>
-                        <h5><s>&#8358;463,826</s></h5>
-                    </div>
-        
-                    <h4 id="product_name">Canon Camera</h4>
-                
-                    <div class="stars">
-                        <span class="fa fa-star checked"></span>
-                         <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </div>
-                
                 </div>
-               </a>
-               <a href="product_2.html">
-                <div class="cards" id="cards">
-        
-                    <div class="image">
-                        <img src="./images/dry peppe.JPG" width="100px" height="100px" alt="">
-                    </div>
-    
-                    <div class="price">
-                        <h2>&#8358;231,913</h2>
-                        <h5><s>&#8358;463,826</s></h5>
-                    </div>
-        
-                    <h4 id="product_name">Dry Peppe</h4>
-                
-                    <div class="stars">
-                        <span class="fa fa-star checked"></span>
-                         <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                        <span class="fa fa-star checked"></span>
-                    </div>
-                
-                </div>
-               </a>
-             
-          
            
+                <div class="cards" id="cards">
+                    
+                    <a href="./products/product_8.html">
+                        <div class="image">
+                            <img src="./images/army green kaftan.JPG" width="100px" height="100px" alt="">
+                        </div>
+                    </a>
+                    <div class="price">
+                        <h2>NGN 55,913</h2>
+                        <h5><s>NGN 63,826</s></h5>
+                    </div>
+        
+                    <h4 id="product_name">Silk Kaftan</h4>
+                  
+                      
+                <div class="stars" id="stars">
+                    <span class="star" onclick="rate(1)">☆</span>
+                    <span class="star" onclick="rate(2)">☆</span>
+                    <span class="star" onclick="rate(3)">☆</span>
+                    <span class="star" onclick="rate(4)">☆</span>
+                    <span class="star" onclick="rate(5)">☆</span>
+                    
+                </div>
+                </div>
+
+                <div class="cards" id="cards">
+                    
+                    <a href="./products/product_9.html">
+                        <div class="image">
+                            <img src="./images/hermes bag.JPG" width="100px" height="100px" alt="">
+                        </div>
+                    </a>
+                    <div class="price">
+                        <h2>NGN 131,913</h2>
+                        <h5><s>NGN 133,826</s></h5>
+                    </div>
+        
+                    <h4 id="product_name">Hermes Bag</h4>
+                  
+                      
+                <div class="stars" id="stars">
+                    <span class="star" onclick="rate(1)">☆</span>
+                    <span class="star" onclick="rate(2)">☆</span>
+                    <span class="star" onclick="rate(3)">☆</span>
+                    <span class="star" onclick="rate(4)">☆</span>
+                    <span class="star" onclick="rate(5)">☆</span>
+                    
+                </div>
+                </div>
+
+                <div class="cards" id="cards">
+                    
+                    <a href="./products/product_10.html">
+                        <div class="image">
+                            <img src="./images/allpurpose_bag.jpg" width="100px" height="100px" alt="">
+                        </div>
+                    </a>
+                    <div class="price">
+                        <h2>NGN 11,913</h2>
+                        <h5><s>NGN 13,826</s></h5>
+                    </div>
+        
+                    <h4 id="product_name">All Purpose Bag</h4>
+                  
+                      
+                <div class="stars" id="stars">
+                    <span class="star" onclick="rate(1)">☆</span>
+                    <span class="star" onclick="rate(2)">☆</span>
+                    <span class="star" onclick="rate(3)">☆</span>
+                    <span class="star" onclick="rate(4)">☆</span>
+                    <span class="star" onclick="rate(5)">☆</span>
+                    
+                </div>
+                </div>
+
+                <div class="cards" id="cards">
+                    
+                    <a href="./products/product_11.html">
+                        <div class="image">
+                            <img src="./images/beyond space snicker.JPG" width="100px" height="100px" alt="">
+                        </div>
+                    </a>
+                    <div class="price">
+                        <h2>NGN 38,913</h2>
+                        <h5><s>NGN 39,826</s></h5>
+                    </div>
+        
+                    <h4 id="product_name">Beyond Space Snickers</h4>
+                  
+                      
+                <div class="stars" id="stars">
+                    <span class="star" onclick="rate(1)">☆</span>
+                    <span class="star" onclick="rate(2)">☆</span>
+                    <span class="star" onclick="rate(3)">☆</span>
+                    <span class="star" onclick="rate(4)">☆</span>
+                    <span class="star" onclick="rate(5)">☆</span>
+                    
+                </div>
+                </div>
+
+                <div class="cards" id="cards">
+                    
+                    <a href="./products/product_12.html">
+                        <div class="image">
+                            <img src="./images/brown fan gown.JPG" width="100px" height="100px" alt="">
+                        </div>
+                    </a>
+                    <div class="price">
+                        <h2>NGN 31,913</h2>
+                        <h5><s>NGN 33,826</s></h5>
+                    </div>
+        
+                    <h4 id="product_name">Fan Gown</h4>
+                  
+                      
+                <div class="stars" id="stars">
+                    <span class="star" onclick="rate(1)">☆</span>
+                    <span class="star" onclick="rate(2)">☆</span>
+                    <span class="star" onclick="rate(3)">☆</span>
+                    <span class="star" onclick="rate(4)">☆</span>
+                    <span class="star" onclick="rate(5)">☆</span>
+                    
+                </div>
+                </div>
+
+                <div class="cards" id="cards">
+                    
+                    <a href="./products/product_13.html">
+                        <div class="image">
+                            <img src="./images/lace baby gown.JPG" width="100px" height="100px" alt="">
+                        </div>
+                    </a>
+                    <div class="price">
+                        <h2>NGN 30,913</h2>
+                        <h5><s>NGN 33,826</s></h5>
+                    </div>
+        
+                    <h4 id="product_name">Lace Baby Gown</h4>
+                  
+                      
+                <div class="stars" id="stars">
+                    <span class="star" onclick="rate(1)">☆</span>
+                    <span class="star" onclick="rate(2)">☆</span>
+                    <span class="star" onclick="rate(3)">☆</span>
+                    <span class="star" onclick="rate(4)">☆</span>
+                    <span class="star" onclick="rate(5)">☆</span>
+                    
+                </div>
+                </div>
+
+                <div class="cards" id="cards">
+                    
+                    <a href="./products/product_14.html">
+                        <div class="image">
+                            <img src="./images/milk half cover shoe.JPG" width="100px" height="100px" alt="">
+                        </div>
+                    </a>
+                    <div class="price">
+                        <h2>NGN 41,913</h2>
+                        <h5><s>NGN 43,826</s></h5>
+                    </div>
+        
+                    <h4 id="product_name">Half Cover Shoes</h4>
+                  
+                      
+                <div class="stars" id="stars">
+                    <span class="star" onclick="rate(1)">☆</span>
+                    <span class="star" onclick="rate(2)">☆</span>
+                    <span class="star" onclick="rate(3)">☆</span>
+                    <span class="star" onclick="rate(4)">☆</span>
+                    <span class="star" onclick="rate(5)">☆</span>
+                    
+                </div>
+                </div>
+
+                <div class="cards" id="cards">
+                    
+                    <a href="./products/product_15.html">
+                        <div class="image">
+                            <img src="./images/green  boy set.JPG" width="100px" height="100px" alt="">
+                        </div>
+                    </a>
+                    <div class="price">
+                        <h2>NGN 39,913</h2>
+                        <h5><s>NGN 40,826</s></h5>
+                    </div>
+        
+                    <h4 id="product_name">Baby Boy Set</h4>
+                  
+                      
+                <div class="stars" id="stars">
+                    <span class="star" onclick="rate(1)">☆</span>
+                    <span class="star" onclick="rate(2)">☆</span>
+                    <span class="star" onclick="rate(3)">☆</span>
+                    <span class="star" onclick="rate(4)">☆</span>
+                    <span class="star" onclick="rate(5)">☆</span>
+                    
+                </div>
+                </div>
+        
+
+        <div class="sample_details">
+            <div class="product_details">
+                <h1 id="product_name">White Cauliflower</h1>
+                
+                <fieldset class="select-details1">
+                    <h2><b>Price:</b> </h2>&nbsp; &nbsp;
+                    <h2 id="money">&#8358;1,000</h2>
+                </fieldset>
+                
+                <fieldset class="select-details1">
+                    <h2><b>Size:</b> </h2>&nbsp; &nbsp;
+                   <h2 id="size">500g</h2>
+                </fieldset>
+    
+                <fieldset class="select-details1">
+                    <h2><b>Color:</b> </h2>&nbsp; &nbsp;
+                   <h2 id="color">Brown</h2>
+                </fieldset>
+                
+    
+                <fieldset class="select-input-details">
+                    <span id="numberError"></span>
+                    <input type="number" placeholder="1" id="input">
+                    <button id="addChart">Add to chart</button>
+                </fieldset>
+    
+                <h3 class="product-des">Product Details</h3>
+                <p class="product-des" id="product-des">
+                    White Cauliflower is popular and versatile vegetable for its mild flavour and dense, crunchy texture. Its harvested when thehead is compact and creamy white in color with tightly packed florets. Its rich in vitamins, it can be enjoyes raw as crunchy snack or slad ingredient, or cooked in various ways including steaming, roasting, sauteing or even marsh as low-carb alternate for marsh potates.
+                </p>
+            
+                
+            </div>
+    
+         
         </div>
+         
+        <div class="saved_products" id="saved_products">
+            <button  id="close_favorite" onclick=" closeFavorite()" style="background-color: rgb(24, 36, 58); padding: .5rem; border-radius: .2rem; color: #fff; cursor: pointer;">
+                <img src="../icons/close-svgrepo-com.svg" width="20px">
+            </button>
+    
+            <div class="favorite_listCarts">
+            </div>
+                  
+        </div>
+    
+        <div class="payment_way" id="payment_way">
+            <div class="amount">
+                <button class="close_cart" id="close" onclick="closeCart()">
+                        <img src="../icons/close-svgrepo-com.svg" width="20px">
+                </button>
+                <h3 id="total_amount">&#8358;0.00</h3>
+            </div>
+    
+            <div class="listCart">
+            </div>
+            
+            <div class="btnClass">
+                <button class="delete" id="delete_all_button" onclick="deleteAllProducts()">Delete All</button>
+                <button class="payAll" id="close" >Pay All</button>
+            </div>
+    
+               
+        </div>
+
+        <div class="shadowy" id="upperShadow">
+           
+            <div class="modaly" id="paymentModal">
+                <div class="close_modal" onclick="closePayment()">
+                    <img src="./icons/close-svgrepo-com.svg"  style="width:20px;">
+                </div>
+                <div class="pay_box">
+                    
+                    <div class="payment_card"> 
+                        <div class="visa_icon">
+                            <img src="./icons/mastercard-full-svgrepo-com.svg" onclick="changeMasterCard()">
+                        </div>
+                        <div class="visa_icon">
+                            <img src="./icons/visa-classic-svgrepo-com.svg"  onclick="changeVisaCard()">
+                        </div>
+                        <div class="visa_icon">
+                            <img src="./icons/paypal-svgrepo-com.svg"  onclick="changePaypalCard()">
+                        </div>
+                    </div>
+                    <div class="visa">
+                        <div class="person_info">
+                            <fieldset class="fname">
+                                <input type="text" placeholder="First Name">
+                            </fieldset>
+                            <fieldset class="fname">
+                                <input type="text" placeholder="Last Name">
+                            </fieldset>
+                            <fieldset class="fname">
+                                <input type="text" placeholder="Email">
+                            </fieldset>
+                            <fieldset class="fname">
+                                <input type="text" placeholder="Phone Number">
+                            </fieldset>
+                        </div>
+                        <fieldset class="card_type">
+                           <div class="visa_card">
+                            <h4>Credit Card</h4>
+                            <img src="./icons/mastercard-full-svgrepo-com.svg"style="width:60px;" id="master_card">
+                            <img src="./icons/visa-classic-svgrepo-com.svg"style="width:60px; display:none;" id="visa_card">
+                            <img src="./icons/paypal-svgrepo-com.svg"style="width:60px; display:none;" id="paypal_card">
+                           </div>
+                        </fieldset>
+                        <h2>Card Details</h2>
+    
+                        <fieldset class="year">
+                            <input type="date" placeholder="Expiry Date">
+                            <input type="date" placeholder="CVV">
+                        </fieldset>
+                        <button class="card_button">Pay with Visa</button>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    
+        <div class="shadow" id="downShadow">
+            <div class="modal" id="modal">
+                <div class="close_modal" onclick="closeModal()">
+                    <img src="./icons/close-svgrepo-com.svg"  style="width:20px;">
+                </div>
+    
+                <div class="confirm_delivery">
+                    <h2>Select Delivery Method</h2>
+                    <div class="pickup">
+                        <button type="radio">Pickup Station</button>
+                        <P>FREE</P> <br>
+                        <p>Delivery Between --- and ----</p>
+                    </div>
+                    <div class="pickup">
+                        <label>Select Pickup Station</label>
+                        <select id="pickup_station">
+                            <option value=""></option>
+                            <option>NATO</option>
+                            <option>KTSTA</option>
+                        </select>
+                    </div>
+                    <div class="pickup">
+                        <button type="radio">Doo Delivery</button>
+                        <P>FREE</P> <br>
+                        <p>Delivery Between --- and ----</p>
+                        
+                    </div>
+                    <button class="confirm_delivery_button" onclick="showPayment()">Confirm Delivery</button>
+                </div>
+            </div>
+           </div>
+     
+     
+     
+           <footer id="footer">
+            <div class="web-name"><h2>ShopEase</h2></div>
+            <div class="web-info">
+                <i class="fas- fa-globe">English</i>
+                <h3>$ USD - &#8358; Naira</h3>
+                <h3>Katsina State, Nigeria</h3>
+            </div>
+
+            <div class="login">
+                <p>Already a customer ? <a href="">Sign in here</a></p>
+            </div>
+            <div class="terms-condtitions">
+                <li> Condition of use</li>
+                <li>About us</li>
+                <li>Customer Care</li>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024, ShopEase.com</p>
+            </div>
+        </footer>
+        
+
      </div>
 
-     <script>
-        const search_container = document.getElementById("search-result");
-const input = document.getElementById("search_input");
 
-const search_icon = document.getElementById("fa-search");
-const hide_search = document.getElementById("fa-angle-left");
+		<script>
 
-input.addEventListener('input', function(event){
-    search_container.style.display = "block";
-    search_icon.style.display = "none";
-    hide_search.style.display = "inline";
-});
+const shadow= document.getElementById("downShadow");
+const modal = document.getElementById("modal");
+const paymentShadow = document.getElementById("upperShadow");
+const paymentModal = document.getElementById("paymentModal");
 
-// HIDE SEARCH 
+function showModal(){
+    shadow.style.display = "block";
+    modal.style.display = "block";
 
-function hideSearch(){
-    const search_container = document.getElementById("search-result");
-    const hide_search = document.getElementById("fa-angle-left");
-    const search_icon = document.getElementById("fa-search");
-    
-    search_container.style.display ="none";
+}
+function closeModal(){
+    shadow.style.display = "none";
+    modal.style.display = "none";
+}
+
+
+function showPayment(){
+    shadow.style.display = "none";
+    modal.style.display = "none";
+    paymentShadow.style.display = "block";
+    paymentModal.style.display = "block";
+  }
+
+function closePayment(){
+    paymentModal.style.display = "none";
+    paymentShadow.style.display = "none";
    
-
-    if(hide_search.style.display = "none"){
-        search_icon.style.display ="block";
- 
-    }
 }
 
-// SEARCH PRODUCT
 
-const search = () => {
-   const searchBox = document.getElementById("search_input").value.toUpperCase();
-   const storeItems = document.getElementById("product_list")
-   const product = document.querySelectorAll(".product")
-   const pname = document.getElementsByTagName("h2")
-
-    for( var i =0; i <  pname.length; i++){
-        let match = product[i].getElementsByTagName("h2")[0];
-
-        if(match){
-          let textValue = match.textContent || match.innerHTML
-
-            if (textValue.toUpperCase().indexOf(searchBox) > -1) {
-                product[i].style.display = "";
-            }else{
-                product[i].style.display = "none";
-
-            }
-        }
-    }
-
-  
-}
-     </script>
-    
+</script>
+   
      <script src="./home.js"></script>
+     <script src="./cart.js"></script>
 
 </body>
 </html>

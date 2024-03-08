@@ -428,3 +428,41 @@ function changePaypalCard(){
     paypal.style.display ="block";
 }
 
+
+
+document.addEventListener('DOMContentLoaded', function(){
+ for (let i = 1; i <= 10; i++){
+     let rating = parseInt(localStorage.getItem(`product${i}Rating`)) || 0;
+     displayRating(i, rating);
+ }
+});
+
+function rate(productId, rating){
+ localStorage.setItem(`product${productId}Rating`, rating);
+ displayRating(productId, rating);
+}
+
+function displayRating(productId, rating){
+ const starsContainer = document.getElementById(`stars${productId}`);
+
+ starsContainer.innerHTML = ""; 
+
+ for (let i = 1; i <= 5; i++){
+     const star = document.createElement("span");
+     star.classList.add('star');
+
+     if (i <= rating){
+         star.classList.add('rated-star');
+         star.textContent = "★"; // Filled star
+     } else {
+         star.textContent = "☆"; // Empty star
+     }
+
+     star.onclick = function(){
+         rate(productId, i);
+     };
+
+     starsContainer.appendChild(star);
+ }
+}
+

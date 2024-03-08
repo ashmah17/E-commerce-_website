@@ -3082,8 +3082,11 @@ button{
             text-decoration: line-through;
         }
         .cards #product_name{
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             width: 100%;
+            margin-top: .2rem;
+            margin-bottom: .8rem;
+            color: var(--main-color);
         }
         .price h2{
             font-size: 1.8rem;
@@ -3106,9 +3109,11 @@ button{
         .star{
             font-size: 30px;
             cursor: pointer;
+            color:#a39f9f;
+
         }
-         .star .filled{
-          color: goldenrod;
+         .rated-star{
+          color:goldenrod;
            cursor: pointer;
             
         }
@@ -3409,13 +3414,7 @@ button{
             /* align-items: center; */
             /* margin-left: rem; */
          }
-         #product_name{
-            width: 25rem;
-            margin-top: .2rem;
-            margin-bottom: .8rem;
-            color: var(--main-color);
-            font-size: 2rem;
-         }
+        
          .sample_details h2{
             color: var(--main-color);
             font-weight: 500;
