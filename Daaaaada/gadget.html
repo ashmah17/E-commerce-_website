@@ -1,0 +1,2290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Categories</title>
+    <link rel="stylesheet" href="./fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="./home.css">
+</head>
+<style>
+    .product_container{
+        visibility: hidden;
+        z-index: 70;
+    }
+    .sample_details{
+        display: none;
+    }
+</style>
+
+<body>
+    <div class="sidebar" id="sidebarr">
+        <div class="close_btn">
+             <img src="./dada.png" alt="">
+             <span id="icon_btn" class="side_bar_search_icon" onclick='toggleSidebar()'>
+                <img src="./icons/close-svgrepo-com.svg" alt="">
+            </span>
+        </div>
+
+          <ul class="menu">
+
+         <li class="list">
+             <a href="home.html">
+                 <i class="side_bar_home_icon">
+                    <img src="./icons/home-svgrepo-com (1).svg" alt="">
+                 </i>
+                 <span>Home</span>
+             </a>
+         </li>
+         
+         <li class="list">
+             <a href="collection.html">
+                 <i class="side_bar_icon">
+                    <img src="./icons/tags-category-categories-labels-svgrepo-com.svg" alt="">
+                 </i>
+                 <span>Collections</span>
+             </a>
+         </li>
+
+         <li class="list">
+             <a href="men_clothes.html">
+                 <i class="side_bar_cap_icon">
+                    <img src="./icons/apparel-cap-clothing-svgrepo-com (1).svg" alt="">
+                 </i>
+                 <span>Men Clothes</span>
+             </a>
+         </li>
+
+         <li class="list">
+             <a href="beauty.html">
+                 <i class="side_bar_icon">
+                    <img src="./icons/perfume-svgrepo-com.svg" alt="">
+                 </i>
+                 <span>Beauty Products</span>
+             </a>
+         </li>
+
+         <li class="list">
+             <a href="electronics.html">
+                 <i class="side_bar_icon">
+                    <img src="./icons/kitchen-cooker-utensils-svgrepo-com.svg" alt="">
+                 </i>
+                 <span>kitchen Items</span>
+             </a>
+         </li>
+
+      
+         <li class="list">
+               <a href="#">
+                <div class="select" id="select">
+                    <i class="side_bar_icon">
+                        <img src="./icons/setting-material-svgrepo-com.svg" alt="">
+                    </i>
+                    <span >Setting</span>
+               </div>
+            </a>
+         </li>
+
+      
+        
+
+         </ul>
+    </div>
+
+     <div class="main-content">
+
+        <!--********* HEADER SECTION ******-->
+
+        <div class="header-wrapper">
+
+            <div class="icon_box" >
+               <span id="icon_btn" onclick='toggleSidebar()'>&#9776;</span>
+            </div>
+
+             <div class="header-tittle">
+                <img src="./icons/shopease11.png" alt="">
+             </div>
+
+           <fieldset class="cart">
+            
+            <div class="add_to_chart" id="add_to_chart">
+                <i id="shopping_cart" onclick="toggleCart()" >
+                    <img src="./icons/cart-large-2-svgrepo-com (1).svg">
+                </i>    
+                <span>0</span>
+
+             </div>
+
+             <div class="favorite" id="favorite">
+                <i id="favorite_cart" onclick="toggleFavorite()" >
+                   <img src="./icons/favorite-filled-svgrepo-com.svg">
+                </i>    
+                <span>0</span>
+            </div>
+
+             <div class="user">
+              <a href="">
+                <img src="./icons/user-heart-svgrepo-com.svg"  onclick="addFavorite()">
+
+              </a>
+             </div>
+           </fieldset>
+
+        </div>
+
+        <div class="search-result" id="search-result">
+
+            <div class="product_list" id="product_list" >            
+
+                <a href="./products/product_1.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/2-in Airfyer oven.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>2-1 Airfyer</h2>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="./products/product_2.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/apple watch.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Apple Watch</h2>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="./products/product_3.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/aquazzura hills.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Aquazzura Hills</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="./products/product_4.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/armless_chair.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Armless Tub</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="./products/product_5.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/army green kaftan.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Army Green Kaftan</h2>
+                        </div>
+                    </div>
+                </a>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/ash abay.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Ash Abaya</h2>
+                        </div>
+                    </div>
+                </a>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/ash baby snicker.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Ash Baby Snickers</h2>
+                        </div>
+                    </div>
+                </a>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/ash longsleeve shirt.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Ash long sleeve shirt</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/avocado body cream.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Avocado Body Cream</h2>
+                        </div>
+                    </div>
+                </a>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/babeque pan.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Babeque Pan</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/baby_bag.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Baby Bag</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/bakarat perfume.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Bakkarat Perfum</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/bakarat perfume.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Bakkarat Perfume</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/banana.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Banana</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/barry black kaftan.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Barry Kaftan</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/bayleaf.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Bay Leave</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/beedteak tomatoe.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Beedsteak Tomato</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/beige baby snicker.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>
+                                Beige Baby Snickers</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/beyond space snicker.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Beyond Space Snickers</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/black AFI snicker.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>AFI Snickers</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/black kaftan.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Black Kaftan</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/nike white snicker.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Black Kaftan</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/black peppe.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Black Peppe</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/black seed.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Black Seed</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/Black Slicon Spatula.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Black Seed</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/blue adidas snicker.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Adidas Snickers</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/blue baby gown.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Blue Baby Gown</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/blue baby snicker.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Nike Baby snickers</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/blue suit.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Blue Suit</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/board clip.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Board Clip</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/bolb_chandelier.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Bolb Chandelier</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/boohoo hills.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Boohoo Hills</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/brastemp refrigerator.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Brastemp Refigerator</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/brown fan gown.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Fan Gown</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/brown kaftan.JPG.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Brown Kaftan</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/brown sweater boy set.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Brown Baby cloth</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/buffet.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Buffet</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/cabage.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Cabbage</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/candle_holder.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Candle Holder</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/cardimon.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Cardimon</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/cauliflower.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Cauliflower</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/cd plate.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Cd Plate</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/cement_chandelier.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Cement Chandelier</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/ceramic plate.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Ceramic Plates</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/ceramic utensil holder.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Ceramic Utensil Holder</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/round_tub.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>rRound Tub</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/chandelier.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Chandelier</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/channel perfume.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Channel Perfume</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/cheetar snicker.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Cheetar Snickers</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/chery-tomato.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Cherry Tomato</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/buffet.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Wooden Buffet</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/Cinnamon.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Cinnamon</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/cinnamon2.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Dry Cinnamon</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/clip.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Clip</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/clove.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Clove</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/coconut.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Coconut</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/code-lace baby gown.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Lace Baby Gown</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/correction fluid.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Correction Fluid</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/crochet baby gown.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Crochet Baby Gown</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/cucumber.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Cucumber</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/cumin.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Cumin</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/D  and G perfume.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>D & G Perfume</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/deesktop.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Desktop</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/dell laptop.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Dell Laptop</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/digital camera.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Digital Camera</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/dior watch.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Dior Watch</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/dry peppe.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Dry Peppe</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/dry turmeric.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Dry Turmeric</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/electric_lamp.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Electric Lamp</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/enganona halcover shoes.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Half Cover shoe</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/fenugreek.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Fenugreek</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/fig.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Fig</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/five stove gass cooker.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Gas Cooker</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/flat laptop.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Flat Laptop</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/flexible kyboard.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Flexible Keyboard</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/gaing.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>PS Game</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/garlic squeezer.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Garlic Squeezer</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/garlic.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Garlic</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/ginger.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Ginger</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/givenchy perfume.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Givenchy Perfume</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/givenchy perfume.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Globe Tomato</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/gold necklace.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Gold Plated Necklace</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/green  boy set.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Green Boy Set</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/green beans.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Green Beans</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/green ta scrub.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Green Tea Scrub</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/green_sofa.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Blue Sofa</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/hair oil.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2> Hair Oil</h2>
+                        </div>
+                    </div>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/hand colander.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Hand Colander</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/hand juicer.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Hand Juicer</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/hand_baby_bag.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Hand baby bag</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/hange_cement_chandelier.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Hange Chendelier</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/hardcover.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Hardcover Book</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/hardcover_notebook.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Hardcover Note Book</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/heart silver necklace.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Heart Silver Neclace</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/hermes bag.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Hermes Bag</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/hp laptop.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Hp Laptop</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/irish_potato.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Irish Potato</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/keyboard.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Keyboard</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/knife set.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Knife Set</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/lace baby gown.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Lace Baby Gow</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/lavender scrub.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Lavender Scrub</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/leatherhard-cover.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Hardcover Journal</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/lemon squezeer.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Lemon Squeezer</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/lemon.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Lemon</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/lenovo laptop.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Lenovo Laptop</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/lettuce.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Lettuce</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/LH baby boy armless and short.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>LH Baby Boy Set</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/magic bullet belnder.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Magic Bullet Blender</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/math_set.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Mathematical Set</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/math_set2.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Blue Mathematical Set</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/measuring cup.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Measuring Cup</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/mercury gaming microphone.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Mercury Gaming Microphone</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/metal lid spice jar.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Metal Lid Spice Jar</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/metel book glider.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Metal Book Glider</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/michael kors watch.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Michael Kors Watch</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/midi vuitton bag.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Tote Vuitton Bag</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/milk flat shoe.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Flat shoe</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/milk half cover shoe.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Flat shoe</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/mini flask.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Mini FLask</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/mini laptop.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Mini Laptop</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/mini louis vuitton.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Mini Louis Vuitton</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/mini louis vuitton.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Mini Toaster</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/mirror_buffet.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Glass Buffet</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/mixer.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Electric Mixer</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/molton brown shower gel.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Molton Shower Gel</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/mosaic camera.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Mosaic Camera</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/mother board.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Mother Board</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/multi coled fabric gown.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Multi-Color Fabric Gownn</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/multi-colored men shit.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Multi-Colored Shirt</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/navy_sofa.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Navy Sofa</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/netigo N66oP WEBCAM.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Netigo N660P Webcam</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/nike white snicker.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>White NIKE Snickers</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/nonstick pan.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Nonstick Pan</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/noodle  measurer.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Noodle Measurer</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/notebook.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Notebook</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/nutmeg.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Notebook</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/onion.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Onion</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/onion2.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Purple Onion</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/oxheart tomato.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Oxheart Tomato</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/pack_bag.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Back Pack Bag</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/paper tape.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Paper Tape</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/paper_cutter.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Paper Cutter</h2>
+                        </div>
+                    </div>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/peach and lily face mask.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Peach and Lily Face mask</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/pencil set.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Pencil Set</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/periperal microphone.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Periperal Microphone</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/pie cutter.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Periperal Microphone</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/pineapple cutter.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Pinepple Cutter</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/pineapple.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Pineapple</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/pink tote bag.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Pink Tote Bag</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/podcast.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Podcast Microphone</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/pomegranate.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Pomegranate</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/prada bag.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Prada Bag</h2>
+                        </div>
+                    </div>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/pumpkin.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Pumpkin</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/rose shower gel.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Rose Shower Gel</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/round_gold_tub.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Beige Round Tub</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/round_tub.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Pink Round Tub</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/rubber spiral book.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Rubber Spiral Book</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/saffron.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Saffron</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/same same baby set.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Same Same Baby Set</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/sandy brown kaftan.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Sandy Brown Kaftan</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/satpler.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Stapler</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/scandal perfume.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Scandal Perfume</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/seagreen waist belt gown.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Waist Belt Gown</h2>
+                        </div>
+                    </div>
+                </a>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/shamfoo.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Shamfoo</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/sharperner.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Sharpener</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/silicon hand siever.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Siicon Siever</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/silicon spoons.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Silicon Spatula</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/silk gown.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Silk Gown</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/silk milk gown.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Milk Silk Gown</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/silver neclace.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>D Silver Necklace</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/slide_lamp.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Side Lamp</h2>
+                        </div>
+                    </div>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/navy_sofa.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Navy Blue Sofa</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/soup egies.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Soup Vegies</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/spice jars.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Spice Jars</h2>
+                        </div>
+                    </div>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/spice peppe.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Red Peppe</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/spiral memo.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Spiral Memo</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/star arice.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Star Anice</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/steak cutter.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Steak Cutter</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/steve madden hills.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Steve Madden Hills</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/stick glue.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Stick Glue</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/sweet peppe.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Sweet Peppe</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/tamarin.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Tamarin</h2>
+                        </div>
+                    </div>
+                </a>
+                
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/tape holder.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Tape Holder</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/tape.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Tape</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/telephone.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Telephone</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/the ordinary serum.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>The Ordinary Serum</h2>
+                        </div>
+                    </div>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/thyme.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Thyme</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/toi  et moi boy set.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Toi Et Moi Boy Set</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/tomato.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Tomato</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/travel_bag.jpg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Travel Bag</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/turmeric scrub.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Turmeric Scrub</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/turmeric.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Turmeric</h2>
+                        </div>
+                    </div>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/vedio camera.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Vedio Camera</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/versace watch.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Versace Watch</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/vest hand baby gown.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Vest Hand Baby Gown</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/vitamin a SERUM.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Vitamin A Serum</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/vuitton bag.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Tote Vuitton Bag</h2>
+                        </div>
+                    </div>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/white blender.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>White Blender</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/white mark snicker.JPG" alt=""></div>
+                        <div class="p-details">
+                            <h2>Mark Snicker</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/white silicon spatula set.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>White Silicon Spatula</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/white silicon utensil holder.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Wooden Spatula</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/wireless gaming set.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>Wireless HeadPhone</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/wireless headset.jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>White Wireless HeadPhone</h2>
+                        </div>
+                    </div>
+                </a>
+                <a href="mirrors.html">
+                    <div class="product" id="product">
+                    <div class="img">  <img src="./images/wireless mouse (2).jpeg" alt=""></div>
+                        <div class="p-details">
+                            <h2>White Wireless HeadPhone</h2>
+                        </div>
+                    </div>
+                </a>
+                
+
+               
+                
+            </div>
+
+        </div>
+
+        <div class="container" id="container">
+            <div class="cards" id="cards">
+    
+                <a href="./products/product_1.html">
+                    <div class="image">
+                        <img src="./images/3.8mm webcam.jpeg" width="100px" height="100px" alt="">
+                    </div>
+                </a>
+
+                <div class="price">
+                    <h2>NGN 131,913</h2>
+                    <h5><s>NGN 133,826</s></h5>
+                </div>
+    
+                <h4 id="product_name">3.8mm Webcam</h4>
+                
+                <div class="stars" id="stars">
+                    <span class="star" onclick="rate(1)">☆</span>
+                    <span class="star" onclick="rate(2)">☆</span>
+                    <span class="star" onclick="rate(3)">☆</span>
+                    <span class="star" onclick="rate(4)">☆</span>
+                    <span class="star" onclick="rate(5)">☆</span>
+                    
+                </div>
+            
+                </div>
+
+                <div class="cards" id="cards">
+                    
+                    <a href="./products/product_2.html">
+                        <div class="image">
+                            <img src="./images/marshal.jpeg" width="100px" height="100px" alt="">
+                        </div>
+                    </a>
+                    <div class="price">
+                        <h2>NGN 93,013</h2>
+                        <h5><s>NGN 93,826</s></h5>
+                    </div>
+        
+                    <h4 id="product_name">Marshal Headphone
+                      
+                <div class="stars" id="stars">
+                    <span class="star" onclick="rate(1)">☆</span>
+                    <span class="star" onclick="rate(2)">☆</span>
+                    <span class="star" onclick="rate(3)">☆</span>
+                    <span class="star" onclick="rate(4)">☆</span>
+                    <span class="star" onclick="rate(5)">☆</span>
+                    
+                </div>
+                
+                </div>
+                <div class="cards" id="cards">
+                    
+                    <a href="./products/product_3.html">
+                        <div class="image">
+                            <img src="./images/mini projector.jpeg" width="100px" height="100px" alt="">
+                        </div>
+                    </a>
+                    <div class="price">
+                        <h2>NGN 75,913</h2>
+                        <h5><s>NGN 77,826</s></h5>
+                    </div>
+        
+                    <h4 id="product_name">Dser projector</h4>
+        
+                      
+                <div class="stars" id="stars">
+                    <span class="star" onclick="rate(1)">☆</span>
+                    <span class="star" onclick="rate(2)">☆</span>
+                    <span class="star" onclick="rate(3)">☆</span>
+                    <span class="star" onclick="rate(4)">☆</span>
+                    <span class="star" onclick="rate(5)">☆</span>
+                    
+                </div>
+                
+                </div>
+             
+                <div class="cards" id="cards">
+                    
+                    <a href="./products/product_4.html">
+                        <div class="image">
+                            <img src="./images/iwatch.jpeg" width="100px" height="100px" alt="">
+                        </div>
+                    </a>
+                    <div class="price">
+                        <h2>NGN 111,913</h2>
+                        <h5><s>NGN 112,826</s></h5>
+                    </div>
+        
+                    <h4 id="product_name">Apple fitness Tracker</h4>
+                  
+                      
+                <div class="stars" id="stars">
+                    <span class="star" onclick="rate(1)">☆</span>
+                    <span class="star" onclick="rate(2)">☆</span>
+                    <span class="star" onclick="rate(3)">☆</span>
+                    <span class="star" onclick="rate(4)">☆</span>
+                    <span class="star" onclick="rate(5)">☆</span>
+                    
+                </div>
+                
+                </div>
+                
+                <div class="cards" id="cards">
+                    
+                    <a href="./products/product_5.html">
+                        <div class="image">
+                            <img src="./images/dell laptop.jpeg" width="100px" height="100px" alt="">
+                        </div>
+                    </a>
+                    <div class="price">
+                        <h2>NGN 322,913</h2>
+                        <h5><s>NGN 345,826</s></h5>
+                    </div>
+        
+                    <h4 id="product_name">Dell Laptop</h4>
+                  
+                      
+                <div class="stars" id="stars">
+                    <span class="star" onclick="rate(1)">☆</span>
+                    <span class="star" onclick="rate(2)">☆</span>
+                    <span class="star" onclick="rate(3)">☆</span>
+                    <span class="star" onclick="rate(4)">☆</span>
+                    <span class="star" onclick="rate(5)">☆</span>
+                    
+                </div>
+                </div>
+              
+                <div class="cards" id="cards">
+                    
+                    <a href="./products/product_6.html">
+                        <div class="image">
+                            <img src="./images/flexible kyboard.jpeg" width="100px" height="100px" alt="">
+                        </div>
+                    </a>
+                    <div class="price">
+                        <h2>NGN 84,913</h2>
+                        <h5><s>NGN 83,826</s></h5>
+                    </div>
+        
+                    <h4 id="product_name">Flexible Keyboard</h4>
+                  
+                      
+                <div class="stars" id="stars">
+                    <span class="star" onclick="rate(1)">☆</span>
+                    <span class="star" onclick="rate(2)">☆</span>
+                    <span class="star" onclick="rate(3)">☆</span>
+                    <span class="star" onclick="rate(4)">☆</span>
+                    <span class="star" onclick="rate(5)">☆</span>
+                    
+                </div>
+                </div>
+                
+                <div class="cards" id="cards">
+                    
+                    <a href="./products/product_7.html">
+                        <div class="image">
+                            <img src="./images/gaing.jpeg" width="100px" height="100px" alt="">
+                        </div>
+                    </a>
+                    <div class="price">
+                        <h2>NGN 35,913</h2>
+                        <h5><s>NGN 36,826</s></h5>
+                    </div>
+        
+                    <h4 id="product_name">Ps Game</h4>
+                  
+                      
+                <div class="stars" id="stars">
+                    <span class="star" onclick="rate(1)">☆</span>
+                    <span class="star" onclick="rate(2)">☆</span>
+                    <span class="star" onclick="rate(3)">☆</span>
+                    <span class="star" onclick="rate(4)">☆</span>
+                    <span class="star" onclick="rate(5)">☆</span>
+                    
+                </div>
+                </div>
+           
+                <div class="cards" id="cards">
+                    
+                    <a href="./products/product_8.html">
+                        <div class="image">
+                            <img src="./images/podcast.jpeg" width="100px" height="100px" alt="">
+                        </div>
+                    </a>
+                    <div class="price">
+                        <h2>NGN 77,913</h2>
+                        <h5><s>NGN 71,826</s></h5>
+                    </div>
+        
+                    <h4 id="product_name">Podcast</h4>
+                  
+                      
+                <div class="stars" id="stars">
+                    <span class="star" onclick="rate(1)">☆</span>
+                    <span class="star" onclick="rate(2)">☆</span>
+                    <span class="star" onclick="rate(3)">☆</span>
+                    <span class="star" onclick="rate(4)">☆</span>
+                    <span class="star" onclick="rate(5)">☆</span>
+                    
+                </div>
+                </div>
+
+                <div class="cards" id="cards">
+                    
+                    <a href="./products/product_9.html">
+                        <div class="image">
+                            <img src="./images/bonai.jpeg" width="100px" height="100px" alt="">
+                        </div>
+                    </a>
+                    <div class="price">
+                        <h2>NGN 18,913</h2>
+                        <h5><s>NGN 19,826</s></h5>
+                    </div>
+        
+                    <h4 id="product_name">bonai powerbank</h4>
+                  
+                      
+                <div class="stars" id="stars">
+                    <span class="star" onclick="rate(1)">☆</span>
+                    <span class="star" onclick="rate(2)">☆</span>
+                    <span class="star" onclick="rate(3)">☆</span>
+                    <span class="star" onclick="rate(4)">☆</span>
+                    <span class="star" onclick="rate(5)">☆</span>
+                    
+                </div>
+                </div>
+
+                           <div class="cards" id="cards">
+                    
+                    <a href="./products/product_9.html">
+                        <div class="image">
+                            <img src="./images/nikon.jpeg" width="100px" height="100px" alt="">
+                        </div>
+                    </a>
+                    <div class="price">
+                        <h2>NGN 118,913</h2>
+                        <h5><s>NGN 119,826</s></h5>
+                    </div>
+        
+                    <h4 id="product_name">Nikon Camera</h4>
+                  
+                      
+                <div class="stars" id="stars">
+                    <span class="star" onclick="rate(1)">☆</span>
+                    <span class="star" onclick="rate(2)">☆</span>
+                    <span class="star" onclick="rate(3)">☆</span>
+                    <span class="star" onclick="rate(4)">☆</span>
+                    <span class="star" onclick="rate(5)">☆</span>
+                    
+                </div>
+                </div>
+
+
+        </div>
+
+        <div class="sample_details">
+            <div class="product_details">
+                <h1 id="product_name">White Cauliflower</h1>
+                
+                <fieldset class="select-details1">
+                    <h2><b>Price:</b> </h2>&nbsp; &nbsp;
+                    <h2 id="money">&#8358;1,000</h2>
+                </fieldset>
+                
+                <fieldset class="select-details1">
+                    <h2><b>Size:</b> </h2>&nbsp; &nbsp;
+                   <h2 id="size">500g</h2>
+                </fieldset>
+    
+                <fieldset class="select-details1">
+                    <h2><b>Color:</b> </h2>&nbsp; &nbsp;
+                   <h2 id="color">Brown</h2>
+                </fieldset>
+                
+    
+                <fieldset class="select-input-details">
+                    <span id="numberError"></span>
+                    <input type="number" placeholder="1" id="input">
+                    <button id="addChart">Add to chart</button>
+                </fieldset>
+    
+                <h3 class="product-des">Product Details</h3>
+                <p class="product-des" id="product-des">
+                    White Cauliflower is popular and versatile vegetable for its mild flavour and dense, crunchy texture. Its harvested when thehead is compact and creamy white in color with tightly packed florets. Its rich in vitamins, it can be enjoyes raw as crunchy snack or slad ingredient, or cooked in various ways including steaming, roasting, sauteing or even marsh as low-carb alternate for marsh potates.
+                </p>
+            
+                
+            </div>
+    
+         
+        </div>
+
+        
+        <div class="saved_products" id="saved_products">
+            <button  id="close_favorite" onclick=" closeFavorite()" style="background-color: rgb(24, 36, 58); padding: .5rem; border-radius: .2rem; color: #fff; cursor: pointer;">
+                <img src="../icons/close-svgrepo-com.svg" width="20px">
+            </button>
+    
+            <div class="favorite_listCarts">
+            </div>
+                  
+        </div>
+    
+        <div class="payment_way" id="payment_way">
+            <div class="amount">
+                <button class="close_cart" id="close" onclick="closeCart()">
+                        <img src="../icons/close-svgrepo-com.svg" width="20px">
+                </button>
+                <h3 id="total_amount">&#8358;0.00</h3>
+            </div>
+    
+            <div class="listCart">
+            </div>
+            
+            <div class="btnClass">
+                <button class="delete" id="delete_all_button" onclick="deleteAllProducts()">Delete All</button>
+                <button class="payAll" id="close" >Pay All</button>
+            </div>
+    
+               
+        </div>
+
+        <div class="shadowy" id="upperShadow">
+           
+            <div class="modaly" id="paymentModal">
+                <div class="close_modal" onclick="closePayment()">
+                    <img src="./icons/close-svgrepo-com.svg"  style="width:20px;">
+                </div>
+                <div class="pay_box">
+                    
+                    <div class="payment_card"> 
+                        <div class="visa_icon">
+                            <img src="./icons/mastercard-full-svgrepo-com.svg" onclick="changeMasterCard()">
+                        </div>
+                        <div class="visa_icon">
+                            <img src="./icons/visa-classic-svgrepo-com.svg"  onclick="changeVisaCard()">
+                        </div>
+                        <div class="visa_icon">
+                            <img src="./icons/paypal-svgrepo-com.svg"  onclick="changePaypalCard()">
+                        </div>
+                    </div>
+                    <div class="visa">
+                        <div class="person_info">
+                            <fieldset class="fname">
+                                <input type="text" placeholder="First Name">
+                            </fieldset>
+                            <fieldset class="fname">
+                                <input type="text" placeholder="Last Name">
+                            </fieldset>
+                            <fieldset class="fname">
+                                <input type="text" placeholder="Email">
+                            </fieldset>
+                            <fieldset class="fname">
+                                <input type="text" placeholder="Phone Number">
+                            </fieldset>
+                        </div>
+                        <fieldset class="card_type">
+                           <div class="visa_card">
+                            <h4>Credit Card</h4>
+                            <img src="./icons/mastercard-full-svgrepo-com.svg"style="width:60px;" id="master_card">
+                            <img src="./icons/visa-classic-svgrepo-com.svg"style="width:60px; display:none;" id="visa_card">
+                            <img src="./icons/paypal-svgrepo-com.svg"style="width:60px; display:none;" id="paypal_card">
+                           </div>
+                        </fieldset>
+                        <h2>Card Details</h2>
+    
+                        <fieldset class="year">
+                            <input type="date" placeholder="Expiry Date">
+                            <input type="date" placeholder="CVV">
+                        </fieldset>
+                        <button class="card_button">Pay with Visa</button>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    
+        <div class="shadow" id="downShadow">
+            <div class="modal" id="modal">
+                <div class="close_modal" onclick="closeModal()">
+                    <img src="./icons/close-svgrepo-com.svg"  style="width:20px;">
+                </div>
+    
+                <div class="confirm_delivery">
+                    <h2>Select Delivery Method</h2>
+                    <div class="pickup">
+                        <button type="radio">Pickup Station</button>
+                        <P>FREE</P> <br>
+                        <p>Delivery Between --- and ----</p>
+                    </div>
+                    <div class="pickup">
+                        <label>Select Pickup Station</label>
+                        <select id="pickup_station">
+                            <option value=""></option>
+                            <option>NATO</option>
+                            <option>KTSTA</option>
+                        </select>
+                    </div>
+                    <div class="pickup">
+                        <button type="radio">Doo Delivery</button>
+                        <P>FREE</P> <br>
+                        <p>Delivery Between --- and ----</p>
+                        
+                    </div>
+                    <button class="confirm_delivery_button" onclick="showPayment()">Confirm Delivery</button>
+                </div>
+            </div>
+           </div>
+     
+     
+     
+           <footer id="footer">
+            <div class="web-name"><h2>ShopEase</h2></div>
+            <div class="web-info">
+                <i class="fas- fa-globe">English</i>
+                <h3>$ USD - &#8358; Naira</h3>
+                <h3>Katsina State, Nigeria</h3>
+            </div>
+
+            <div class="login">
+                <p>Already a customer ? <a href="">Sign in here</a></p>
+            </div>
+            <div class="terms-condtitions">
+                <li> Condition of use</li>
+                <li>About us</li>
+                <li>Customer Care</li>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024, ShopEase.com</p>
+            </div>
+        </footer>
+        
+
+     </div>
+
+   
+	<script>
+
+const shadow= document.getElementById("downShadow");
+const modal = document.getElementById("modal");
+const paymentShadow = document.getElementById("upperShadow");
+const paymentModal = document.getElementById("paymentModal");
+
+function showModal(){
+    shadow.style.display = "block";
+    modal.style.display = "block";
+
+}
+function closeModal(){
+    shadow.style.display = "none";
+    modal.style.display = "none";
+}
+
+
+function showPayment(){
+    shadow.style.display = "none";
+    modal.style.display = "none";
+    paymentShadow.style.display = "block";
+    paymentModal.style.display = "block";
+  }
+
+function closePayment(){
+    paymentModal.style.display = "none";
+    paymentShadow.style.display = "none";
+   
+}
+
+
+</script>
+
+      <script src="./home.js"></script>
+     <script src="./cart.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="./fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="./home.css">
+
+    <style>
+        .product_container{
+            visibility: hidden;
+            z-index: 70;
+        }
+        .sample_details{
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="showCart">
+
+    <!--************** SIDE BAR************ -->
+    <div class="sidebar" id="sidebarr">
+        <div class="close_btn">
+             <img src="./dada.png" alt="">
+             <span id="icon_btn" class="side_bar_search_icon" onclick='toggleSidebar()'>
+                <img src="./icons/close-svgrepo-com.svg" alt="">
+            </span>
+        </div>
+
+          <ul class="menu">
+
+         <li class="list">
+             <a href="home.html">
+                 <i class="side_bar_home_icon">
+                    <img src="./icons/home-svgrepo-com (1).svg" alt="">
+                 </i>
+                 <span>Home</span>
+             </a>
+         </li>
+         
+         <li class="list">
+             <a href="collection.html">
+                 <i class="side_bar_icon">
+                    <img src="./icons/tags-category-categories-labels-svgrepo-com.svg" alt="">
+                 </i>
+                 <span>Collections</span>
+             </a>
+         </li>
+
+         <li class="list">
+             <a href="men_clothes.html">
+                 <i class="side_bar_cap_icon">
+                    <img src="./icons/apparel-cap-clothing-svgrepo-com (1).svg" alt="">
+                 </i>
+                 <span>Men Clothes</span>
+             </a>
+         </li>
+
+         <li class="list">
+             <a href="beauty.html">
+                 <i class="side_bar_icon">
+                    <img src="./icons/perfume-svgrepo-com.svg" alt="">
+                 </i>
+                 <span>Beauty Products</span>
+             </a>
+         </li>
+
+         <li class="list">
+             <a href="electronics.html">
+                 <i class="side_bar_icon">
+                    <img src="./icons/kitchen-cooker-utensils-svgrepo-com.svg" alt="">
+                 </i>
+                 <span>kitchen Items</span>
+             </a>
+         </li>
+
+      
+         <li class="list">
+               <a href="#">
+                <div class="select" id="select">
+                    <i class="side_bar_icon">
+                        <img src="./icons/setting-material-svgrepo-com.svg" alt="">
+                    </i>
+                    <span >Setting</span>
+               </div>
+            </a>
+         </li>
+
+      
+        
+
+         </ul>
+    </div>
+
+     <div class="main-content">
+
+        <!--********* HEADER SECTION ******-->
+        <div class="header-wrapper">
+
+            <div class="icon_box" >
+               <span id="icon_btn" onclick='toggleSidebar()'>&#9776;</span>
+            </div>
+
+             <div class="header-tittle">
+                <img src="./icons/shopease11.png" alt="">
+             </div>
+
+           <fieldset class="cart">
+            
+            <div class="add_to_chart" id="add_to_chart">
+                <i id="shopping_cart" onclick="toggleCart()" >
+                    <img src="./icons/cart-large-2-svgrepo-com (1).svg">
+                </i>    
+                <span>0</span>
+
+             </div>
+
+             <div class="favorite" id="favorite">
+                <i id="favorite_cart" onclick="toggleFavorite()" >
+                   <img src="./icons/favorite-filled-svgrepo-com.svg">
+                </i>    
+                <span>0</span>
+            </div>
+
+             <div class="user">
+              <a href="">
+                <img src="./icons/user-heart-svgrepo-com.svg"  onclick="addFavorite()">
+
+              </a>
+             </div>
+           </fieldset>
+
+        </div>
+        
+        <div class="categories">
+            <div class="latest-collection-label"  style=" background-color: rgb(22, 48, 87);">Shop from Our Collections  
+                <i class="side_bar_search_icon">
+                </i>
+            </div>
+            
+        <div class="portofolio-container">
+                
+            <div class="portofolio-box">
+                <img src="./images/bg cloths3.jpg" alt="">
+
+                <div class="portofolio-layer">
+                    <h4>Fashion</h4>
+                    <p>Explore our chic fashion collection for effortless style that speak volume <br>
+                        <a href="fashion.html">  <i class="fa-solid fa-angle-down"></i> </a>
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="portofolio-box">
+                <img src="./images/star arice.JPG" alt="">
+                <div class="portofolio-layer">
+                    <h4>Spices</h4>
+                    <p>Add a burst of flavours to your dishes with our premium spice blend<br>
+                        <a href="spices.html">  <i class="fa-solid fa-angle-down"></i> </a>
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="portofolio-box">
+                <img src="./images/hardcover.JPG" alt="">
+                <div class="portofolio-layer">
+                    <h4>Stationeries</h4>
+                    <p>Elevate your creativity with our sleek and functional stationery<br>
+                        <a href="stationery.html">  <i class="fa-solid fa-angle-down"></i> </a>
+                    </p></div>
+            </div>
+
+            <div class="portofolio-box">
+                <img src="./images/digital camera.jpeg" alt="">
+                <div class="portofolio-layer">
+                    <h4>Gadgets</h4>
+                    <p>Ugrade your tech game with our cutting edge gadgets for every lifestyle
+                        <a href="gadget.html">  <i class="fa-solid fa-angle-down"></i> </a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="portofolio-box">
+                <img src="./images/brastemp refrigerator.JPG" alt="">
+                <div class="portofolio-layer">
+                    <h4>Electronics</h4>
+                    <p>Experience innovation at its finest with our top-of-line elecronic devices
+                        <a href="electronics.html">  <i class="fa-solid fa-angle-down"></i> </a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="portofolio-box">
+                <img src="./images/soup egies.JPG" alt="">
+                <div class="portofolio-layer">
+                    <h4>Groceries</h4>
+                    <p>Shop fresh and quality groceries convieniently from our wide selection
+                        <a href="groceries.html">  <i class="fa-solid fa-angle-down"></i> </a>
+                    </p></div>
+            </div>
+
+        </div>
+        </div>
+
+        <div class="sample_details">
+            <div class="product_details">
+                <h1 id="product_name">White Cauliflower</h1>
+                
+                <fieldset class="select-details1">
+                    <h2><b>Price:</b> </h2>&nbsp; &nbsp;
+                    <h2 id="money">&#8358;1,000</h2>
+                </fieldset>
+                
+                <fieldset class="select-details1">
+                    <h2><b>Size:</b> </h2>&nbsp; &nbsp;
+                   <h2 id="size">500g</h2>
+                </fieldset>
+    
+                <fieldset class="select-details1">
+                    <h2><b>Color:</b> </h2>&nbsp; &nbsp;
+                   <h2 id="color">Brown</h2>
+                </fieldset>
+                
+    
+                <fieldset class="select-input-details">
+                    <span id="numberError"></span>
+                    <input type="number" placeholder="1" id="input">
+                    <button id="addChart">Add to chart</button>
+                </fieldset>
+    
+                <h3 class="product-des">Product Details</h3>
+                <p class="product-des" id="product-des">
+                    White Cauliflower is popular and versatile vegetable for its mild flavour and dense, crunchy texture. Its harvested when thehead is compact and creamy white in color with tightly packed florets. Its rich in vitamins, it can be enjoyes raw as crunchy snack or slad ingredient, or cooked in various ways including steaming, roasting, sauteing or even marsh as low-carb alternate for marsh potates.
+                </p>
+            
+                
+            </div>
+    
+         
+        </div>
+
+        <div class="saved_products" id="saved_products">
+            <button  id="close_favorite" onclick=" closeFavorite()" style="background-color: rgb(24, 36, 58); padding: .5rem; border-radius: .2rem; color: #fff; cursor: pointer;">
+                <img src="../icons/close-svgrepo-com.svg" width="20px">
+            </button>
+    
+            <div class="favorite_listCarts">
+            </div>
+                  
+        </div>
+    
+        <div class="payment_way" id="payment_way">
+            <div class="amount">
+                <button class="close_cart" id="close" onclick="closeCart()">
+                        <img src="../icons/close-svgrepo-com.svg" width="20px">
+                </button>
+                <h3 id="total_amount">&#8358;0.00</h3>
+            </div>
+    
+            <div class="listCart">
+            </div>
+            
+            <div class="btnClass">
+                <button class="delete" id="delete_all_button" onclick="deleteAllProducts()">Delete All</button>
+                <button class="payAll" id="close" >Pay All</button>
+            </div>
+    
+               
+        </div>
+        
+        <div class="shadowy" id="upperShadow">
+           
+            <div class="modaly" id="paymentModal">
+                <div class="close_modal" onclick="closePayment()">
+                    <img src="./icons/close-svgrepo-com.svg"  style="width:20px;">
+                </div>
+                <div class="pay_box">
+                    
+                    <div class="payment_card"> 
+                        <div class="visa_icon">
+                            <img src="./icons/mastercard-full-svgrepo-com.svg" onclick="changeMasterCard()">
+                        </div>
+                        <div class="visa_icon">
+                            <img src="./icons/visa-classic-svgrepo-com.svg"  onclick="changeVisaCard()">
+                        </div>
+                        <div class="visa_icon">
+                            <img src="./icons/paypal-svgrepo-com.svg"  onclick="changePaypalCard()">
+                        </div>
+                    </div>
+                    <div class="visa">
+                        <div class="person_info">
+                            <fieldset class="fname">
+                                <input type="text" placeholder="First Name">
+                            </fieldset>
+                            <fieldset class="fname">
+                                <input type="text" placeholder="Last Name">
+                            </fieldset>
+                            <fieldset class="fname">
+                                <input type="text" placeholder="Email">
+                            </fieldset>
+                            <fieldset class="fname">
+                                <input type="text" placeholder="Phone Number">
+                            </fieldset>
+                        </div>
+                        <fieldset class="card_type">
+                           <div class="visa_card">
+                            <h4>Credit Card</h4>
+                            <img src="./icons/mastercard-full-svgrepo-com.svg"style="width:60px;" id="master_card">
+                            <img src="./icons/visa-classic-svgrepo-com.svg"style="width:60px; display:none;" id="visa_card">
+                            <img src="./icons/paypal-svgrepo-com.svg"style="width:60px; display:none;" id="paypal_card">
+                           </div>
+                        </fieldset>
+                        <h2>Card Details</h2>
+    
+                        <fieldset class="year">
+                            <input type="date" placeholder="Expiry Date">
+                            <input type="date" placeholder="CVV">
+                        </fieldset>
+                        <button class="card_button">Pay with Visa</button>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    
+        <div class="shadow" id="downShadow">
+            <div class="modal" id="modal">
+                <div class="close_modal" onclick="closeModal()">
+                    <img src="./icons/close-svgrepo-com.svg"  style="width:20px;">
+                </div>
+    
+                <div class="confirm_delivery">
+                    <h2>Select Delivery Method</h2>
+                    <div class="pickup">
+                        <button type="radio">Pickup Station</button>
+                        <P>FREE</P> <br>
+                        <p>Delivery Between --- and ----</p>
+                    </div>
+                    <div class="pickup">
+                        <label>Select Pickup Station</label>
+                        <select id="pickup_station">
+                            <option value=""></option>
+                            <option>NATO</option>
+                            <option>KTSTA</option>
+                        </select>
+                    </div>
+                    <div class="pickup">
+                        <button type="radio">Doo Delivery</button>
+                        <P>FREE</P> <br>
+                        <p>Delivery Between --- and ----</p>
+                        
+                    </div>
+                    <button class="confirm_delivery_button" onclick="showPayment()">Confirm Delivery</button>
+                </div>
+            </div>
+           </div>
+
+        <footer id="footer">
+            <div class="web-name"><h2>ShopEase</h2></div>
+            <div class="web-info">
+                <i class="fas- fa-globe">English</i>
+                <h3>$ USD - &#8358; Naira</h3>
+                <h3>Katsina State, Nigeria</h3>
+            </div>
+
+            <div class="login">
+                <p>Already a customer ? <a href="">Sign in here</a></p>
+            </div>
+            <div class="terms-condtitions">
+                <li> Condition of use</li>
+                <li>About us</li>
+                <li>Customer Care</li>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024, ShopEase.com</p>
+            </div>
+        </footer>
+     </div>
+
+
+
+     <script>
+
+        const shadow= document.getElementById("downShadow");
+        const modal = document.getElementById("modal");
+        const paymentShadow = document.getElementById("upperShadow");
+        const paymentModal = document.getElementById("paymentModal");
+        
+        function showModal(){
+            shadow.style.display = "block";
+            modal.style.display = "block";
+        
+        }
+        function closeModal(){
+            shadow.style.display = "none";
+            modal.style.display = "none";
+        }
+        
+        
+        function showPayment(){
+            shadow.style.display = "none";
+            modal.style.display = "none";
+            paymentShadow.style.display = "block";
+            paymentModal.style.display = "block";
+          }
+        
+        function closePayment(){
+            paymentModal.style.display = "none";
+            paymentShadow.style.display = "none";
+           
+        }
+        
+        
+        </script>
+        
+        
+        
+
+     <script src="./home.js"></script>
+     <script src="./cart.js"></script>
+
+</body>
+</html>

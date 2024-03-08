@@ -7,7 +7,15 @@
     <link rel="stylesheet" href="./fontawesome-free/css/all.min.css">
     <link rel="stylesheet" href="./home.css">
 </head>
-
+<style>
+    .product_container{
+        visibility: hidden;
+        z-index: 70;
+    }
+    .sample_details{
+        display: none;
+    }
+</style>
 <body>
     <div class="sidebar" id="sidebarr">
         <div class="close_btn">
@@ -1985,7 +1993,7 @@
                     
                     <a href="./products/product_8.html">
                         <div class="image">
-                            <img src="./images/barry black kaftan.JPG" width="100px" height="100px" alt="">
+                            <img src="./images/army green kaftan.JPG" width="100px" height="100px" alt="">
                         </div>
                     </a>
                     <div class="price">
@@ -1993,7 +2001,7 @@
                         <h5><s>NGN 63,826</s></h5>
                     </div>
         
-                    <h4 id="product_name">Barry Kaftab</h4>
+                    <h4 id="product_name">Silk Kaftan</h4>
                   
                       
                 <div class="stars" id="stars">
@@ -2058,7 +2066,7 @@
 
                 <div class="cards" id="cards">
                     
-                    <a href="./products/product_12.html">
+                    <a href="./products/product_11.html">
                         <div class="image">
                             <img src="./images/beyond space snicker.JPG" width="100px" height="100px" alt="">
                         </div>
@@ -2083,7 +2091,7 @@
 
                 <div class="cards" id="cards">
                     
-                    <a href="./products/product_13.html">
+                    <a href="./products/product_12.html">
                         <div class="image">
                             <img src="./images/brown fan gown.JPG" width="100px" height="100px" alt="">
                         </div>
@@ -2108,7 +2116,7 @@
 
                 <div class="cards" id="cards">
                     
-                    <a href="./products/product_14.html">
+                    <a href="./products/product_13.html">
                         <div class="image">
                             <img src="./images/lace baby gown.JPG" width="100px" height="100px" alt="">
                         </div>
@@ -2133,9 +2141,9 @@
 
                 <div class="cards" id="cards">
                     
-                    <a href="./products/product_15.html">
+                    <a href="./products/product_14.html">
                         <div class="image">
-                            <img src="./images/black kaftan.JPG" width="100px" height="100px" alt="">
+                            <img src="./images/milk half cover shoe.JPG" width="100px" height="100px" alt="">
                         </div>
                     </a>
                     <div class="price">
@@ -2143,7 +2151,7 @@
                         <h5><s>NGN 43,826</s></h5>
                     </div>
         
-                    <h4 id="product_name">Black Kaftan</h4>
+                    <h4 id="product_name">Half Cover Shoes</h4>
                   
                       
                 <div class="stars" id="stars">
@@ -2158,9 +2166,9 @@
 
                 <div class="cards" id="cards">
                     
-                    <a href="./products/product_16.html">
+                    <a href="./products/product_15.html">
                         <div class="image">
-                            <img src="./images/brown sweater boy set.JPG" width="100px" height="100px" alt="">
+                            <img src="./images/green  boy set.JPG" width="100px" height="100px" alt="">
                         </div>
                     </a>
                     <div class="price">
@@ -2168,7 +2176,7 @@
                         <h5><s>NGN 40,826</s></h5>
                     </div>
         
-                    <h4 id="product_name">Baby Sweater</h4>
+                    <h4 id="product_name">Baby Boy Set</h4>
                   
                       
                 <div class="stars" id="stars">
@@ -2182,14 +2190,223 @@
                 </div>
         </div>
 
-        C:\Users\Umar Dalhat\Desktop\e-commerce website\gadget.html
+        <div class="sample_details">
+            <div class="product_details">
+                <h1 id="product_name">White Cauliflower</h1>
+                
+                <fieldset class="select-details1">
+                    <h2><b>Price:</b> </h2>&nbsp; &nbsp;
+                    <h2 id="money">&#8358;1,000</h2>
+                </fieldset>
+                
+                <fieldset class="select-details1">
+                    <h2><b>Size:</b> </h2>&nbsp; &nbsp;
+                   <h2 id="size">500g</h2>
+                </fieldset>
+    
+                <fieldset class="select-details1">
+                    <h2><b>Color:</b> </h2>&nbsp; &nbsp;
+                   <h2 id="color">Brown</h2>
+                </fieldset>
+                
+    
+                <fieldset class="select-input-details">
+                    <span id="numberError"></span>
+                    <input type="number" placeholder="1" id="input">
+                    <button id="addChart">Add to chart</button>
+                </fieldset>
+    
+                <h3 class="product-des">Product Details</h3>
+                <p class="product-des" id="product-des">
+                    White Cauliflower is popular and versatile vegetable for its mild flavour and dense, crunchy texture. Its harvested when thehead is compact and creamy white in color with tightly packed florets. Its rich in vitamins, it can be enjoyes raw as crunchy snack or slad ingredient, or cooked in various ways including steaming, roasting, sauteing or even marsh as low-carb alternate for marsh potates.
+                </p>
+            
+                
+            </div>
+    
+         
+        </div>
+         
+        <div class="saved_products" id="saved_products">
+            <button  id="close_favorite" onclick=" closeFavorite()" style="background-color: rgb(24, 36, 58); padding: .5rem; border-radius: .2rem; color: #fff; cursor: pointer;">
+                <img src="../icons/close-svgrepo-com.svg" width="20px">
+            </button>
+    
+            <div class="favorite_listCarts">
+            </div>
+                  
+        </div>
+    
+        <div class="payment_way" id="payment_way">
+            <div class="amount">
+                <button class="close_cart" id="close" onclick="closeCart()">
+                        <img src="../icons/close-svgrepo-com.svg" width="20px">
+                </button>
+                <h3 id="total_amount">&#8358;0.00</h3>
+            </div>
+    
+            <div class="listCart">
+            </div>
+            
+            <div class="btnClass">
+                <button class="delete" id="delete_all_button" onclick="deleteAllProducts()">Delete All</button>
+                <button class="payAll" id="close" >Pay All</button>
+            </div>
+    
+               
+        </div>
 
+        <div class="shadowy" id="upperShadow">
+           
+            <div class="modaly" id="paymentModal">
+                <div class="close_modal" onclick="closePayment()">
+                    <img src="./icons/close-svgrepo-com.svg"  style="width:20px;">
+                </div>
+                <div class="pay_box">
+                    
+                    <div class="payment_card"> 
+                        <div class="visa_icon">
+                            <img src="./icons/mastercard-full-svgrepo-com.svg" onclick="changeMasterCard()">
+                        </div>
+                        <div class="visa_icon">
+                            <img src="./icons/visa-classic-svgrepo-com.svg"  onclick="changeVisaCard()">
+                        </div>
+                        <div class="visa_icon">
+                            <img src="./icons/paypal-svgrepo-com.svg"  onclick="changePaypalCard()">
+                        </div>
+                    </div>
+                    <div class="visa">
+                        <div class="person_info">
+                            <fieldset class="fname">
+                                <input type="text" placeholder="First Name">
+                            </fieldset>
+                            <fieldset class="fname">
+                                <input type="text" placeholder="Last Name">
+                            </fieldset>
+                            <fieldset class="fname">
+                                <input type="text" placeholder="Email">
+                            </fieldset>
+                            <fieldset class="fname">
+                                <input type="text" placeholder="Phone Number">
+                            </fieldset>
+                        </div>
+                        <fieldset class="card_type">
+                           <div class="visa_card">
+                            <h4>Credit Card</h4>
+                            <img src="./icons/mastercard-full-svgrepo-com.svg"style="width:60px;" id="master_card">
+                            <img src="./icons/visa-classic-svgrepo-com.svg"style="width:60px; display:none;" id="visa_card">
+                            <img src="./icons/paypal-svgrepo-com.svg"style="width:60px; display:none;" id="paypal_card">
+                           </div>
+                        </fieldset>
+                        <h2>Card Details</h2>
+    
+                        <fieldset class="year">
+                            <input type="date" placeholder="Expiry Date">
+                            <input type="date" placeholder="CVV">
+                        </fieldset>
+                        <button class="card_button">Pay with Visa</button>
+                    </div>
+    
+                </div>
+            </div>
+        </div>
+    
+        <div class="shadow" id="downShadow">
+            <div class="modal" id="modal">
+                <div class="close_modal" onclick="closeModal()">
+                    <img src="./icons/close-svgrepo-com.svg"  style="width:20px;">
+                </div>
+    
+                <div class="confirm_delivery">
+                    <h2>Select Delivery Method</h2>
+                    <div class="pickup">
+                        <button type="radio">Pickup Station</button>
+                        <P>FREE</P> <br>
+                        <p>Delivery Between --- and ----</p>
+                    </div>
+                    <div class="pickup">
+                        <label>Select Pickup Station</label>
+                        <select id="pickup_station">
+                            <option value=""></option>
+                            <option>NATO</option>
+                            <option>KTSTA</option>
+                        </select>
+                    </div>
+                    <div class="pickup">
+                        <button type="radio">Doo Delivery</button>
+                        <P>FREE</P> <br>
+                        <p>Delivery Between --- and ----</p>
+                        
+                    </div>
+                    <button class="confirm_delivery_button" onclick="showPayment()">Confirm Delivery</button>
+                </div>
+            </div>
+           </div>
+     
+     
+     
+           <footer id="footer">
+            <div class="web-name"><h2>ShopEase</h2></div>
+            <div class="web-info">
+                <i class="fas- fa-globe">English</i>
+                <h3>$ USD - &#8358; Naira</h3>
+                <h3>Katsina State, Nigeria</h3>
+            </div>
 
+            <div class="login">
+                <p>Already a customer ? <a href="">Sign in here</a></p>
+            </div>
+            <div class="terms-condtitions">
+                <li> Condition of use</li>
+                <li>About us</li>
+                <li>Customer Care</li>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024, ShopEase.com</p>
+            </div>
+        </footer>
+        
 
      </div>
 
+
+		<script>
+
+const shadow= document.getElementById("downShadow");
+const modal = document.getElementById("modal");
+const paymentShadow = document.getElementById("upperShadow");
+const paymentModal = document.getElementById("paymentModal");
+
+function showModal(){
+    shadow.style.display = "block";
+    modal.style.display = "block";
+
+}
+function closeModal(){
+    shadow.style.display = "none";
+    modal.style.display = "none";
+}
+
+
+function showPayment(){
+    shadow.style.display = "none";
+    modal.style.display = "none";
+    paymentShadow.style.display = "block";
+    paymentModal.style.display = "block";
+  }
+
+function closePayment(){
+    paymentModal.style.display = "none";
+    paymentShadow.style.display = "none";
    
-     <script src="./script.js"></script>
+}
+
+
+</script>
+   
+     <script src="./home.js"></script>
+     <script src="./cart.js"></script>
 
 </body>
 </html>

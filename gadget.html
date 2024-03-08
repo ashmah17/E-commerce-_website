@@ -2039,7 +2039,31 @@
                 </div>
                 </div>
 
-               
+                <div class="cards" id="cards">
+                    
+                    <a href="./products/product_9.html">
+                        <div class="image">
+                            <img src="./images/nikon.jpeg" width="100px" height="100px" alt="">
+                        </div>
+                    </a>
+                    <div class="price">
+                        <h2>NGN 118,913</h2>
+                        <h5><s>NGN 119,826</s></h5>
+                    </div>
+        
+                    <h4 id="product_name">Nikon Camera</h4>
+                  
+                      
+                <div class="stars" id="stars">
+                    <span class="star" onclick="rate(1)">☆</span>
+                    <span class="star" onclick="rate(2)">☆</span>
+                    <span class="star" onclick="rate(3)">☆</span>
+                    <span class="star" onclick="rate(4)">☆</span>
+                    <span class="star" onclick="rate(5)">☆</span>
+                    
+                </div>
+                </div>
+
 
         </div>
 
@@ -2222,11 +2246,45 @@
         </footer>
         
 
-
      </div>
 
    
-     <script src="./script.js"></script>
+	<script>
+
+const shadow= document.getElementById("downShadow");
+const modal = document.getElementById("modal");
+const paymentShadow = document.getElementById("upperShadow");
+const paymentModal = document.getElementById("paymentModal");
+
+function showModal(){
+    shadow.style.display = "block";
+    modal.style.display = "block";
+
+}
+function closeModal(){
+    shadow.style.display = "none";
+    modal.style.display = "none";
+}
+
+
+function showPayment(){
+    shadow.style.display = "none";
+    modal.style.display = "none";
+    paymentShadow.style.display = "block";
+    paymentModal.style.display = "block";
+  }
+
+function closePayment(){
+    paymentModal.style.display = "none";
+    paymentShadow.style.display = "none";
+   
+}
+
+
+</script>
+
+      <script src="./home.js"></script>
+     <script src="./cart.js"></script>
 
 </body>
 </html>

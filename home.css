@@ -153,11 +153,12 @@ button{
     .search-box{
         display: flex;
         align-items: center;
+        justify-content: space-between;
         flex-direction: row;
         border-radius: .5rem;
         width: 10rem;
-        /* background-color:  #8d0808; */
-        border:  1px solid var(--tertiary-color);
+        padding: 0;
+        /* border:  1px solid var(--tertiary-color); */
     }
     .side_bar_icon img{
         width: 30px;
@@ -267,6 +268,9 @@ button{
         font-size: .9rem;
         width: 80%;
         border-radius: .5rem;
+        margin-left: .5rem;
+        border:  1px solid var(--tertiary-color);
+
     }
     .search_input::placeholder{
         font-size: .8rem;
