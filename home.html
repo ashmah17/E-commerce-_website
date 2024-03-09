@@ -15,6 +15,17 @@
         .sample_details{
             display: none;
         }
+        .drop-content{
+            display:none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0  8px  16px 0 rgba(0, 0, 0,0.2);
+            z-index: 100;
+        }
+        .show{
+            display:block;
+        }
     </style>
 </head>
 
@@ -83,8 +94,12 @@
                     <i class="side_bar_icon">
                         <img src="./icons/setting-material-svgrepo-com.svg" alt="">
                     </i>
-                    <span >Setting</span>
-               </div>
+                    <span class="dropbtn" onclick="toggleDropdown()">Setting</span>
+                    <div id="mydropdown" class="drop-content">
+                        <a href="">Profile</a>
+                        <a href="">Contact Us</a>
+                    </div>
+                </div>
             </a>
          </li>
 
@@ -2882,7 +2897,26 @@
 
  
 
+<script>
+   function toggleDropdown() {
+    var dropdownMenu = document.getElementById("mydropdown");
+    dropdownMenu.classList.toggle("show");
+}
 
+window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("drop-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove("show");
+            }
+        }
+    }
+}
+
+
+</script>
 
 
 <script src="./home.js"></script>

@@ -154,7 +154,7 @@ cartItems.forEach(item => {
             </div>
            
             <span class="pay">
-                <img src="./icons/trash-list-alt-svgrepo-com.svg" style="width: 20px;" id="delete_button">
+                <img src="./icons/trash-list-alt-svgrepo-com.svg" onclick="deleteProduct()" style="width: 20px;" id="delete_button">
                 <img src="./icons/checkout-svgrepo-com.svg" style="width: 20px;" onclick="showModal()">
                 </span>
         `;
@@ -222,8 +222,8 @@ updateCartIcon();
 renderCartItems(); 
 
 // DELETE SINGLE PRODUCT
-document.getElementById("delete_button").addEventListener('click', deleteAllProducts);
-function deleteProduct(){
+document.getElementById("delete_button").addEventListener('click', deleteProducts);
+function deleteProducts(){
     const productName = this.parentNode.querySelector('.namy').textContent;
     const productIndex = cartItems.findIndex(item => item.name === productName);
 
