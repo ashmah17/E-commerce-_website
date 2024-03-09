@@ -154,7 +154,7 @@ cartItems.forEach(item => {
             </div>
            
             <span class="pay">
-                <img src="./icons/trash-list-alt-svgrepo-com.svg" style="width: 20px;">
+                <img src="./icons/trash-list-alt-svgrepo-com.svg" style="width: 20px;" id="delete_button">
                 <img src="./icons/checkout-svgrepo-com.svg" style="width: 20px;" onclick="showModal()">
                 </span>
         `;
@@ -221,6 +221,22 @@ addToPaymentWay(product_info);
 updateCartIcon();
 renderCartItems(); 
 
+// DELETE SINGLE PRODUCT
+document.getElementById("delete_button").addEventListener('click', deleteAllProducts);
+function deleteProduct(){
+    const productName = this.parentNode.querySelector('.namy').textContent;
+    const productIndex = cartItems.findIndex(item => item.name === productName);
+
+    if (productIndex !== -1){
+        cartItems.splice(productIndex, 1);
+        localStorage.setItem('cartItems',JSON.stringify(cartItems));
+        renderCartItems();
+        updateCartIcon;
+    }
+}
+
+
+// delete all product
 function deleteAllProducts() {
 cartItems = []; 
 localStorage.setItem('cartItems', JSON.stringify(cartItems)); // Update localStorage
@@ -233,6 +249,7 @@ document.getElementById('delete_all_button').addEventListener('click', deleteAll
 
 
 });
+// DOWNLOAD RECEIPT
 
 function downloadReceipt() {
     const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
@@ -292,4 +309,50 @@ function downloadReceipt() {
 
     document.body.removeChild(a);
 }
+
+//*****************************************MODAL *****************************************
+
+const shadow= document.getElementById("downShadow");
+const modal = document.getElementById("modal");
+const paymentShadow = document.getElementById("upperShadow");
+const paymentModal = document.getElementById("paymentModal");
+const receiptShadow = document.getElementById("receiptShadow");
+const receipt_modal = document.getElementById("receipt_modal");
+
+function showModal(){
+    shadow.style.display = "block";
+    modal.style.display = "block";
+
+}
+function closeModal(){
+    shadow.style.display = "none";
+    modal.style.display = "none";
+}
+
+
+function showPayment(){
+    shadow.style.display = "none";
+    modal.style.display = "none";
+    paymentShadow.style.display = "block";
+    paymentModal.style.display = "block";
+  }
+
+function closePayment(){
+    paymentModal.style.display = "none";
+    paymentShadow.style.display = "none";
+   
+}
+function openReceipt(){
+    paymentShadow.style.display = "none";
+    paymentModal.style.display = "none";
+    receiptShadow.style.display = "block";
+    receipt_modal.style.display = "block";
+  }
+
+function closeReceipt(){
+    receiptShadow.style.display = "none";
+    receipt_modal.style.display = "none";
+   
+}
+
 

@@ -1095,7 +1095,7 @@ button{
             width: 100%;
             height: 1rem;
         }
-        .shadow, .shadowy{
+        .shadow, .shadowy, .receiptShadow{
             width: 100%;
             height: 100vh;
             position: fixed;
@@ -1110,7 +1110,11 @@ button{
             display: none;
         }
         .shadowy{
+            z-index: 99;
+        }
+        #receiptShadow{
             z-index: 100;
+  
         }
         .confirm_delivery_button{
             width: 100%;
