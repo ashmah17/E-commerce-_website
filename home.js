@@ -466,3 +466,27 @@ function displayRating(productId, rating){
  }
 }
 
+// Getime
+function getDeliveryStation() {
+    const currentDate = new Time();
+    const options = { weekday: 'long', month: 'long', day: 'numeric' };
+
+    // Calculate delivery end time correctly
+    const deliveryEnd = new Date(currentDate.getTime() + (42 * 60 * 60 * 1000));
+
+    // Return dates instead of formatted strings
+    return { start: currentDate, end: deliveryEnd };
+}
+
+window.onload = function() {
+    console.log("Window loaded");
+    const deliveryDates = getDeliveryStation();
+    console.log("Delivery dates:", deliveryDates);
+    const deliveryStartStr = deliveryDates.start.toLocaleString('en-US', options);
+    const deliveryEndStr = deliveryDates.end.toLocaleString('en-US', options);
+
+    // Set delivery station and door elements
+    document.getElementById("deliveryStation").innerHTML = `Delivery Date ${deliveryStartStr} to ${deliveryEndStr}`;
+    document.getElementById("deliveryDoor").innerText = `Delivery Date ${deliveryStartStr} to ${deliveryEndStr}`;
+};
+

@@ -3667,8 +3667,12 @@
 
             <fieldset class="select-input-details">
                 <span id="numberError"></span>
-                <input type="number" placeholder="1" id="input">
+                <input type="number" placeholder="1" id="input" min="0">
+               <span class="holder">
                 <button id="addChart">Add to chart</button>
+                <img src="../icons/favorite-filled-svgrepo-com.svg" id="addFavorite" style="width: 30px; cursor: pointer;" >
+               </span>
+            
             </fieldset>
 
             <h3 class="product-des">Product Details</h3>
@@ -3677,34 +3681,6 @@
             </p>
         
             
-        </div>
-
-        <div class="paymentDetails">
-                <select class="ship_to">
-                    <option value="">
-                        <p>Ship To <i class="fas fa-angle-down"></i></p>
-                    </option>
-                    <option>Nigeria</option>
-                    <option>South Africa</option>
-                    <option>China</option>
-                    <option>Canada</option>
-                </select>
-
-            <select class="delivery">
-                <option value="">
-                    <p>Delivery Choice &nbsp; &nbsp;<i class="fas fa-angle-down"></i></p>                        <span>
-                </option>
-                <option> Free Delivery</option>
-                <option> Paid Delivery</option>
-            </select>
-
-            <select class="buyer_right" readonly="true">
-                <option>
-                    <p>Buyer Rights &nbsp; &nbsp;<i class="fas fa-angle-down"></i></p> 
-                </option>
-                <option>When the product you selected, was not the one delivered, you have the right to return it.</option>
-                <option> When the delivery time exceeded.</option>
-            </select>
         </div>
     </div>
 
@@ -3785,7 +3761,7 @@
                         <input type="date" placeholder="Expiry Date">
                         <input type="date" placeholder="CVV">
                     </fieldset>
-                    <button class="card_button">Pay with Visa</button>
+                    <button class="card_button" onclick="openReceipt()">Pay</button>
                 </div>
 
             </div>
@@ -3801,22 +3777,48 @@
             <div class="confirm_delivery">
                 <h2>Select Delivery Method</h2>
                 <div class="pickup">
-                    <button type="radio">Pickup Station</button>
-                    <P>FREE</P> <br>
-                    <p>Delivery Between --- and ----</p>
-                </div>
-                <div class="pickup">
-                    <label>Select Pickup Station</label>
+                    <button id="station">Pickup Station</button>
+                    <p>Pickup fee is NGN 3,000 when you order within the next 24hrs</p> 
+                       <br>
+                    <select  id="">
+                        <option value="">Select Location</option>
+                        <option value="">Katsina</option>
+                        <option value="">Kano</option>
+                        <option value="">Kaduna</option>
+                        <option value="">Abuja</option>
+                        <option value="">Lagos</option>
+                    </select> <br>
                     <select id="pickup_station">
                         <option value=""></option>
                         <option>NATO</option>
                         <option>KTSTA</option>
                     </select>
+                    <p id="deliveryStation"></p>
+                </div>
+                
+                <div class="pickup">
+                    <h4>Number of i tems:</h4>
+                    <h4>Subtotal:</h4>
                 </div>
                 <div class="pickup">
-                    <button type="radio">Doo Delivery</button>
-                    <P>FREE</P> <br>
-                    <p>Delivery Between --- and ----</p>
+                    <button id="door">Door Delivery</button>
+                    <p>Pickup fee is NGN 3,000 when you order within the next 24hrs</p> <br>
+                 
+                    <select  id="">
+                        <option value="">Select Location</option>
+                        <option value="">Katsina</option>
+                        <option value="">Kano</option>
+                        <option value="">Kaduna</option>
+                        <option value="">Abuja</option>
+                        <option value="">Lagos</option>
+                    </select> <br>
+                    <select >
+                        <option value="">City</option>
+                        <option>NATO</option>
+                        <option>KTSTA</option>
+                    </select>
+                    <p id="deliveryDoor"></p>
+                
                     
                 </div>
                 <button class="confirm_delivery_button" onclick="showPayment()">Confirm Delivery</button>
@@ -3824,6 +3826,48 @@
         </div>
        </div>
 
+       <div class="receiptShadow" id="receiptShadow">
+        <div class="modal" id="receipt_modal">
+            <div class="close_modal" onclick="closeReceipt()">
+                <img src="./icons/close-svgrepo-com.svg"  style="width:20px;">
+            </div>
+            
+            <div class="receipt">
+                <div class="receipt-header">
+                    <h2>Receipt</h2>
+                </div>
+                <div class="receipt-details">
+                    <span>Order Number: #123456</span>
+                    <span>Date of Order: March 9, 2024</span>
+                    <span>Delivery Person's Name: John Doe</span>
+                </div>
+                <div class="receipt-item">
+                    <span>Item 1:</span>
+                    <span>Quantity: 2</span>
+                    <span>Unit Price: $5.00</span>
+                    <span>Subtotal: $10.00</span>
+                </div>
+                <div class="receipt-item">
+                    <span>Item 2:</span>
+                    <span>Quantity: 1</span>
+                    <span>Unit Price: $15.00</span>
+                    <span>Subtotal: $15.00</span>
+                </div>
+                <div class="receipt-item">
+                    <span>Item 3:</span>
+                    <span>Quantity: 3</span>
+                    <span>Unit Price: $8.00</span>
+                    <span>Subtotal: $24.00</span>
+                </div>
+                <div class="receipt-total">
+                    <span>Total:</span>
+                    <span>$49.00</span>
+                </div>
+                <button onclick="downloadReceipt()">Download Receipt</button>
+            </div>
+            
+        </div>
+       </div>
 
         <footer id="footer">
             <div class="web-name"><h2>ShopEase</h2></div>
@@ -3861,6 +3905,8 @@ const shadow= document.getElementById("downShadow");
 const modal = document.getElementById("modal");
 const paymentShadow = document.getElementById("upperShadow");
 const paymentModal = document.getElementById("paymentModal");
+const receiptShadow = document.getElementById("receiptShadow");
+const receipt_modal = document.getElementById("receipt_modal");
 
 function showModal(){
     shadow.style.display = "block";
@@ -3883,6 +3929,18 @@ function showPayment(){
 function closePayment(){
     paymentModal.style.display = "none";
     paymentShadow.style.display = "none";
+   
+}
+function openReceipt(){
+    paymentShadow.style.display = "none";
+    paymentModal.style.display = "none";
+    receiptShadow.style.display = "block";
+    receipt_modal.style.display = "block";
+  }
+
+function closeReceipt(){
+    receiptShadow.style.display = "none";
+    receipt_modal.style.display = "none";
    
 }
 
@@ -3979,6 +4037,9 @@ renderFavoriteItems();
 
 
 </script>
+
+
+
 <script src="./home.js"></script>
 <script src="./cart.js"></script>
 <!--  -->

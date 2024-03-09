@@ -220,19 +220,19 @@
            
             <div class="modaly" id="paymentModal">
                 <div class="close_modal" onclick="closePayment()">
-                    <img src="../icons/close-svgrepo-com.svg"  style="width:20px;">
+                    <img src="./icons/close-svgrepo-com.svg"  style="width:20px;">
                 </div>
                 <div class="pay_box">
                     
                     <div class="payment_card"> 
                         <div class="visa_icon">
-                            <img src="../icons/mastercard-full-svgrepo-com.svg"style="width:80px;">
+                            <img src="./icons/mastercard-full-svgrepo-com.svg" onclick="changeMasterCard()">
                         </div>
                         <div class="visa_icon">
-                            <img src="../icons/visa-classic-svgrepo-com.svg" style="width:80px;">
+                            <img src="./icons/visa-classic-svgrepo-com.svg"  onclick="changeVisaCard()">
                         </div>
                         <div class="visa_icon">
-                            <img src="../icons/paypal-svgrepo-com.svg" style="width:80px;">
+                            <img src="./icons/paypal-svgrepo-com.svg"  onclick="changePaypalCard()">
                         </div>
                     </div>
                     <div class="visa">
@@ -253,54 +253,124 @@
                         <fieldset class="card_type">
                            <div class="visa_card">
                             <h4>Credit Card</h4>
-                            <img src="../icons/visa-classic-svgrepo-com.svg"style="width:60px;">
+                            <img src="./icons/mastercard-full-svgrepo-com.svg"style="width:60px;" id="master_card">
+                            <img src="./icons/visa-classic-svgrepo-com.svg"style="width:60px; display:none;" id="visa_card">
+                            <img src="./icons/paypal-svgrepo-com.svg"style="width:60px; display:none;" id="paypal_card">
                            </div>
                         </fieldset>
                         <h2>Card Details</h2>
-
+    
                         <fieldset class="year">
                             <input type="date" placeholder="Expiry Date">
                             <input type="date" placeholder="CVV">
                         </fieldset>
-                        <button class="card_button">Pay with Visa</button>
+                        <button class="card_button" onclick="openReceipt()">Pay</button>
                     </div>
-
+    
                 </div>
             </div>
         </div>
-
+    
         <div class="shadow" id="downShadow">
             <div class="modal" id="modal">
                 <div class="close_modal" onclick="closeModal()">
-                    <img src="../icons/close-svgrepo-com.svg"  style="width:20px;">
+                    <img src="./icons/close-svgrepo-com.svg"  style="width:20px;">
                 </div>
-
+    
                 <div class="confirm_delivery">
                     <h2>Select Delivery Method</h2>
                     <div class="pickup">
-                        <button type="radio">Pickup Station</button>
-                        <P>FREE</P> <br>
-                        <p>Delivery Between --- and ----</p>
-                    </div>
-                    <div class="pickup">
-                        <label>Select Pickup Station</label>
+                        <button id="station">Pickup Station</button>
+                        <p>Pickup fee is NGN 3,000 when you order within the next 24hrs</p> 
+                           <br>
+                        <select  id="">
+                            <option value="">Select Location</option>
+                            <option value="">Katsina</option>
+                            <option value="">Kano</option>
+                            <option value="">Kaduna</option>
+                            <option value="">Abuja</option>
+                            <option value="">Lagos</option>
+                        </select> <br>
                         <select id="pickup_station">
                             <option value=""></option>
                             <option>NATO</option>
                             <option>KTSTA</option>
                         </select>
+                        <p id="deliveryStation"></p>
+                    </div>
+                    
+                    <div class="pickup">
+                        <h4>Number of i tems:</h4>
+                        <h4>Subtotal:</h4>
                     </div>
                     <div class="pickup">
-                        <button type="radio">Doo Delivery</button>
-                        <P>FREE</P> <br>
-                        <p>Delivery Between --- and ----</p>
+                        <button id="door">Door Delivery</button>
+                        <p>Pickup fee is NGN 3,000 when you order within the next 24hrs</p> <br>
+                     
+                        <select  id="">
+                            <option value="">Select Location</option>
+                            <option value="">Katsina</option>
+                            <option value="">Kano</option>
+                            <option value="">Kaduna</option>
+                            <option value="">Abuja</option>
+                            <option value="">Lagos</option>
+                        </select> <br>
+                        <select >
+                            <option value="">City</option>
+                            <option>NATO</option>
+                            <option>KTSTA</option>
+                        </select>
+                        <p id="deliveryDoor"></p>
+                    
                         
                     </div>
                     <button class="confirm_delivery_button" onclick="showPayment()">Confirm Delivery</button>
                 </div>
             </div>
            </div>
-
+    
+           <div class="shadow" id="receiptShadow">
+            <div class="modal" id="receipt_modal">
+                <div class="close_modal" onclick="closeReceipt()">
+                    <img src="./icons/close-svgrepo-com.svg"  style="width:20px;">
+                </div>
+                
+                <div class="receipt">
+                    <div class="receipt-header">
+                        <h2>Receipt</h2>
+                    </div>
+                    <div class="receipt-details">
+                        <span>Order Number: #123456</span>
+                        <span>Date of Order: March 9, 2024</span>
+                        <span>Delivery Person's Name: John Doe</span>
+                    </div>
+                    <div class="receipt-item">
+                        <span>Item 1:</span>
+                        <span>Quantity: 2</span>
+                        <span>Unit Price: $5.00</span>
+                        <span>Subtotal: $10.00</span>
+                    </div>
+                    <div class="receipt-item">
+                        <span>Item 2:</span>
+                        <span>Quantity: 1</span>
+                        <span>Unit Price: $15.00</span>
+                        <span>Subtotal: $15.00</span>
+                    </div>
+                    <div class="receipt-item">
+                        <span>Item 3:</span>
+                        <span>Quantity: 3</span>
+                        <span>Unit Price: $8.00</span>
+                        <span>Subtotal: $24.00</span>
+                    </div>
+                    <div class="receipt-total">
+                        <span>Total:</span>
+                        <span>$49.00</span>
+                    </div>
+                    <button onclick="downloadReceipt()">Download Receipt</button>
+                </div>
+                
+            </div>
+           </div>
         <footer id="footer">
             <div class="web-name"><h2>ShopEase</h2></div>
             <div class="web-info">

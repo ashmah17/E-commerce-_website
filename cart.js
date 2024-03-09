@@ -116,6 +116,7 @@ function addToPaymentWay(product_info) {
         cartItems[existingIndex].quantity += product_info.quantity;
         cartItems[existingIndex].totalPrice += product_info.price * product_info.quantity;
     } else {
+       
         cartItems.push(product_info);
     }
 
@@ -123,6 +124,7 @@ function addToPaymentWay(product_info) {
     updateCartIcon();
     renderCartItems();
 }
+
 
 function renderCartItems() {
 const paymentWay = document.querySelector('.listCart');
@@ -232,4 +234,62 @@ document.getElementById('delete_all_button').addEventListener('click', deleteAll
 
 });
 
+function downloadReceipt() {
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+    function generateReceiptContent(items) {
+        let receiptContent = `
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Receipt</title>
+        <style>
+            /* Your CSS styles here */
+        </style>
+        </head>
+        <body>
+        <div class="receipt">
+            <div class="receipt-header">
+                <h2>Receipt</h2>
+            </div>
+            <div class="receipt-items">`;
+
+        items.forEach((item, index) => {
+            receiptContent += `
+                <div class="receipt-item">
+                    <span>Item ${index + 1}:</span>
+                    <span>${item.name}</span>
+                    <span>Quantity: ${item.quantity}</span>
+                    <span>Unit Price: NGN ${item.price}</span>
+                    <span>Subtotal: NGN ${item.totalPrice}</span>
+                </div>`;
+        });
+
+        receiptContent += `
+            </div>
+            <div class="receipt-total">
+                <span>Total:</span>
+                <span>NGN ${items.reduce((total, item) => total + item.totalPrice, 0)}</span>
+            </div>
+        </div>
+        </body>
+        </html>`;
+        
+        return receiptContent;
+    }
+
+    const receiptContent = generateReceiptContent(cartItems);
+    const blob = new Blob([receiptContent], { type: 'text/html' });
+    
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'receipt.html';
+
+    document.body.appendChild(a);
+    a.click();
+
+    document.body.removeChild(a);
+}
 
