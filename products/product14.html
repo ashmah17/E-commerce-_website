@@ -128,7 +128,7 @@
                 <div class="product-info">
                     <div class="product_sample">
                         <div class="main-sample">
-                            <img src="../images/toi  et moi boy set.JPG" alt="" id="main-image">
+                            <img src="../images/3.8mm webcam.jpeg" alt="" id="main-image">
                         </div>
                     </div>
 
@@ -136,9 +136,9 @@
                     <div class="small">
                         <h4 class="small-label">Choose Another Sample</h4>
                         <div class="pictures">
-                            <img src="../images/toi  et moi boy set.JPG" class="other-image">
-                            <img src="../images/brown sweater boy set.JPG"  class="other-image">
-                            <img src="../images/coffe sweater boy set.JPG"  class="other-image">                    
+                            <img src="../images/3.8mm webcam.jpeg" class="other-image">
+                            <img src="../images/netigo N66oP WEBCAM.jpeg"  class="other-image">
+                            <img src="../images/mosaic camera.jpeg"  class="other-image">                    
                     
                         </div>
                     </div>
@@ -147,39 +147,37 @@
 
                 <div class="sample_details">
                     <div class="product_details">
-                        <h1 id="product_name">White Cauliflower</h1>
+                        <h1 id="product_name">3.8mm Webcam</h1>
                         
                         <fieldset class="select-details1">
                             <h2><b>Price:</b> </h2>&nbsp; &nbsp;
-                            <h2 id="money">&#8358;1,000</h2>
+                            <h2 id="money">NGN 131,000</h2>
                         </fieldset>
                         
                         <fieldset class="select-details1">
                             <h2><b>Size:</b> </h2>&nbsp; &nbsp;
-                           <h2 id="size">500g</h2>
+                           <h2 id="size">Mini</h2>
                         </fieldset>
-
+            
                         <fieldset class="select-details1">
                             <h2><b>Color:</b> </h2>&nbsp; &nbsp;
-                           <h2 id="color">Brown</h2>
+                           <h2 id="color">Black</h2>
                         </fieldset>
                         
-        
+            
                         <fieldset class="select-input-details">
                             <span id="numberError"></span>
                             <input type="number" placeholder="1" id="input" min="0">
                            <span class="holder">
                             <button id="addChart">Add to chart</button>
-                            <img src="../icons/favorite-svgrepo-com (1).svg" id="addFavorite" style="width: 30px; cursor: pointer;" >
-                            <img src="../icons/favorite-filled-svgrepo-com.svg" id="filledAddFavorite" style="width: 30px; cursor: pointer; display: none;" >
+                            <img src="../icons/favorite-filled-svgrepo-com.svg" id="addFavorite" style="width: 30px; cursor: pointer;" >
                            </span>
                         
                         </fieldset>
-
+            
                         <h3 class="product-des">Product Details</h3>
                         <p class="product-des" id="product-des">
-                            White Cauliflower is popular and versatile vegetable for its mild flavour and dense, crunchy texture. Its harvested when thehead is compact and creamy white in color with tightly packed florets. Its rich in vitamins, it can be enjoyes raw as crunchy snack or slad ingredient, or cooked in various ways including steaming, roasting, sauteing or even marsh as low-carb alternate for marsh potates.
-                        </p>
+                            EMEET 1080P Webcam, Web Camera with 2 Noise-Cancelling Microphones and Privacy Cover, 90°                        </p>
                     
                         
                     </div>
@@ -221,19 +219,19 @@
            
             <div class="modaly" id="paymentModal">
                 <div class="close_modal" onclick="closePayment()">
-                    <img src="../icons/close-svgrepo-com.svg"  style="width:20px;">
+                    <img src="./icons/close-svgrepo-com.svg"  style="width:20px;">
                 </div>
                 <div class="pay_box">
                     
                     <div class="payment_card"> 
                         <div class="visa_icon">
-                            <img src="../icons/mastercard-full-svgrepo-com.svg"style="width:80px;">
+                            <img src="./icons/mastercard-full-svgrepo-com.svg" onclick="changeMasterCard()">
                         </div>
                         <div class="visa_icon">
-                            <img src="../icons/visa-classic-svgrepo-com.svg" style="width:80px;">
+                            <img src="./icons/visa-classic-svgrepo-com.svg"  onclick="changeVisaCard()">
                         </div>
                         <div class="visa_icon">
-                            <img src="../icons/paypal-svgrepo-com.svg" style="width:80px;">
+                            <img src="./icons/paypal-svgrepo-com.svg"  onclick="changePaypalCard()">
                         </div>
                     </div>
                     <div class="visa">
@@ -254,54 +252,124 @@
                         <fieldset class="card_type">
                            <div class="visa_card">
                             <h4>Credit Card</h4>
-                            <img src="../icons/visa-classic-svgrepo-com.svg"style="width:60px;">
+                            <img src="./icons/mastercard-full-svgrepo-com.svg"style="width:60px;" id="master_card">
+                            <img src="./icons/visa-classic-svgrepo-com.svg"style="width:60px; display:none;" id="visa_card">
+                            <img src="./icons/paypal-svgrepo-com.svg"style="width:60px; display:none;" id="paypal_card">
                            </div>
                         </fieldset>
                         <h2>Card Details</h2>
-
+    
                         <fieldset class="year">
                             <input type="date" placeholder="Expiry Date">
                             <input type="date" placeholder="CVV">
                         </fieldset>
-                        <button class="card_button">Pay with Visa</button>
+                        <button class="card_button" onclick="openReceipt()">Pay</button>
                     </div>
-
+    
                 </div>
             </div>
         </div>
-
+    
         <div class="shadow" id="downShadow">
             <div class="modal" id="modal">
                 <div class="close_modal" onclick="closeModal()">
-                    <img src="../icons/close-svgrepo-com.svg"  style="width:20px;">
+                    <img src="./icons/close-svgrepo-com.svg"  style="width:20px;">
                 </div>
-
+    
                 <div class="confirm_delivery">
                     <h2>Select Delivery Method</h2>
                     <div class="pickup">
-                        <button type="radio">Pickup Station</button>
-                        <P>FREE</P> <br>
-                        <p>Delivery Between --- and ----</p>
-                    </div>
-                    <div class="pickup">
-                        <label>Select Pickup Station</label>
+                        <button id="station">Pickup Station</button>
+                        <p>Pickup fee is NGN 3,000 when you order within the next 24hrs</p> 
+                           <br>
+                        <select  id="">
+                            <option value="">Select Location</option>
+                            <option value="">Katsina</option>
+                            <option value="">Kano</option>
+                            <option value="">Kaduna</option>
+                            <option value="">Abuja</option>
+                            <option value="">Lagos</option>
+                        </select> <br>
                         <select id="pickup_station">
                             <option value=""></option>
                             <option>NATO</option>
                             <option>KTSTA</option>
                         </select>
+                        <p id="deliveryStation"></p>
+                    </div>
+                    
+                    <div class="pickup">
+                        <h4>Number of i tems:</h4>
+                        <h4>Subtotal:</h4>
                     </div>
                     <div class="pickup">
-                        <button type="radio">Doo Delivery</button>
-                        <P>FREE</P> <br>
-                        <p>Delivery Between --- and ----</p>
+                        <button id="door">Door Delivery</button>
+                        <p>Pickup fee is NGN 3,000 when you order within the next 24hrs</p> <br>
+                     
+                        <select  id="">
+                            <option value="">Select Location</option>
+                            <option value="">Katsina</option>
+                            <option value="">Kano</option>
+                            <option value="">Kaduna</option>
+                            <option value="">Abuja</option>
+                            <option value="">Lagos</option>
+                        </select> <br>
+                        <select >
+                            <option value="">City</option>
+                            <option>NATO</option>
+                            <option>KTSTA</option>
+                        </select>
+                        <p id="deliveryDoor"></p>
+                    
                         
                     </div>
                     <button class="confirm_delivery_button" onclick="showPayment()">Confirm Delivery</button>
                 </div>
             </div>
            </div>
-
+    
+           <div class="shadow" id="receiptShadow">
+            <div class="modal" id="receipt_modal">
+                <div class="close_modal" onclick="closeReceipt()">
+                    <img src="./icons/close-svgrepo-com.svg"  style="width:20px;">
+                </div>
+                
+                <div class="receipt">
+                    <div class="receipt-header">
+                        <h2>Receipt</h2>
+                    </div>
+                    <div class="receipt-details">
+                        <span>Order Number: #123456</span>
+                        <span>Date of Order: March 9, 2024</span>
+                        <span>Delivery Person's Name: John Doe</span>
+                    </div>
+                    <div class="receipt-item">
+                        <span>Item 1:</span>
+                        <span>Quantity: 2</span>
+                        <span>Unit Price: $5.00</span>
+                        <span>Subtotal: $10.00</span>
+                    </div>
+                    <div class="receipt-item">
+                        <span>Item 2:</span>
+                        <span>Quantity: 1</span>
+                        <span>Unit Price: $15.00</span>
+                        <span>Subtotal: $15.00</span>
+                    </div>
+                    <div class="receipt-item">
+                        <span>Item 3:</span>
+                        <span>Quantity: 3</span>
+                        <span>Unit Price: $8.00</span>
+                        <span>Subtotal: $24.00</span>
+                    </div>
+                    <div class="receipt-total">
+                        <span>Total:</span>
+                        <span>$49.00</span>
+                    </div>
+                    <button onclick="downloadReceipt()">Download Receipt</button>
+                </div>
+                
+            </div>
+           </div>
         <footer id="footer">
             <div class="web-name"><h2>ShopEase</h2></div>
             <div class="web-info">
@@ -326,7 +394,6 @@
  
     </div>
 
-      
     <script>
         document.addEventListener('DOMContentLoaded', function () {
 let favoriteItems = localStorage.getItem('favoriteItems') ? JSON.parse(localStorage.getItem('favoriteItems')) : [];
@@ -416,7 +483,7 @@ renderFavoriteItems();
 });
 
     </script>
-    
+   
          <script>
 
         document.addEventListener('DOMContentLoaded', function () {
@@ -578,28 +645,28 @@ renderFavoriteItems();
                 otherImages[0].onclick = function(){
                     mainImage.src = otherImages[0].src;
                     price.innerHTML = '&#8358;1,000';
-                    productName.innerHTML = 'keiky Cucumber';
-                    sizes.innerHTML = '500g';
-                    color.innerHTML = 'White';
-                    productDes.innerHTML = 'White Cauliflower is popular and versatile vegetable for its mild flavour and dense, crunchy texture. Its harvested when thehead is compact and creamy white in color with tightly packed florets. Its rich in vitamins, it can be enjoyes raw as crunchy snack or slad ingredient, or cooked in various ways including steaming, roasting, sauteing or even marsh as low-carb alternate for marsh potates.';
+                    productName.innerHTML = '3.8mm Webcam';
+                    sizes.innerHTML = 'Mini';
+                    color.innerHTML = 'Black';
+                    productDes.innerHTML = 'EMEET 1080P Webcam, Web Camera with 2 Noise-Cancelling Microphones and Privacy Cover, 90°';
                 }
 
                 otherImages[1].onclick = function(){
                     mainImage.src = otherImages[1].src;
-                    price.innerHTML = '&#8358;10,000';
-                    productName.innerHTML = 'Cheddar Cauliflower';
-                    productDes.innerHTML = 'Orange Cauliflower also knowan as"Cheddar Cauliflower" is a vibrant and colorful variation of white cauliflower, unlike the white cauliflower that has a creamy head cheddar has a bright orange hue due to its higher level of beta-carotene" a pigment found in veges. such as carrot its mild and sweet as the white cauliflower but with added benefit of an increased value due to its higher beta-carotine content, it can be prepared as steaming, roasting,sauteing or even enjoyed as raw.';
-                    sizes.innerHTML = '250g';
-                    color.innerHTML = 'Orange';
+                    price.innerHTML = '&#8358;110,000';
+                    productName.innerHTML = 'NexiGo N660 ';
+                    productDes.innerHTML = 'NexiGo N660 1080P Business Webcam, Dual Microphone & Privacy Cover, USB FHD Web Computer Camera';
+                    sizes.innerHTML = 'Mini';
+                    color.innerHTML = 'Black';
                 }
 
                 otherImages[2].onclick = function(){
                     mainImage.src = otherImages[2].src;
-                    price.innerHTML = '&#8358;210,900';
-                    productName.innerHTML = 'Graffiti Cauliflower';
-                    productDes.innerHTML = 'Its stunning variant of cauliflower, the purple color comes from the presence of anthocyanins with is antioxidant also found in red cabbage, its mild and slightly swwet taste with ';
-                    sizes.innerHTML = '250g';
-                    color.innerHTML = 'Purple';
+                    price.innerHTML = 'NGN 210,900';
+                    productName.innerHTML = 'Mosic Camera';
+                    productDes.innerHTML = '4K Webcam, HD Autofocus Webcam with Microphone, Adjustable Light Computer Camera with Privacy ';
+                    sizes.innerHTML = 'Mini';
+                    color.innerHTML = 'Black';
                 }
 
 
@@ -607,5 +674,6 @@ renderFavoriteItems();
 
 <script src="./modal.js"></script>
 <script src="../home.js"></script>
+<script src="../cart.js"></script>
 </body>
 </html>

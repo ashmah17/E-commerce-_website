@@ -128,7 +128,7 @@
                 <div class="product-info">
                     <div class="product_sample">
                         <div class="main-sample">
-                            <img src="../images/coconut.JPG" alt="" id="main-image">
+                            <img src="../images/mini projector.jpeg" alt="" id="main-image">
                         </div>
                     </div>
 
@@ -136,9 +136,9 @@
                     <div class="small">
                         <h4 class="small-label">Choose Another Sample</h4>
                         <div class="pictures">
-                            <img src="../images/coconut.JPG" class="other-image">
-                            <img src="../images/coconut (1).JPG"  class="other-image">
-                            <img src="../images/coconut (2).JPG"  class="other-image">                    
+                            <img src="../images/mini projector.jpeg" class="other-image">
+                            <img src="../images/projector1.jpeg"  class="other-image">
+                            <img src="../images/projector2.jpeg"  class="other-image">                    
                     
                         </div>
                     </div>
@@ -147,21 +147,21 @@
 
                 <div class="sample_details">
                     <div class="product_details">
-                        <h1 id="product_name">White Cauliflower</h1>
+                        <h1 id="product_name">Mini Dser Projector</h1>
                         
                         <fieldset class="select-details1">
                             <h2><b>Price:</b> </h2>&nbsp; &nbsp;
-                            <h2 id="money">&#8358;1,000</h2>
+                            <h2 id="money">NGN 75,913</h2>
                         </fieldset>
                         
                         <fieldset class="select-details1">
                             <h2><b>Size:</b> </h2>&nbsp; &nbsp;
-                           <h2 id="size">500g</h2>
+                           <h2 id="size">Mini</h2>
                         </fieldset>
 
                         <fieldset class="select-details1">
                             <h2><b>Color:</b> </h2>&nbsp; &nbsp;
-                           <h2 id="color">Brown</h2>
+                           <h2 id="color">Black</h2>
                         </fieldset>
                         
         
@@ -170,15 +170,15 @@
                             <input type="number" placeholder="1" id="input" min="0">
                            <span class="holder">
                             <button id="addChart">Add to chart</button>
-                            <img src="../icons/favorite-filled-svgrepo-com.svg" id="addFavorite" style="width: 30px; cursor: pointer;" >
+                            <img src="../icons/favorite-svgrepo-com (1).svg" id="addFavorite" style="width: 30px; cursor: pointer;" >
+                            <img src="../icons/favorite-filled-svgrepo-com.svg" id="filledAddFavorite" style="width: 30px; cursor: pointer; display: none;" >
                            </span>
                         
                         </fieldset>
 
                         <h3 class="product-des">Product Details</h3>
                         <p class="product-des" id="product-des">
-                            White Cauliflower is popular and versatile vegetable for its mild flavour and dense, crunchy texture. Its harvested when thehead is compact and creamy white in color with tightly packed florets. Its rich in vitamins, it can be enjoyes raw as crunchy snack or slad ingredient, or cooked in various ways including steaming, roasting, sauteing or even marsh as low-carb alternate for marsh potates.
-                        </p>
+                            [Electric Focus] 5G WiFi Projector with Bluetooth, FunFlix G1 Mini Portable 1080P Projector,2024 Latest                         </p>
                     
                         
                     </div>
@@ -325,95 +325,96 @@
  
     </div>
 
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-    let favoriteItems = localStorage.getItem('favoriteItems') ? JSON.parse(localStorage.getItem('favoriteItems')) : [];
+      
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+let favoriteItems = localStorage.getItem('favoriteItems') ? JSON.parse(localStorage.getItem('favoriteItems')) : [];
 
-    function updateFavoriteIcon() {
-        const favoriteCount = document.getElementById('favorite').querySelector('span');
-        let totalCounts = 0;
+function updateFavoriteIcon() {
+    const favoriteCount = document.getElementById('favorite').querySelector('span');
+    let totalCounts = 0;
 
-        favoriteItems.forEach(item => {
-            totalCounts += item.quantity;
-        });
-
-        favoriteCount.textContent = totalCounts;
-    }
-
-    function addToFavorite(savedProducts) {
-        const existingIndex = favoriteItems.findIndex(item =>
-            item.name === savedProducts.name && item.Image === savedProducts.Image
-        );
-
-        if (existingIndex === -1) {
-            favoriteItems.push(savedProducts);
-            localStorage.setItem('favoriteItems', JSON.stringify(favoriteItems));
-            updateFavoriteIcon();
-        }
-    }
-
-    function renderFavoriteItems() {
-        const favoriteContainer = document.querySelector('.favorite_listCarts');
-        favoriteContainer.innerHTML = '';
-
-        favoriteItems.forEach(item => {
-            if (item.quantity > 0) {
-                const productItem = document.createElement('div');
-                productItem.classList.add('favorite_item');
-                productItem.innerHTML = `
-                    <div class="favorite_image">
-                        <img src="${item.Image}" alt="">
-                    </div>
-                    <div class="favorite_name">
-                        ${item.name}
-                    </div>
-                    <div class="totalPrice">₦${item.totalPrice}</div>
-                    <span class="pay_favorite">
-                        <img src="../icons/trash-list-alt-svgrepo-com.svg" class="deleteFavorite" style="width: 25px;">     
-                        <a href="product_50.html"><button id="moveChart" >View Product</button></a>
-                    </span>
-                `;
-
-                productItem.querySelector('.deleteFavorite').addEventListener('click', function () {
-                    favoriteItems = favoriteItems.filter(favorite => 
-                        favorite.name !== item.name || favorite.Image !== item.Image
-                    );
-
-                    localStorage.setItem('favoriteItems', JSON.stringify(favoriteItems));
-
-                    updateFavoriteIcon();
-                    renderFavoriteItems();
-                });
-
-                favoriteContainer.appendChild(productItem);
-            }
-        });
-    }
-
-    document.getElementById('addFavorite').addEventListener('click', function () {
-        const product_id = document.querySelector('.product_container').getAttribute('data-id');
-        const product = document.querySelector('#product_id');
-        const details = document.querySelector('.sample_details');
-        const sizeDropdown = document.getElementById("size");
-        const selectedSize = sizeDropdown ? sizeDropdown.value : '';
-        const savedProducts = {
-            id: product_id,
-            name: product.querySelector('#product_name').textContent,
-            price: parseInt(details.querySelector('#money').textContent.replace(/\D/g, '')),
-            Image: product.querySelector('#main-image').src,
-            size: selectedSize,
-            quantity: parseInt(details.querySelector('input').value) || 1,
-            totalPrice: parseInt(details.querySelector('#money').textContent.replace(/\D/g, '')) * parseInt(details.querySelector('input').value) || parseInt(details.querySelector('#money').textContent.replace(/\D/g, ''))
-        };
-
-        addToFavorite(savedProducts);
+    favoriteItems.forEach(item => {
+        totalCounts += item.quantity;
     });
 
-    updateFavoriteIcon();
-    renderFavoriteItems();
+    favoriteCount.textContent = totalCounts;
+}
+
+function addToFavorite(savedProducts) {
+    const existingIndex = favoriteItems.findIndex(item =>
+        item.name === savedProducts.name && item.Image === savedProducts.Image
+    );
+
+    if (existingIndex === -1) {
+        favoriteItems.push(savedProducts);
+        localStorage.setItem('favoriteItems', JSON.stringify(favoriteItems));
+        updateFavoriteIcon();
+    }
+}
+
+function renderFavoriteItems() {
+    const favoriteContainer = document.querySelector('.favorite_listCarts');
+    favoriteContainer.innerHTML = '';
+
+    favoriteItems.forEach(item => {
+        if (item.quantity > 0) {
+            const productItem = document.createElement('div');
+            productItem.classList.add('favorite_item');
+            productItem.innerHTML = `
+                <div class="favorite_image">
+                    <img src="${item.Image}" alt="">
+                </div>
+                <div class="favorite_name">
+                    ${item.name}
+                </div>
+                <div class="totalPrice">₦${item.totalPrice}</div>
+                <span class="pay_favorite">
+                    <img src="../icons/trash-list-alt-svgrepo-com.svg" class="deleteFavorite" style="width: 25px;">     
+                    <a href="product_50.html"><button id="moveChart" >View Product</button></a>
+                </span>
+            `;
+
+            productItem.querySelector('.deleteFavorite').addEventListener('click', function () {
+                favoriteItems = favoriteItems.filter(favorite => 
+                    favorite.name !== item.name || favorite.Image !== item.Image
+                );
+
+                localStorage.setItem('favoriteItems', JSON.stringify(favoriteItems));
+
+                updateFavoriteIcon();
+                renderFavoriteItems();
+            });
+
+            favoriteContainer.appendChild(productItem);
+        }
+    });
+}
+
+document.getElementById('addFavorite').addEventListener('click', function () {
+    const product_id = document.querySelector('.product_container').getAttribute('data-id');
+    const product = document.querySelector('#product_id');
+    const details = document.querySelector('.sample_details');
+    const sizeDropdown = document.getElementById("size");
+    const selectedSize = sizeDropdown ? sizeDropdown.value : '';
+    const savedProducts = {
+        id: product_id,
+        name: product.querySelector('#product_name').textContent,
+        price: parseInt(details.querySelector('#money').textContent.replace(/\D/g, '')),
+        Image: product.querySelector('#main-image').src,
+        size: selectedSize,
+        quantity: parseInt(details.querySelector('input').value) || 1,
+        totalPrice: parseInt(details.querySelector('#money').textContent.replace(/\D/g, '')) * parseInt(details.querySelector('input').value) || parseInt(details.querySelector('#money').textContent.replace(/\D/g, ''))
+    };
+
+    addToFavorite(savedProducts);
 });
 
-        </script>
+updateFavoriteIcon();
+renderFavoriteItems();
+});
+
+    </script>
     
          <script>
 
@@ -575,29 +576,29 @@
 
                 otherImages[0].onclick = function(){
                     mainImage.src = otherImages[0].src;
-                    price.innerHTML = '&#8358;1,000';
-                    productName.innerHTML = 'keiky Cucumber';
-                    sizes.innerHTML = '500g';
-                    color.innerHTML = 'White';
-                    productDes.innerHTML = 'White Cauliflower is popular and versatile vegetable for its mild flavour and dense, crunchy texture. Its harvested when thehead is compact and creamy white in color with tightly packed florets. Its rich in vitamins, it can be enjoyes raw as crunchy snack or slad ingredient, or cooked in various ways including steaming, roasting, sauteing or even marsh as low-carb alternate for marsh potates.';
+                    price.innerHTML = 'NGN 75,913';
+                    productName.innerHTML = 'Mini Dser Projector';
+                    sizes.innerHTML = 'Mini';
+                    color.innerHTML = 'Black';
+                    productDes.innerHTML = '[Electric Focus] 5G WiFi Projector with Bluetooth, FunFlix G1 Mini Portable 1080P Projector,2024 Latest ';
                 }
 
                 otherImages[1].onclick = function(){
                     mainImage.src = otherImages[1].src;
-                    price.innerHTML = '&#8358;10,000';
-                    productName.innerHTML = 'Cheddar Cauliflower';
-                    productDes.innerHTML = 'Orange Cauliflower also knowan as"Cheddar Cauliflower" is a vibrant and colorful variation of white cauliflower, unlike the white cauliflower that has a creamy head cheddar has a bright orange hue due to its higher level of beta-carotene" a pigment found in veges. such as carrot its mild and sweet as the white cauliflower but with added benefit of an increased value due to its higher beta-carotine content, it can be prepared as steaming, roasting,sauteing or even enjoyed as raw.';
-                    sizes.innerHTML = '250g';
-                    color.innerHTML = 'Orange';
+                    price.innerHTML = 'NGN 110,000';
+                    productName.innerHTML = 'Meer Projector';
+                    productDes.innerHTML = 'Meer Mini Projector,Portable Movie Projector,Smart Home Projector,Neat Projector';
+                    sizes.innerHTML = 'Mini';
+                    color.innerHTML = 'Black';
                 }
 
                 otherImages[2].onclick = function(){
                     mainImage.src = otherImages[2].src;
                     price.innerHTML = '&#8358;210,900';
-                    productName.innerHTML = 'Graffiti Cauliflower';
-                    productDes.innerHTML = 'Its stunning variant of cauliflower, the purple color comes from the presence of anthocyanins with is antioxidant also found in red cabbage, its mild and slightly swwet taste with ';
-                    sizes.innerHTML = '250g';
-                    color.innerHTML = 'Purple';
+                    productName.innerHTML = 'ARBIN Projector';
+                    productDes.innerHTML = 'Mini Projector, Support 1080P Smart Portable Projector with 5G WiFi and Bluetooth, 10000 Lumen';
+                    sizes.innerHTML = 'Mini';
+                    color.innerHTML = 'White';
                 }
 
 
